@@ -40,22 +40,27 @@ nav ul {
 nav a {
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 section {
     min-height: 100vh;
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
 }
 
 section h2 {
+    padding: 2rem 7rem 2rem 7rem;
     font-size: 5rem;
     color: black;
 }
 
 p {
-    
+   padding: 2rem 7rem 2rem 7rem;
+   color: black;
+   font-size: 2rem;
+   text-align: justify; 
 }
 
 .about {
