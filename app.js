@@ -1,5 +1,8 @@
+//Get the needed object from HTML
 const sections = document.querySelectorAll('section');
 const focus = document.querySelector('.focus');
+
+//Initialize options to animate the NavNar
 const options = { threshold: 0.7 };
 
 let observer = new IntersectionObserver(navCheck, options);

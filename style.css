@@ -6,6 +6,13 @@
 
 body {
     font-family: sans-serif;
+    background-image: url("./background.JPG");
+    background-attachment: fixed;
+}
+
+body background-image {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
 }
 
 header {
@@ -13,6 +20,7 @@ header {
     position: sticky;
     top: 0px;
     background: black;
+    filter: none;
 }
 
 nav {
@@ -54,6 +62,7 @@ section h2 {
     padding: 2rem 7rem 2rem 7rem;
     font-size: 5rem;
     color: black;
+    filter: none;
 }
 
 p {
@@ -63,22 +72,22 @@ p {
    text-align: justify; 
 }
 
-.about {
-    background: linear-gradient(to right top, lightcoral, #e8554e);
-}
-
-.projects {
-    background: linear-gradient(to right top, #667eea,  #764ba2);
-}
-
-.contacts {
-    background: linear-gradient(to right top, #13547a, #80d0c7);
-}
-
 .focus {
     position: absolute;
     z-index: -2;
     background: linear-gradient(to right top, lightcoral, orange);
     transform: scale(2);
     transition: all 0.5s ease;
+}
+
+.CV_Download {
+    width: 15rem;
+    height: 5rem;
+    font-weight: bold;
+    font: sans-serif;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(to right top, lightcoral, orange);
+    border: none;
+    margin-top: 10%;
 }
