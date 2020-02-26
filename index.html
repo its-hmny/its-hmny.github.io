@@ -5,7 +5,7 @@
         <meta name="description" content="Enea Guidi's personal website">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel=stylesheet href="style.css"/>
-        <link rel="icon" href="e_logo.ico"/>
+        <link rel="icon" href="res/logo.ico"/>
         <title>Enea Guidi</title>
     </head>
     <body>
@@ -23,6 +23,7 @@
        <main>
            
            <section id="about-id" class="about">
+                <!--Need to add CV download button, PDF is better-->
                 <h2>About me</h2>
                 <p>
                     Currently I'm a second year CS bachelor student at University of Bologna (UniBo).
@@ -32,15 +33,15 @@
                     knowledge in Game programming/engineering. I'm looking forward to know more things both for my own career
                     and personal knowledge.
                 </p>
-                <center>><button class="CV_Download">Download Curriculum Vitae</button></center>
-                <!--Need to add CV download button, PDF is better-->
+                <center><button onclick="window.open('res/Enea_Guidi_CV.pdf')" class="CV_Download">Download Curriculum</button></center>
            </section>
 
            <section id="project-id" class="projects">
                 <h2>Projects</h2>
                 <p>
-                    Here's a list of my projects, mainly course assignment plus more personal stuff. 
+                    Here's a list of my projects, mostly  they're course assignment but there's also some personal stuff. 
                     They're all avaiable on GitHub, if interested feel free to contribute to them.
+                    In case you want to reach out for something (further questions, etc) scroll below.
                 </p>
                 <center><table class="projects_table">
                     <tr>
@@ -49,12 +50,32 @@
                         <th>Language</th>
                     </tr>
                 </table></center>
-                <!--Add GitHub projects table with GitHub API, style it properly-->
+
            </section>
 
            <section id="contacts-id" class="contacts">
-                <h2>Contacts</h2>
                 <!--Need to add button for GitHub, LinkedIn, Telegram and so on-->
+                <h2>Contacts</h2>
+                <p>
+                    If what you saw interested you (or simply you want to know me better before doing so)
+                    here's some way you could communicate/check on me. 
+                </p>
+                <center>
+                    <div class="social_networks_links">
+                        <a href="https://www.github.com/its-hmny" target="_blank">
+                            <img src="res/github_icon.png">
+                        </a>
+                        <a href="https://www.instagram.com/horny_milf_near_you" target="_blank">
+                            <img src="res/instagram_icon.png">
+                        </a>
+                        <a href="https://www.twitter.com/its_hmny" target="_blank">
+                            <img src="res/twitter_icon.png">
+                        </a>
+                        <a href="https://t.me/its_hmny" target="_blank">
+                            <img src="res/telegram_icon.jpg">
+                        </a>
+                    </div>
+                </center>
            </section>
 
        </main>
