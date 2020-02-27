@@ -46,7 +46,7 @@ async function populateTable() {
 
 populateTable();
 
-/*This little subroutine cycles throughall the section and pass each of them to 
+/*This little subroutine cycles through all the sections and pass each of them to 
 the observer that will call the navCheck method */
 sections.forEach(section => {
     observer.observe(section);
