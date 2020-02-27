@@ -89,7 +89,7 @@ p {
     color: white;
     background: linear-gradient(to right top, lightcoral, orange);
     border: none;
-    margin-top: 10%;
+    margin-top: 3%;
 }
 
 .CV_Download:hover {
@@ -113,6 +113,9 @@ tr, td, th {
     letter-spacing: 1px;
 }
 
-.social_network_links {
+.social_networks_links {
     cursor: pointer;
+    content: space-between 5rem;
+    display: inline-block;
+    margin: 5rem;
 }
