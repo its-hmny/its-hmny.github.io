@@ -34,7 +34,7 @@ async function populateTable() {
     
     result.items.forEach(repo => {
         const position = result.items.left; //Position in which the repo elements has to be inserted
-        let newRow = projects_table.insertRow(position);
+        const newRow = projects_table.insertRow(position);
         
         //Adds the needed repo's info to the table row element
         newRow.insertCell().append(document.createTextNode(repo.name));
