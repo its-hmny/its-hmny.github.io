@@ -40,6 +40,15 @@ async function populateTable() {
         newRow.insertCell().append(document.createTextNode(repo.name));
         newRow.insertCell().append(document.createTextNode(repo.description));
         newRow.insertCell().append(document.createTextNode(repo.language));
+        
+        //Create the link to the repo page in GitHub, and then  insert it in the table
+        const repo_link = document.createElement("a");
+        
+        repo_link.setAttribute("href", repo.html_url);
+        repo_link.appendChild(document.createTextNode("See"));
+        repo_link.className = "repo_link";
+        
+        newRow.insertCell().append(repo_link);
     });
 }
 

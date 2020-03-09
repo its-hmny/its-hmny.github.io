@@ -108,6 +108,12 @@ tr, td, th {
     letter-spacing: 1px;
 }
 
+.repo_link {
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
 .social_networks_links a {
     cursor: pointer;
     color:transparent;
