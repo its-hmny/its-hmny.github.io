@@ -45,6 +45,7 @@ async function populateTable() {
         const repo_link = document.createElement("a");
         
         repo_link.setAttribute("href", repo.html_url);
+        repo_link.setAttribute("target", "_blank");
         repo_link.appendChild(document.createTextNode("See"));
         repo_link.className = "repo_link";
         
