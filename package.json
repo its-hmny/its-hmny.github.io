@@ -13,7 +13,7 @@
   "scripts": {
     "build:all": "next build",
     "build:html": "next build && next export",
-    "chore:format": "prettier --write 'components/*' 'pages/*' 'schema/*'",
+    "chore:format": "prettier --write 'components/*' 'pages/*'",
     "chore:lint": "next lint",
     "start:dev": "next dev",
     "start:prod": "next build && next start"
