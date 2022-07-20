@@ -10,7 +10,7 @@ const Style = {
   FloatingContainer: {
     p: '0px',
     h: '97vh',
-    mw: '30em',
+    mw: '35em',
     zIndex: 5,
     top: '1.5vh',
     right: '0.5em',

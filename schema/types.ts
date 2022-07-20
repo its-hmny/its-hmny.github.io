@@ -12,3 +12,27 @@ import { ReactNode } from 'react';
  * @param content - Custom or built-in React component with self-contained logic
  */
 export type Section = { title: string; subtitle: string; content: ReactNode };
+
+/**
+ * Describes the needed data to be retrieved from GitHub public GraphQL/REST API server.
+ * Apart from obviously name, description and URL we fetch also other 'interesting' fields
+ * such as the predominant language of the project, the number of commits, the license and
+ * the tags/keyword (used to provide to the user a quick context about the repo).
+ * @type @alias Repository
+ * @param url - The full URL to GitHub's repository detail page
+ * @param name - GitHub repo name
+ * @param description - The description/helper text related to the repo
+ * @param license - The repository open source license
+ * @param language - The mainly used programming language
+ * @param n_commit - The number of active commit on the 'main' branch
+ * @param tags - Tags/Keywords related to the repo
+ */
+export type Repository = {
+  url: string;
+  name: string;
+  description: string;
+  license: string;
+  language: string;
+  n_commit: number;
+  tags: Array<string>;
+};

@@ -3,7 +3,8 @@ import type { NextPage } from 'next';
 import { useCallback, useState } from 'react';
 
 import Drawer from '../components/Drawer';
-import { Sections } from '../schema/constant';
+import { RepositoriesList } from '../components/Repo';
+import { Repositories, Sections } from '../schema/constant';
 import { Section } from '../schema/types';
 
 const Styles = { Page: { h: '100vh', fd: 'column', ai: 'center', gap: 30 } };
@@ -24,21 +25,28 @@ const Home: NextPage = () => {
         <Text h1> Welcome to my new homepage</Text>
 
         <Grid>
-          <Button onClick={onSectionChosen('Mock 1')}>Blog</Button>
+          <Button onClick={onSectionChosen('About Me')}>About Me</Button>
         </Grid>
         <Grid>
-          <Button onClick={onSectionChosen('Mock 2')}>Projects</Button>
+          <Button onClick={onSectionChosen('Projects')}>Projects</Button>
         </Grid>
         <Grid>
-          <Button onClick={onSectionChosen('Mock 3')}>Contacts</Button>
+          <Button onClick={onSectionChosen('Blog')}>Blog</Button>
         </Grid>
         <Grid>
-          <Button onClick={onSectionChosen('Mock 4')}>About me</Button>
+          <Button onClick={onSectionChosen('Contacts')}>Contacts</Button>
         </Grid>
       </Grid.Container>
 
       {/* Drawer that displays current section details */}
-      {!!details && <Drawer {...details} onClose={() => setDetails(null)} />}
+      {!!details && (
+        <Drawer
+          {...details}
+          // TODO This is hardcoded, must be removed
+          content={<RepositoriesList repos={Repositories} />}
+          onClose={() => setDetails(null)}
+        />
+      )}
     </>
   );
 };
