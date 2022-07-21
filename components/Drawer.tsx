@@ -2,7 +2,13 @@ import { Card, Grid, Text, useClickAway } from '@nextui-org/react';
 import { Close } from 'grommet-icons';
 import { ReactNode, useRef } from 'react';
 
-// TODO Comment this
+/**
+ * Custom data to be rendered inside the <Drawer /> component.
+ * TODO: use as children components
+ * @param title - The modal header title
+ * @param subtitle - A subtitle to introduce and what is shown in the modal
+ * @param content - The "injectable" content.
+ */
 type Props = { title: string; subtitle: string; content: ReactNode; onClose: () => void };
 
 const Style = {

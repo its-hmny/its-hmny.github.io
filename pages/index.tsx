@@ -3,8 +3,8 @@ import type { NextPage } from 'next';
 import { useCallback, useState } from 'react';
 
 import Drawer from '../components/Drawer';
-import { RepositoriesList } from '../components/Repo';
-import { Repositories, Sections } from '../schema/constant';
+import MyRepositories from '../components/MyRepositories';
+import { Sections } from '../schema/constant';
 import { Section } from '../schema/types';
 
 const Styles = { Page: { h: '100vh', fd: 'column', ai: 'center', gap: 30 } };
@@ -43,7 +43,7 @@ const Home: NextPage = () => {
         <Drawer
           {...details}
           // TODO This is hardcoded, must be removed
-          content={<RepositoriesList repos={Repositories} />}
+          content={<MyRepositories />}
           onClose={() => setDetails(null)}
         />
       )}
