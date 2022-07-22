@@ -1,10 +1,12 @@
 import { Github, Linkedin, Mail, Twitter } from 'grommet-icons';
 
+import AboutMe from '../components/AboutMe';
 import Drawer from '../components/Drawer';
+import MyArticles from '../components/MyArticles';
 import MyContacts from '../components/MyContacts';
 import MyRepositories from '../components/MyRepositories';
 import Popup from '../components/Popup';
-import type { Contact, Repository, Section } from './types';
+import type { Article, Contact, Repository, Section } from './types';
 
 /**
  * The desired sections to be rendered in the homepage interactive playground.
@@ -13,9 +15,9 @@ import type { Contact, Repository, Section } from './types';
 export const Sections: Array<Section> = [
   {
     title: 'About Me',
-    subtitle: 'Mock test description 1',
-    scaffold: Drawer,
-    content: MyRepositories,
+    subtitle: "I'm a fullstack developer currently working in San Marino, Italy",
+    scaffold: Popup,
+    content: AboutMe,
   },
   {
     title: 'Projects',
@@ -28,13 +30,76 @@ export const Sections: Array<Section> = [
     title: 'Blog',
     subtitle: 'Mock test description 3',
     scaffold: Drawer,
-    content: MyRepositories,
+    content: MyArticles,
   },
   {
     title: 'Contacts',
     subtitle: "Want to chat? Here's a diverse list of methods you can reach me with.",
     scaffold: Popup,
     content: MyContacts,
+  },
+];
+
+/**
+ * The desired contacts infos and socials to be rendered in the MyContacts component
+ * @constant
+ */
+export const Contacts: Array<Contact> = [
+  {
+    icon: Twitter,
+    name: 'Twitter',
+    raw: 'https://twitter.com/its_hmny',
+    url: 'https://twitter.com/its_hmny',
+  },
+  {
+    icon: Mail,
+    name: 'Email',
+    raw: 'guidienea@gmail.com',
+    url: 'mailto:guidienea@gmail.com?subject=Yo, wassup??',
+  },
+  {
+    icon: Github,
+    name: 'GitHub',
+    raw: 'https://www.google.com',
+    url: 'https://www.google.com',
+  },
+  {
+    icon: Linkedin,
+    name: 'LinkedIn',
+    raw: 'https://www.google.com',
+    url: 'https://www.google.com',
+  },
+];
+
+/**
+ * Array of mock articles object for testing/rendering purposes.
+ * TODO: Remove this one when data fetching from GitHUb is available.
+ * @constant
+ */
+export const Articles: Array<Article> = [
+  {
+    title: '3D-Cellular-Automata',
+    subtitle: 'A Three.js webapp to simulate cellular automata in 3D',
+    content: 'Typescript',
+    url: 'https://www.google.com',
+  },
+  {
+    title: '3D-Cellular-Automata',
+    subtitle: 'A Three.js webapp to simulate cellular automata in 3D',
+    content: 'Typescript',
+    url: 'https://www.google.com',
+  },
+  {
+    title: '3D-Cellular-Automata',
+    subtitle: 'A Three.js webapp to simulate cellular automata in 3D',
+    content: 'Typescript',
+    url: 'https://www.google.com',
+  },
+  {
+    title: '3D-Cellular-Automata',
+    subtitle: 'A Three.js webapp to simulate cellular automata in 3D',
+    content: 'Typescript',
+    url: 'https://www.google.com',
   },
 ];
 
@@ -78,37 +143,6 @@ export const Repositories: Array<Repository> = [
     n_commit: 100,
     license: 'GPLv3.0',
     tags: ['test1', 'test2', 'test3'],
-    url: 'https://www.google.com',
-  },
-];
-
-/**
- * The desired contacts infos and socials to be rendered in the MyContacts component
- * @constant
- */
-export const Contacts: Array<Contact> = [
-  {
-    icon: Twitter,
-    name: 'Twitter',
-    raw: 'https://twitter.com/its_hmny',
-    url: 'https://twitter.com/its_hmny',
-  },
-  {
-    icon: Mail,
-    name: 'Email',
-    raw: 'guidienea@gmail.com',
-    url: 'mailto:guidienea@gmail.com?subject=Yo, wassup??',
-  },
-  {
-    icon: Github,
-    name: 'GitHub',
-    raw: 'https://www.google.com',
-    url: 'https://www.google.com',
-  },
-  {
-    icon: Linkedin,
-    name: 'LinkedIn',
-    raw: 'https://www.google.com',
     url: 'https://www.google.com',
   },
 ];

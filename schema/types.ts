@@ -36,6 +36,29 @@ export type Section = {
 };
 
 /**
+ * TODO Comment
+ * @type @alias Article
+ * @param name - Social name or contact type (Email, Facebook, GitHub, Phone Number, ...)
+ * @param icon - Desired grommet-icon React component to be rendered
+ * @param url - New page/redirect URL
+ * @param raw - The string to be copied on the user clipboard upon interaction
+ */
+export type Article = { title: string; subtitle: string; content: string; url: string };
+
+/**
+ * Describes the needed data to visualize a full-fledged contact button in the website UI.
+ * Apart from name, icon and URL that are quite basic concept the 'raw' field will be used
+ * for more advanced used with clipboard interaction: instead of opening a new page/window
+ * it could be desirable to save only the needed infos on the user clipboard for later usages.
+ * @type @alias Contact
+ * @param name - Social name or contact type (Email, Facebook, GitHub, Phone Number, ...)
+ * @param icon - Desired grommet-icon React component to be rendered
+ * @param url - New page/redirect URL
+ * @param raw - The string to be copied on the user clipboard upon interaction
+ */
+export type Contact = { name: string; icon: Icon; url: string; raw: string };
+
+/**
  * Describes the needed data to be retrieved from GitHub public GraphQL/REST API server.
  * Apart from obviously name, description and URL we fetch also other 'interesting' fields
  * such as the predominant language of the project, the number of commits, the license and
@@ -57,22 +80,4 @@ export type Repository = {
   language: string;
   n_commit: number;
   tags: Array<string>;
-};
-
-/**
- * Describes the needed data to visualize a full-fledged contact button in the website UI.
- * Apart from name, icon and URL that are quite basic concept the 'raw' field will be used
- * for more advanced used with clipboard interaction: instead of opening a new page/window
- * it could be desirable to save only the needed infos on the user clipboard for later usages.
- * @type @alias Contact
- * @param name - Social name or contact type (Email, Facebook, GitHub, Phone Number, ...)
- * @param icon - Desired grommet-icon React component to be rendered
- * @param url - New page/redirect URL
- * @param raw - The string to be copied on the user clipboard upon interaction
- */
-export type Contact = {
-  name: string;
-  icon: Icon;
-  url: string;
-  raw: string;
 };
