@@ -1,3 +1,5 @@
+import { Github, Linkedin, Mail, Twitter } from 'grommet-icons';
+
 import Drawer from '../components/Drawer';
 import MyContacts from '../components/MyContacts';
 import MyRepositories from '../components/MyRepositories';
@@ -76,6 +78,37 @@ export const Repositories: Array<Repository> = [
     n_commit: 100,
     license: 'GPLv3.0',
     tags: ['test1', 'test2', 'test3'],
+    url: 'https://www.google.com',
+  },
+];
+
+/**
+ * The desired contacts infos and socials to be rendered in the MyContacts component
+ * @constant
+ */
+export const Contacts: Array<Contact> = [
+  {
+    icon: Twitter,
+    name: 'Twitter',
+    raw: 'https://twitter.com/its_hmny',
+    url: 'https://twitter.com/its_hmny',
+  },
+  {
+    icon: Mail,
+    name: 'Email',
+    raw: 'guidienea@gmail.com',
+    url: 'mailto:guidienea@gmail.com?subject=Yo, wassup??',
+  },
+  {
+    icon: Github,
+    name: 'GitHub',
+    raw: 'https://www.google.com',
+    url: 'https://www.google.com',
+  },
+  {
+    icon: Linkedin,
+    name: 'LinkedIn',
+    raw: 'https://www.google.com',
     url: 'https://www.google.com',
   },
 ];
