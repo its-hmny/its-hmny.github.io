@@ -36,11 +36,9 @@ const RepoDetails = ({ language, license, n_commit, tags }: Repository) => (
 
 // Fetches last active repositories and renders them inside a <Collapse.Group /> component
 const MyRepositories = () => {
-  const repos = Repositories;
-
   return (
     <Collapse.Group splitted>
-      {repos.map(repo => (
+      {Repositories.map(repo => (
         <Collapse title={<RepoHeader {...repo} />} subtitle={repo.description}>
           <RepoDetails {...repo} />
         </Collapse>

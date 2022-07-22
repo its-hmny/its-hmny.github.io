@@ -1,6 +1,6 @@
 import { Github, Linkedin, Mail, Twitter } from 'grommet-icons';
 
-import AboutMe from '../components/AboutMe';
+import MyInfo from '../components/MyInfo';
 import Drawer from '../components/Drawer';
 import MyArticles from '../components/MyArticles';
 import MyContacts from '../components/MyContacts';
@@ -17,7 +17,7 @@ export const Sections: Array<Section> = [
     title: 'About Me',
     subtitle: "I'm a fullstack developer currently working in San Marino, Italy",
     scaffold: Popup,
-    content: AboutMe,
+    content: MyInfo,
   },
   {
     title: 'Projects',
