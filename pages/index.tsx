@@ -2,12 +2,12 @@ import { Button, Grid, Text } from '@nextui-org/react';
 import type { NextPage } from 'next';
 import { useCallback, useState } from 'react';
 
-import Drawer from '../components/Drawer';
-import MyRepositories from '../components/MyRepositories';
 import { Sections } from '../schema/constant';
-import { Section } from '../schema/types';
+import type { Section } from '../schema/types';
 
-const Styles = { Page: { h: '100vh', fd: 'column', ai: 'center', gap: 30 } };
+const Styles = {
+  Page: { h: '100vh', fd: 'column', ai: 'center', gap: 30 },
+};
 
 const Home: NextPage = () => {
   // Internal state that keeps track of the choice/interaction made by the user
@@ -38,14 +38,11 @@ const Home: NextPage = () => {
         </Grid>
       </Grid.Container>
 
-      {/* Drawer that displays current section details */}
+      {/* Displays current section details with the scaffold of choice  */}
       {!!details && (
-        <Drawer
-          {...details}
-          // TODO This is hardcoded, must be removed
-          content={<MyRepositories />}
-          onClose={() => setDetails(null)}
-        />
+        <details.scaffold {...details} onClose={() => setDetails(null)}>
+          <details.content />
+        </details.scaffold>
       )}
     </>
   );

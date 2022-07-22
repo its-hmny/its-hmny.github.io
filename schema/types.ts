@@ -24,9 +24,15 @@ export type ScaffoldProps = {
  * @type @alias Section
  * @param title - The section name/title
  * @param subtitle - A brief description or further elaboration about it
+ * @param scaffold - The "scaffold" component to be used as parent to the 'content' component
  * @param content - Custom or built-in React component with self-contained logic
  */
-export type Section = { title: string; subtitle: string; content: ReactNode };
+export type Section = {
+  title: string;
+  subtitle: string;
+  scaffold: (props: ScaffoldProps) => JSX.Element;
+  content: () => JSX.Element;
+};
 
 /**
  * Describes the needed data to be retrieved from GitHub public GraphQL/REST API server.

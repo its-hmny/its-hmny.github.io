@@ -1,14 +1,39 @@
-import { Repository, Section } from './types';
+import Drawer from '../components/Drawer';
+import MyContacts from '../components/MyContacts';
+import MyRepositories from '../components/MyRepositories';
+import Popup from '../components/Popup';
+import type { Contact, Repository, Section } from './types';
 
 /**
  * The desired sections to be rendered in the homepage interactive playground.
  * @constant
  */
 export const Sections: Array<Section> = [
-  { title: 'About Me', subtitle: 'Mock test description 1', content: null },
-  { title: 'Projects', subtitle: 'Mock test description 2', content: null },
-  { title: 'Blog', subtitle: 'Mock test description 3', content: null },
-  { title: 'Contacts', subtitle: 'Mock test description 4', content: null },
+  {
+    title: 'About Me',
+    subtitle: 'Mock test description 1',
+    scaffold: Drawer,
+    content: MyRepositories,
+  },
+  {
+    title: 'Projects',
+    subtitle:
+      "Here's a list of my most recent Open Source projects. I'm currently experimenting with 3D rendering on the web, static analysis and Go.",
+    scaffold: Drawer,
+    content: MyRepositories,
+  },
+  {
+    title: 'Blog',
+    subtitle: 'Mock test description 3',
+    scaffold: Drawer,
+    content: MyRepositories,
+  },
+  {
+    title: 'Contacts',
+    subtitle: "Want to chat? Here's a diverse list of methods you can reach me with.",
+    scaffold: Popup,
+    content: MyContacts,
+  },
 ];
 
 /**
