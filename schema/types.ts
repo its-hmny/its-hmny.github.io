@@ -1,4 +1,19 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
+
+/**
+ * Custom data to be rendered inside the a <Layout /> component.
+ * @type @alias ScaffoldProps
+ * @param title - The header/title content of the layout
+ * @param subtitle - A subtitle to introduce what is shown in the drawer
+ * @param onClose -  Callback for when the user wants to exit/close the current layout
+ * @param children - The "injectable" dynamic content.
+ */
+export type ScaffoldProps = {
+  title: string;
+  subtitle: string;
+  onClose: () => void;
+  children: ReactNode;
+};
 
 /**
  * Describes the required data for each macro/section in the homepage interactive playground.

@@ -1,19 +1,12 @@
 import { Card, Grid, Text, useClickAway } from '@nextui-org/react';
 import { Close } from 'grommet-icons';
-import { ReactNode, useRef } from 'react';
+import { useRef } from 'react';
+import type { ScaffoldProps } from '../schema/types';
 
-/**
- * Custom data to be rendered inside the <Drawer /> component.
- * TODO: use as children components
- * @param title - The modal header title
- * @param subtitle - A subtitle to introduce and what is shown in the modal
- * @param content - The "injectable" content.
- */
-type Props = { title: string; subtitle: string; content: ReactNode; onClose: () => void };
-
+// TODO Add responsive CSS rules
 const Style = {
   // Drawer's general styling
-  FloatingContainer: {
+  Container: {
     p: '0px',
     h: '97vh',
     mw: '35em',
@@ -27,7 +20,7 @@ const Style = {
   Subtitle: { color: '$accents8' },
 };
 
-const Drawer = ({ title, subtitle, content, onClose }: Props) => {
+const Drawer = ({ title, subtitle, children, onClose }: ScaffoldProps) => {
   // Internal reference to the floating container/card
   const ref = useRef(null);
 
@@ -35,7 +28,7 @@ const Drawer = ({ title, subtitle, content, onClose }: Props) => {
   useClickAway(ref, onClose);
 
   return (
-    <Card isHoverable ref={ref} css={Style.FloatingContainer}>
+    <Card isHoverable ref={ref} css={Style.Container}>
       {/* Drawer Header */}
       <Card.Header>
         <Grid.Container gap={1}>
@@ -53,7 +46,7 @@ const Drawer = ({ title, subtitle, content, onClose }: Props) => {
       </Card.Header>
 
       {/* Drawer Body (dynamic content) */}
-      <Card.Body>{content}</Card.Body>
+      <Card.Body>{children}</Card.Body>
     </Card>
   );
 };
