@@ -17,6 +17,17 @@ export type ScaffoldProps = {
 };
 
 /**
+ * Custom data to be passed to 3D model component.
+ * @type @alias Model3DProps
+ * @param position- The coordinates of the Model
+ * @param onModelClick - The callback for when a model is clicked
+ */
+export type Model3DProps = {
+  position: [number, number, number];
+  onModelClick: () => void;
+};
+
+/**
  * Describes the required data for each macro/section in the homepage interactive playground.
  * Each section has its own titles and subtitle that briefs the user about what to expect
  * or explains some kind of notions to him. The 'content' field instead is though to be a
