@@ -4,15 +4,20 @@ import { Github } from 'grommet-icons';
 import { Repositories as MockRepos } from '../../schema/constant';
 import { Repository } from '../../schema/types';
 
+const Styles = {
+  // One more thant '--nextui-zIndices-max' variable (equal to 999)
+  Tooltip: { zIndex: 10000 },
+};
+
 // Based on the Repository data generates an Header-like component
 const RepoHeader = ({ name, url }: Repository) => (
   <Grid.Container gap={1}>
-    <Tooltip content="View on GitHub">
+    <Tooltip hideArrow content="View on GitHub" css={Styles.Tooltip}>
       <Link target="_blank" href={url}>
         <Github color="white" />
       </Link>
     </Tooltip>
-    &nbsp;
+    &nbsp; &nbsp;
     <Text h5>{name}</Text>
   </Grid.Container>
 );

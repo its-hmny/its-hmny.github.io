@@ -47,30 +47,10 @@ export const Sections: Array<Section> = [
  * @constant
  */
 export const Contacts: Array<Contact> = [
-  {
-    icon: Twitter,
-    name: 'Twitter',
-    raw: 'https://twitter.com/its_hmny',
-    url: 'https://twitter.com/its_hmny',
-  },
-  {
-    icon: Mail,
-    name: 'Email',
-    raw: 'guidienea@gmail.com',
-    url: 'mailto:guidienea@gmail.com?subject=Hi',
-  },
-  {
-    icon: Github,
-    name: 'GitHub',
-    raw: 'https://github.com/its-hmny',
-    url: 'https://github.com/its-hmny',
-  },
-  {
-    icon: Linkedin,
-    name: 'LinkedIn',
-    raw: 'https://www.linkedin.com/in/enea-guidi',
-    url: 'https://www.linkedin.com/in/enea-guidi',
-  },
+  { icon: Twitter, name: 'Twitter', url: 'https://twitter.com/its_hmny' },
+  { icon: Mail, name: 'Email', url: 'mailto:guidienea@gmail.com?subject=Hi' },
+  { icon: Github, name: 'GitHub', url: 'https://github.com/its-hmny' },
+  { icon: Linkedin, name: 'LinkedIn', url: 'https://www.linkedin.com/in/enea-guidi' },
 ];
 
 /**
@@ -80,25 +60,25 @@ export const Contacts: Array<Contact> = [
  */
 export const Articles: Array<Article> = [
   {
-    title: '3D-Cellular-Automata',
+    title: 'Blog title 1',
     subtitle: 'A Three.js webapp to simulate cellular automata in 3D',
     content: 'Typescript',
     url: 'https://www.google.com',
   },
   {
-    title: '3D-Cellular-Automata',
+    title: 'Blog title 2',
     subtitle: 'A Three.js webapp to simulate cellular automata in 3D',
     content: 'Typescript',
     url: 'https://www.google.com',
   },
   {
-    title: '3D-Cellular-Automata',
+    title: 'Blog title 3',
     subtitle: 'A Three.js webapp to simulate cellular automata in 3D',
     content: 'Typescript',
     url: 'https://www.google.com',
   },
   {
-    title: '3D-Cellular-Automata',
+    title: 'Blog title 4',
     subtitle: 'A Three.js webapp to simulate cellular automata in 3D',
     content: 'Typescript',
     url: 'https://www.google.com',
