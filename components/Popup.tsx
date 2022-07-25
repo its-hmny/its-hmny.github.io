@@ -1,27 +1,31 @@
 import { Grid, Modal, Text } from '@nextui-org/react';
+
 import type { ScaffoldProps } from '../schema/types';
 
+// TODO Add responsive CSS rules
 const Styles = {
   // Basic styling for the title and subtitle <Text /> components
-  Text: { textAlign: 'start' },
+  Subtitle: { color: '$accents8', textAlign: 'start' },
 };
 
 const Popup = ({ title, subtitle, onClose, children }: ScaffoldProps) => {
   return (
     <Modal closeButton open width="40%" onClose={onClose}>
-      {/* Modal Header with title and subtitle */}
+      {/* Popup Header */}
       <Modal.Header>
         <Grid.Container>
-          <Grid xs={12} css={Styles.Text}>
+          {/* Drawer Header Title */}
+          <Grid xs={12}>
             <Text h3>{title}</Text>
           </Grid>
-          <Grid xs={12} css={Styles.Text}>
-            <Text>{subtitle}</Text>
+          {/* Drawer Header Subtitle */}
+          <Grid xs={12}>
+            <Text css={Styles.Subtitle}>{subtitle}</Text>
           </Grid>
         </Grid.Container>
       </Modal.Header>
 
-      {/* Modal dynamic content */}
+      {/* Popup dynamic content */}
       <Modal.Body>{children}</Modal.Body>
     </Modal>
   );
