@@ -27,12 +27,12 @@ const Home: NextPage = () => {
   // Internal state that keep track of the react-three-fiber canvas initialization
   const [isCanvasInit, setCanvasInit] = useState(false);
   // Internal state that keeps track of the choice/interaction made by the user
-  const [details, setDetails] = useState<Section | null>(null);
+  const [section, setSection] = useState<Section | null>(null);
 
   // Returns an handler for the specified section (see function currying)
   const onSectionChosen = useCallback((id: string) => {
     const section = Sections.find(s => s.title === id);
-    return () => setDetails(section ?? null);
+    return () => setSection(section ?? null);
   }, []);
 
   return (
@@ -42,6 +42,13 @@ const Home: NextPage = () => {
         <Text h2>{t.pages.home.title}</Text>
         <Text h5>{t.pages.home.subtitle}</Text>
       </Grid.Container>
+
+      {/* Loading modal, show spinner while 3D Models/Icon and canvas loads */}
+      <Modal open={!isCanvasInit && isModelLoading.progress < 100}>
+        <Progress size="xl" indeterminated={!isCanvasInit} value={isModelLoading.progress} />
+      </Modal>
+
+      {/* 3D Playground/Explorer */}
       <Canvas
         style={Styles.Canvas}
         onCreated={() => setCanvasInit(true)}
@@ -57,20 +64,15 @@ const Home: NextPage = () => {
         {/* Icons Models */}
         <Document position={[-70, 70, 0]} onModelClick={onSectionChosen('Blog')} />
         <Email position={[1, 1, -35]} onModelClick={onSectionChosen('Contacts')} />
-        <Avatar position={[80, 35, 35]} onModelClick={onSectionChosen('About Me')} />
+        <Avatar position={[80, 35, 35]} onModelClick={onSectionChosen('About me')} />
         <Computer position={[-50, -50, 43]} onModelClick={onSectionChosen('Projects')} />
       </Canvas>
 
-      {/* Loading modal, show spinner while 3D Models/Icon and canvas loads */}
-      <Modal open={!isCanvasInit && isModelLoading.progress < 100}>
-        <Progress size="xl" indeterminated={!isCanvasInit} value={isModelLoading.progress} />
-      </Modal>
-
       {/* Displays current section details with the scaffold of choice  */}
-      {!!details && (
-        <details.scaffold {...details} onClose={() => setDetails(null)}>
-          <details.content />
-        </details.scaffold>
+      {!!section && (
+        <section.scaffold {...section} onClose={() => setSection(null)}>
+          <section.content />
+        </section.scaffold>
       )}
     </>
   );

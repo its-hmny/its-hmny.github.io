@@ -41,7 +41,7 @@ const MyRepositories = () => {
   return (
     <Collapse.Group splitted>
       {MockRepos.map(repo => (
-        <Collapse key={repo.url} title={<RepoHeader {...repo} />} subtitle={repo.description}>
+        <Collapse key={repo.name} title={<RepoHeader {...repo} />} subtitle={repo.description}>
           <RepoDetails {...repo} />
         </Collapse>
       ))}

@@ -12,7 +12,7 @@ const Styles = {
 const MyContacts = () => {
   // Based on the given Contact returns a closured onClickHandler
   const getClickHandler = useCallback((contact: Contact) => {
-    return () => window.open(contact.raw);
+    return () => window.open(contact.url);
   }, []);
 
   return (

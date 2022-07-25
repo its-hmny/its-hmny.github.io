@@ -57,19 +57,19 @@ export const Contacts: Array<Contact> = [
     icon: Mail,
     name: 'Email',
     raw: 'guidienea@gmail.com',
-    url: 'mailto:guidienea@gmail.com?subject=Yo, wassup??',
+    url: 'mailto:guidienea@gmail.com?subject=Hi',
   },
   {
     icon: Github,
     name: 'GitHub',
-    raw: 'https://www.google.com',
-    url: 'https://www.google.com',
+    raw: 'https://github.com/its-hmny',
+    url: 'https://github.com/its-hmny',
   },
   {
     icon: Linkedin,
     name: 'LinkedIn',
-    raw: 'https://www.google.com',
-    url: 'https://www.google.com',
+    raw: 'https://www.linkedin.com/in/enea-guidi',
+    url: 'https://www.linkedin.com/in/enea-guidi',
   },
 ];
 

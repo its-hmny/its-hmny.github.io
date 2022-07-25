@@ -5,13 +5,13 @@ import type { ScaffoldProps } from '../../schema/types';
 // TODO Add responsive CSS rules
 const Styles = {
   // Drawer's general styling, floating and fixed on left side of the page
-  Container: { h: '97vh', mw: '35em', top: '1.5vh', right: '0.5em', position: 'fixed' },
+  Drawer: { h: '97vh', mw: '35em', top: '1.5vh', right: '0.5em', position: 'fixed' },
   // Basic styling for the subtitle <Text /> components
-  Subtitle: { color: '$accents8', textAlign: 'start' },
+  Subtitle: { color: '$accents8', textAlign: 'start', whiteSpace: 'pre-line' },
 };
 
 const Drawer = ({ title, subtitle, children, onClose }: ScaffoldProps) => (
-  <Modal closeButton open width="40%" onClose={onClose} css={Styles.Container}>
+  <Modal closeButton open width="40%" onClose={onClose} css={Styles.Drawer}>
     {/* Drawer Header */}
     <Modal.Header>
       <Grid.Container>

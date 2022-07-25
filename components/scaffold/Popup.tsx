@@ -4,13 +4,15 @@ import type { ScaffoldProps } from '../../schema/types';
 
 // TODO Add responsive CSS rules
 const Styles = {
+  // Popup's general styling, floating and fixed on left side of the page
+  Popup: { mw: '600px' },
   // Basic styling for the title and subtitle <Text /> components
-  Subtitle: { color: '$accents8', textAlign: 'start' },
+  Subtitle: { color: '$accents8', textAlign: 'justify', whiteSpace: 'pre-line' },
 };
 
 const Popup = ({ title, subtitle, onClose, children }: ScaffoldProps) => {
   return (
-    <Modal closeButton open width="40%" onClose={onClose}>
+    <Modal width="600px" closeButton open onClose={onClose} css={Styles.Popup}>
       {/* Popup Header */}
       <Modal.Header>
         <Grid.Container>
