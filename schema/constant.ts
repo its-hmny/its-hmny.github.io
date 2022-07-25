@@ -8,6 +8,7 @@ import MyRepositories from '../components/contents/MyRepositories';
 import Drawer from '../components/scaffold/Drawer';
 import Popup from '../components/scaffold/Popup';
 
+import t from '../public/translations.json';
 import type { Article, Contact, Repository, Section } from './types';
 
 /**
@@ -16,27 +17,26 @@ import type { Article, Contact, Repository, Section } from './types';
  */
 export const Sections: Array<Section> = [
   {
-    title: 'About Me',
-    subtitle: "I'm a fullstack developer currently working in San Marino, Italy",
+    title: t.pages.home.sections.about_me.title,
+    subtitle: t.pages.home.sections.about_me.description,
     scaffold: Popup,
     content: MyInfos,
   },
   {
-    title: 'Projects',
-    subtitle:
-      "Here's a list of my most recent Open Source projects. I'm currently experimenting with 3D rendering on the web, static analysis and Go.",
+    title: t.pages.home.sections.projects.title,
+    subtitle: t.pages.home.sections.projects.description,
     scaffold: Drawer,
     content: MyRepositories,
   },
   {
-    title: 'Blog',
-    subtitle: 'Mock test description 3',
+    title: t.pages.home.sections.blog.title,
+    subtitle: t.pages.home.sections.blog.description,
     scaffold: Drawer,
     content: MyArticles,
   },
   {
-    title: 'Contacts',
-    subtitle: "Want to chat? Here's a diverse list of methods you can reach me with.",
+    title: t.pages.home.sections.contacts.title,
+    subtitle: t.pages.home.sections.contacts.description,
     scaffold: Popup,
     content: MyContacts,
   },

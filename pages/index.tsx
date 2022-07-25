@@ -1,4 +1,4 @@
-import { Modal, Progress } from '@nextui-org/react';
+import { Grid, Modal, Progress, Text } from '@nextui-org/react';
 import { OrbitControls, useProgress } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import type { NextPage } from 'next';
@@ -9,10 +9,14 @@ import Computer from '../components/models/Computer';
 import Document from '../components/models/Document';
 import Email from '../components/models/Email';
 
+import t from '../public/translations.json';
 import { Sections } from '../schema/constant';
 import type { Section } from '../schema/types';
 
 const Styles = {
+  // Page header styling rules
+  Title: { top: '1.5vh', left: '1.5vw', position: 'fixed' },
+  // 3D Canvas fits the whole screen
   Canvas: { height: '100vh' },
 };
 
@@ -33,6 +37,11 @@ const Home: NextPage = () => {
 
   return (
     <>
+      {/* Page header */}
+      <Grid.Container direction="column" css={Styles.Title}>
+        <Text h2>{t.pages.home.title}</Text>
+        <Text h5>{t.pages.home.subtitle}</Text>
+      </Grid.Container>
       <Canvas
         style={Styles.Canvas}
         onCreated={() => setCanvasInit(true)}

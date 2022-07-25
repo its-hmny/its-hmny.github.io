@@ -1,0 +1,31 @@
+{
+  "pages": {
+    "home": {
+      "title": "👋 Hey, I'm Enea Guidi.",
+      "subtitle": "Welcome to my website, please click on the icons to learn more about me.",
+
+      "sections": {
+        "about_me": {
+          "title": "About me",
+          "description": "Hi, my name is Enea Guidi, but on the internet I go by hmny, I'm 23 and currently I'm living and working in San Marino.\n\n I'm really passionate about computer science and software engineering, my favorite topics are related to Compiler, Language Design and Static Analysis but I'm also exploring the blockchain and distributed system worlds.\n\n Even if I have not much experience under my belt (2+ years) I still had the opportunity to work with different technologies and frameworks such as: Typescript, Go, Next.js, Nest.js, SQL & NoSQL database, Docker and many others.\n\n I strive to always improve myself and learn new things and would love to receive feedback about my work."
+        },
+
+        "projects": {
+          "title": "Projects",
+          "description": "Here's you can find a list of my most recent Open Source projects.\n At the moment I'm experimenting with 3D rendering on the web (mainly with React, Spline & react-three-fiber).\n I'm also quite keen on other fields such as: Compiler & Interpreters, Blockchain & Smart Contract programming as well as Distributed Systems like IPFS, Ray or Erlang."
+        },
+
+        "blog": {
+          "title": "Blog",
+          "description": "This is a list of my most recent articles, I usually write about different topics: from my personal work experiences to TODO COMMENT"
+        },
+
+        "contacts": {
+          "title": "Contacts",
+          "description": "Want to chat? Here's a diverse list of channels where you can reach me."
+        }
+      }
+    }
+  },
+  "components": {}
+}
