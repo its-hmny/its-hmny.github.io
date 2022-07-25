@@ -1,6 +1,6 @@
 import { Grid, Modal, Text } from '@nextui-org/react';
 
-import type { ScaffoldProps } from '../schema/types';
+import type { ScaffoldProps } from '../../schema/types';
 
 // TODO Add responsive CSS rules
 const Styles = {

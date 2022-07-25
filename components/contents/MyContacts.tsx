@@ -1,10 +1,11 @@
 import { Avatar, Grid, Tooltip } from '@nextui-org/react';
 import { useCallback } from 'react';
-import { Contacts } from '../schema/constant';
-import { Contact } from '../schema/types';
+
+import { Contacts as ContactList } from '../../schema/constant';
+import { Contact } from '../../schema/types';
 
 const Styles = {
-  // One more thant --nextui-zIndices-max variable (equal to 99)
+  // One more thant '--nextui-zIndices-max' variable (equal to 999)
   Tooltip: { zIndex: 10000 },
 };
 
@@ -16,13 +17,9 @@ const MyContacts = () => {
 
   return (
     <Grid.Container justify="space-evenly">
-      {Contacts.map(c => (
-        <Tooltip hideArrow content={c.name} css={Styles.Tooltip}>
-          <Avatar
-            size="xl"
-            onClick={getClickHandler(c)}
-            icon={<c.icon color="white" />}
-          />
+      {ContactList.map(c => (
+        <Tooltip key={c.name} hideArrow content={c.name} css={Styles.Tooltip}>
+          <Avatar size="xl" onClick={getClickHandler(c)} icon={<c.icon color="white" />} />
         </Tooltip>
       ))}
     </Grid.Container>

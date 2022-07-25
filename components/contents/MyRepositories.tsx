@@ -1,7 +1,8 @@
 import { Collapse, Grid, Link, Text, Tooltip } from '@nextui-org/react';
 import { Github } from 'grommet-icons';
-import { Repositories } from '../schema/constant';
-import { Repository } from '../schema/types';
+
+import { Repositories as MockRepos } from '../../schema/constant';
+import { Repository } from '../../schema/types';
 
 // Based on the Repository data generates an Header-like component
 const RepoHeader = ({ name, url }: Repository) => (
@@ -34,12 +35,13 @@ const RepoDetails = ({ language, license, n_commit, tags }: Repository) => (
   </Grid.Container>
 );
 
-// Fetches last active repositories and renders them inside a <Collapse.Group /> component
 const MyRepositories = () => {
+  // TODO Remove MockRepos and add data fetching from GitHub.
+
   return (
     <Collapse.Group splitted>
-      {Repositories.map(repo => (
-        <Collapse title={<RepoHeader {...repo} />} subtitle={repo.description}>
+      {MockRepos.map(repo => (
+        <Collapse key={repo.url} title={<RepoHeader {...repo} />} subtitle={repo.description}>
           <RepoDetails {...repo} />
         </Collapse>
       ))}

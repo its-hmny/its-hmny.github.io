@@ -1,11 +1,13 @@
 import { Github, Linkedin, Mail, Twitter } from 'grommet-icons';
 
-import MyInfo from '../components/MyInfo';
-import Drawer from '../components/Drawer';
-import MyArticles from '../components/MyArticles';
-import MyContacts from '../components/MyContacts';
-import MyRepositories from '../components/MyRepositories';
-import Popup from '../components/Popup';
+import MyArticles from '../components/contents/MyArticles';
+import MyContacts from '../components/contents/MyContacts';
+import MyInfos from '../components/contents/MyInfos';
+import MyRepositories from '../components/contents/MyRepositories';
+
+import Drawer from '../components/scaffold/Drawer';
+import Popup from '../components/scaffold/Popup';
+
 import type { Article, Contact, Repository, Section } from './types';
 
 /**
@@ -17,7 +19,7 @@ export const Sections: Array<Section> = [
     title: 'About Me',
     subtitle: "I'm a fullstack developer currently working in San Marino, Italy",
     scaffold: Popup,
-    content: MyInfo,
+    content: MyInfos,
   },
   {
     title: 'Projects',
@@ -73,7 +75,7 @@ export const Contacts: Array<Contact> = [
 
 /**
  * Array of mock articles object for testing/rendering purposes.
- * TODO: Remove this one when data fetching from GitHUb is available.
+ * TODO: Remove this one when data fetching from GitHUb will be available.
  * @constant
  */
 export const Articles: Array<Article> = [
@@ -105,7 +107,7 @@ export const Articles: Array<Article> = [
 
 /**
  * Array of mock repositories object for testing/rendering purposes.
- * TODO: Remove this one when data fetching from GitHUb is available.
+ * TODO: Remove this one when data fetching from GitHub will be available.
  * @constant
  */
 export const Repositories: Array<Repository> = [

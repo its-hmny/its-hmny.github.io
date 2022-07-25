@@ -3,7 +3,12 @@ import { OrbitControls, useProgress } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import type { NextPage } from 'next';
 import { useCallback, useState } from 'react';
-import { Avatar, Computer, Document, Email } from '../components/Models';
+
+import Avatar from '../components/models/Avatar';
+import Computer from '../components/models/Computer';
+import Document from '../components/models/Document';
+import Email from '../components/models/Email';
+
 import { Sections } from '../schema/constant';
 import type { Section } from '../schema/types';
 
@@ -49,11 +54,7 @@ const Home: NextPage = () => {
 
       {/* Loading modal, show spinner while 3D Models/Icon and canvas loads */}
       <Modal open={!isCanvasInit && isModelLoading.progress < 100}>
-        <Progress
-          size="xl"
-          indeterminated={!isCanvasInit}
-          value={isModelLoading.progress}
-        />
+        <Progress size="xl" indeterminated={!isCanvasInit} value={isModelLoading.progress} />
       </Modal>
 
       {/* Displays current section details with the scaffold of choice  */}
