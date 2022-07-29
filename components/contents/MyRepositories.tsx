@@ -1,6 +1,7 @@
 import { Collapse, Grid, Link, Text, Tooltip } from '@nextui-org/react';
 import { Github } from 'grommet-icons';
 
+import t from '../../public/translations.json';
 import { Repositories as MockRepos } from '../../schema/constant';
 import { Repository } from '../../schema/types';
 
@@ -12,7 +13,7 @@ const Styles = {
 // Based on the Repository data generates an Header-like component
 const RepoHeader = ({ name, url }: Repository) => (
   <Grid.Container gap={1}>
-    <Tooltip hideArrow content="View on GitHub" css={Styles.Tooltip}>
+    <Tooltip hideArrow content={t.components.my_repos.tooltip} css={Styles.Tooltip}>
       <Link target="_blank" href={url}>
         <Github color="white" />
       </Link>

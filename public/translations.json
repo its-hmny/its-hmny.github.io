@@ -27,5 +27,12 @@
       }
     }
   },
-  "components": {}
+  "components": {
+    "my_article": {
+      "tooltip": "Read on Medium"
+    },
+    "my_repos": {
+      "tooltip": "View on GItHub"
+    }
+  }
 }
