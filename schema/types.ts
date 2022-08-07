@@ -47,14 +47,28 @@ export type Section = {
 };
 
 /**
- * TODO Comment
+ * Describes the data to be retrieved from Dev.to public REST API.
+ * Most aer basic informmations such as the title, the first extract of the article
+ * and the tags related to it. Other details information are the publishing date and
+ * the estimated time to read the full article that are showed as asdditional details.
+ * ! This interface only annotates the currently used subset of the fields received from GitHub API.
  * @type @alias Article
- * @param name - Social name or contact type (Email, Facebook, GitHub, Phone Number, ...)
- * @param icon - Desired grommet-icon React component to be rendered
- * @param url - New page/redirect URL
- * @param raw - The string to be copied on the user clipboard upon interaction
+ * @param url - The full article page url
+ * @param title - The article title
+ * @param description - A trimmed version of the article's content
+ * @param tag_list - Tags/Topics touched by the article
+ * @param published_at - ISO string/timestamp of publication
+ * @param reading_time_minutes - Estimated reading time
+ * #
  */
-export type Article = { title: string; subtitle: string; content: string; url: string };
+export type Article = {
+  url: string;
+  title: string;
+  description: string;
+  tag_list: Array<string>;
+  published_at: string;
+  reading_time_minutes: number;
+};
 
 /**
  * Describes the needed data to visualize a full-fledged contact button in the website UI.
@@ -66,7 +80,7 @@ export type Article = { title: string; subtitle: string; content: string; url: s
 export type Contact = { name: string; icon: Icon; url: string };
 
 /**
- * Describes the needed data to be retrieved from GitHub public REST API server.
+ * Describes the needed data to be retrieved from GitHub public REST API.
  * Apart from obviously name, description and URL we fetch also other fields such as:
  * the predominant language, the license and the tags/keyword/topics.
  * ! This interface only annotates the currently used subset of the fields received from GitHub API.

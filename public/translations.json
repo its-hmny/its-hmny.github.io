@@ -29,7 +29,7 @@
   },
   "components": {
     "my_article": {
-      "tooltip": "Read on Medium"
+      "tooltip": "Read on Dev.to"
     },
     "my_repos": {
       "tooltip": "View on GItHub"

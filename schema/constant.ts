@@ -58,35 +58,3 @@ export const Contacts: Array<Contact> = [
   { icon: Github, name: 'GitHub', url: 'https://github.com/its-hmny' },
   { icon: Linkedin, name: 'LinkedIn', url: 'https://www.linkedin.com/in/enea-guidi' },
 ];
-
-/**
- * Array of mock articles object for testing/rendering purposes.
- * TODO: Remove this one when data fetching from GitHUb will be available.
- * @constant
- */
-export const Articles: Array<Article> = [
-  {
-    title: 'Blog title 1',
-    subtitle: 'A Three.js webapp to simulate cellular automata in 3D',
-    content: 'Typescript',
-    url: 'https://www.google.com',
-  },
-  {
-    title: 'Blog title 2',
-    subtitle: 'A Three.js webapp to simulate cellular automata in 3D',
-    content: 'Typescript',
-    url: 'https://www.google.com',
-  },
-  {
-    title: 'Blog title 3',
-    subtitle: 'A Three.js webapp to simulate cellular automata in 3D',
-    content: 'Typescript',
-    url: 'https://www.google.com',
-  },
-  {
-    title: 'Blog title 4',
-    subtitle: 'A Three.js webapp to simulate cellular automata in 3D',
-    content: 'Typescript',
-    url: 'https://www.google.com',
-  },
-];
