@@ -66,25 +66,23 @@ export type Article = { title: string; subtitle: string; content: string; url: s
 export type Contact = { name: string; icon: Icon; url: string };
 
 /**
- * Describes the needed data to be retrieved from GitHub public GraphQL/REST API server.
- * Apart from obviously name, description and URL we fetch also other 'interesting' fields
- * such as the predominant language of the project, the number of commits, the license and
- * the tags/keyword (used to provide to the user a quick context about the repo).
+ * Describes the needed data to be retrieved from GitHub public REST API server.
+ * Apart from obviously name, description and URL we fetch also other fields such as:
+ * the predominant language, the license and the tags/keyword/topics.
+ * ! This interface only annotates the currently used subset of the fields received from GitHub API.
  * @type @alias Repository
- * @param url - The full URL to GitHub's repository detail page
  * @param name - GitHub repo name
- * @param description - The description/helper text related to the repo
- * @param license - The repository open source license
+ * @param html_url - The full URL to GitHub's repository detail page
  * @param language - The mainly used programming language
- * @param n_commit - The number of active commit on the 'main' branch
- * @param tags - Tags/Keywords related to the repo
+ * @param description - The description/helper text related to the repo
+ * @param topics - Tags/Keywords related to the repo
+ * @param license - The repository open source license
  */
 export type Repository = {
-  url: string;
   name: string;
+  html_url: string;
+  language?: string;
   description: string;
-  license: string;
-  language: string;
-  n_commit: number;
-  tags: Array<string>;
+  topics: Array<string>;
+  license?: { spdx_id: string };
 };
