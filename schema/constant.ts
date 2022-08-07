@@ -12,6 +12,12 @@ import t from '../public/translations.json';
 import type { Article, Contact, Section } from './types';
 
 /**
+ * Contains the base URL for the public all the public APIs used in the project
+ * @constant
+ */
+export const APIs = { DevTo: 'https://dev.to/api', GitHub: 'https://api.github.com' } as const;
+
+/**
  * The desired sections to be rendered in the homepage interactive playground.
  * @constant
  */
