@@ -13,7 +13,7 @@
   "scripts": {
     "build:all": "next build",
     "build:html": "next build && next export",
-    "chore:format": "prettier --write 'components/*' 'pages/*'",
+    "chore:format": "prettier --write \"{**/*.tsx,**/*.ts, !(node*)**/*.js, !(.next*)**/*.js}\"",
     "chore:lint": "next lint",
     "start:dev": "next dev",
     "start:prod": "next build && next start"
@@ -36,6 +36,7 @@
     "grommet-styles": "^0.2.0",
     "prettier": "^2.6.2",
     "styled-components": "^5.3.5",
+    "swr": "^1.3.0",
     "three": "^0.142.0",
     "typescript": "4.7.4"
   }
