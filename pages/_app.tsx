@@ -2,6 +2,8 @@ import { createTheme, NextUIProvider } from '@nextui-org/react';
 import type { AppProps } from 'next/app';
 import { SWRConfig } from 'swr';
 
+import SEO from '../components/SEO';
+
 const MyApp = ({ Component, pageProps }: AppProps) => {
   // Custom NextUI app theme (dark + orange as primary color)
   const theme = createTheme({ type: 'dark' });
@@ -26,6 +28,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <NextUIProvider theme={theme}>
       <SWRConfig value={config}>
+        <SEO />
         <Component {...pageProps} />
       </SWRConfig>
     </NextUIProvider>
