@@ -41,7 +41,7 @@ const Home: NextPage = () => {
       <Grid.Container direction="column" css={Styles.Title}>
         <Text h2>{t.pages.home.title}</Text>
         <Text h5>{t.pages.home.subtitle}</Text>
-        <Text h5>Yes the 3D models sucks, it's still a WIP</Text>
+        <Text h5>Yes the 3D models sucks, it is still a WIP</Text>
       </Grid.Container>
 
       {/* Loading modal, show spinner while 3D Models/Icon and canvas loads */}
