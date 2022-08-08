@@ -1,26 +1,49 @@
+<p align="center">
+    <img alt="Logo" width="400" src=https://github.com/its-hmny/its-hmny.github.io/blob/main/public/logo.png?raw=true">
+</p>
+
+<p align="center">
+    <img alt="GPLv3 License" src="https://img.shields.io/badge/License-GPL%20v3-yellow.svg">
+    <img alt="Code Size" src="https://img.shields.io/github/languages/code-size/its-hmny/its-hmny.github.io?color=green&label=Code%20Size">
+    <img alt="Deploy" src="https://github.com/its-hmny/its-hmny.github.io/actions/workflows/pages.yml/badge.svg">
+    <img alt="Release" src="https://img.shields.io/github/v/release/its-hmny/its-hmny.github.io?label=Version">
+</p>
+
 # its-hmny.github.io
 
-My first and personal website, hosted by GitHub pages https://its-hmny.github.io
+## My personal website, hosted at https://its-hmny.github.io
 
-It's all made with HTML, CSS and Javascript, note that these is the first time I work with each one of these.
-The site itself it's really simple and lightweight, every resource is present locally and doesn't require any
-external library/link for the Javascript part.
+The site consist of only a Spline scene but when the user interacts with it there's some code that intercepts the event and shows UI accordingly. Most the data is static (embedded directly into code) but, for the `Projects` and `Blog` sections, updated data from the GitHub and Dev.to public APIs is fetched.
 
-The link in the description should be always working.
+The site itself doesn't have many more functionalities, it's meant to be just a portfolio with a 3D flavour on it.
 
-Note that the project is currently not optimized for mobile devices (support will be added later).
+## Installation
 
-## Project structure
+To install the dependencies and run the site locally, simply type in your terminal:
 
-The body is divided in 3 basic sections (About me, Projects, Contacts). Each section has its own element inside.
-In the About Me section there's a brief explanation of my previous experience and future personal target
-as well as a download button for my Curriculum Vitae.
+```bash
+  # NOTE: npm or pnpm can be used as well
+  yarn install
+  yarn start:dev
+```
 
-In the Projects section there's a table project populated with all my public project through the GitHub API and
-some Javascript code (the populateTable() function). The table will be always updated.
+You can also build a production version, both with an embedded Node.js server as well as standalone HTML (thanks to `next export`):
 
-The Contacts section has, as you can imagine, some of mine social's profile links if a visitor ever want to keep in touch with me.
+```bash
+  yarn build:all  # With embedded Node.js server
+  yarn build:html # Plain HTML, CSS and JS files exported
+```
 
-## Credits
+## Technology Stack
 
-Thanks to [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q) and [Hussein Nasser](https://www.youtube.com/channel/UC_ML5xP23TOWKUcc-oAE_Eg) respectively for the NavBar animation and the GitHub API tutorial, to [Alessia Garbarino](www.instagram.com/garbaaa) for the background and social icon images.
+- [Typescript](https://www.typescriptlang.org/)
+- [Next.js](https://nextjs.org/) / [React](https://reactjs.org/)
+- [Spline](https://spline.design/) / [SWR](https://swr.vercel.app/) / [NextUI](https://nextui.org/)
+
+## Authors
+
+- [@its-hmny](https://www.github.com/its-hmny) - Follow me on [Twitter](https://twitter.com/its_hmny) as well
+
+## License
+
+This project is distributed under the [GPLv3](https://choosealicense.com/licenses/gpl-3.0/) license.
