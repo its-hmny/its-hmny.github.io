@@ -32,15 +32,17 @@ const RepoDetails = ({ language, license, topics }: Repository) => (
   <Grid.Container alignItems="center" justify="space-evenly" gap={1}>
     {/* Main programming language Container */}
     <Grid xs={6}>
-      Language:&nbsp;<code>{language ?? 'Not available'}</code>
+      {t.components.my_repos.language}&nbsp;
+      <code>{language ?? 'Not available'}</code>
     </Grid>
     {/* License Container */}
     <Grid xs={6}>
-      License:&nbsp;<code>{license?.spdx_id ?? 'Not licensed'}</code>&nbsp;
+      {t.components.my_repos.license}&nbsp;
+      <code>{license?.spdx_id ?? 'Not licensed'}</code>
     </Grid>
     {/* Repository tags and topics */}
     <Grid xs={12}>
-      Tags:&nbsp;
+      {t.components.my_repos.tags}&nbsp;
       <Grid.Container xs={12} wrap="wrap">
         {topics.map(topic => (
           <code key={topic} style={Styles.Tag}>
@@ -63,7 +65,7 @@ const MyRepositories = () => {
   if (repositories === undefined || !!error)
     return (
       <Text h4 blockquote color="error" style={{ textAlign: 'center' }}>
-        There was an error with GitHub API, please try again later.
+        {t.components.my_repos.api_error}
       </Text>
     );
 

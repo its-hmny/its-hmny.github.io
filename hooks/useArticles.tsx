@@ -5,7 +5,7 @@ import { Article } from '../schema/types';
 
 const useArticles = () => {
   // Stringified query params with sorting and result limit
-  // TODO: Make query param dynamic and passed as hook props? 
+  // TODO: Make query param dynamic and passed as hook props?
   // const query = new URLSearchParams({ username: 'its_hmny', per_page: '5' }).toString();
   const query = new URLSearchParams({ username: 'dailydevtips1', per_page: '5' }).toString();
   // Makes the request to the GitHub API

@@ -15,7 +15,7 @@ const Styles = {
 // Based on the Repository data generates an Header-like component
 const ArticleHeader = ({ title, url }: Article) => (
   <Grid.Container gap={1}>
-    <Tooltip hideArrow content={t.components.my_article.tooltip} css={Styles.Tooltip}>
+    <Tooltip hideArrow content={t.components.my_articles.tooltip} css={Styles.Tooltip}>
       <Link target="_blank" href={url}>
         <Medium color="white" />
       </Link>
@@ -30,15 +30,17 @@ const ArticleStats = ({ reading_time_minutes, published_at, tag_list }: Article)
   <Grid.Container alignItems="center" justify="space-evenly" gap={1}>
     {/* Main programming language Container */}
     <Grid xs={6}>
-      Published:&nbsp;<code>{new Date(published_at).toLocaleDateString()}</code>
+      {t.components.my_articles.published_at}&nbsp;
+      <code>{new Date(published_at).toLocaleDateString()}</code>
     </Grid>
     {/* License Container */}
     <Grid xs={6}>
-      Reading time:&nbsp;<code>{`${reading_time_minutes} minutes`}</code>&nbsp;
+      {t.components.my_articles.reading_time}&nbsp;
+      <code>{`${reading_time_minutes} minutes`}</code>
     </Grid>
     {/* Repository tags and topics */}
     <Grid xs={12}>
-      Tags:&nbsp;
+      {t.components.my_articles.tags}&nbsp;
       <Grid.Container xs={12} wrap="wrap">
         {tag_list.map(tag => (
           <code key={tag} style={Styles.Tag}>
@@ -61,7 +63,7 @@ const MyArticles = () => {
   if (articles === undefined || !!error)
     return (
       <Text h4 blockquote color="error" style={{ textAlign: 'center' }}>
-        There was an error with GitHub API, please try again later.
+        {t.components.my_articles.api_error}
       </Text>
     );
 

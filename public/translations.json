@@ -7,7 +7,7 @@
       "sections": {
         "about_me": {
           "title": "About me",
-          "description": "Hi, my name is Enea Guidi, but on the internet I go by hmny, I'm 23 and currently I'm living and working in San Marino.\n\n I'm really passionate about computer science and software engineering, my favorite topics are related to Compiler, Language Design and Static Analysis but I'm also exploring the blockchain and distributed system worlds.\n\n Even if I have not much experience under my belt (2+ years) I still had the opportunity to work with different technologies and frameworks such as: Typescript, Go, Next.js, Nest.js, SQL & NoSQL database, Docker and many others.\n\n I strive to always improve myself and learn new things and would love to receive feedback about my work."
+          "description": "Hi, my name is Enea Guidi, but on the internet I go by \"hmny\", I'm 23 and currently I'm living and working in San Marino.\n\n I'm really passionate about computer science and software engineering, my favorite topics are related to Compiler, Language Design and Static Analysis but I'm also exploring the blockchain development and distributed system worlds.\n\n Even if I have not much experience under my belt I, nevertheless, had the opportunity to work with different technologies and frameworks such as: Typescript, Go, Next.js, Nest.js, SQL & NoSQL database, Docker and many others.\n\n I strive to always improve myself and learn new things and would love to receive feedback about my work."
         },
 
         "projects": {
@@ -28,11 +28,19 @@
     }
   },
   "components": {
-    "my_article": {
-      "tooltip": "Read on Dev.to"
+    "my_articles": {
+      "tooltip": "Read on Dev.to",
+      "published_at": "Published:",
+      "reading_time": "Reading time:",
+      "tags": "Topics:",
+      "api_error": "There was an error with the Dev.to API, please try again later."
     },
     "my_repos": {
-      "tooltip": "View on GItHub"
+      "tooltip": "View on GItHub",
+      "language": "Language:",
+      "license": "License",
+      "tags": "Tags",
+      "api_error": "There was an error with GitHub API, please try again later."
     }
   }
 }
