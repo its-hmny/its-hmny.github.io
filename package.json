@@ -1,8 +1,15 @@
 {
-  "name": "my-app",
+  "name": "Ego",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "description": "My personal website",
+  "author": "Enea Guidi <guidi.enea@gmail.com> (https://its-hmny.github.io)",
+  "homepage": "https://its-hmny.github.io",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/its-hmny/its-hmny.github.io.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
