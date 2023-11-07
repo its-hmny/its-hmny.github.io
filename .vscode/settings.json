@@ -1,5 +1,10 @@
 {
   // ----------------------------------------------------- //
+  //           Code Spell Checker configuration            //
+  // ----------------------------------------------------- //
+  "cSpell.words": ["Enea", "Guidi"],
+
+  // ----------------------------------------------------- //
   //  Typescript, JSX and Tailwind CSS related extensions  //
   // ----------------------------------------------------- //
   "tailwind-fold.foldStyle": "QUOTES",
