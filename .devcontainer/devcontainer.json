@@ -27,6 +27,9 @@
 				"aaron-bond.better-comments",
 				"adam-bender.commit-message-editor",
 				"streetsidesoftware.code-spell-checker",
+				// Git & GitHub related extension(s)
+				"eamodio.gitlens",
+				"mhutchie.git-graph",
 				// Markdown related extension(s)
 				"davidanson.vscode-markdownlint",
 				// React + HTML + Tailwind CSS related extension(s)
