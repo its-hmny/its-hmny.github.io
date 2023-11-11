@@ -7,7 +7,7 @@ import MacBook from './MacbookAir';
 export default function LandingSection() {
   return (
     <div className='z-20 flex h-screen items-center justify-evenly bg-black align-middle text-white max-lg:w-screen	max-lg:flex-col'>
-      <div className='h-screen w-1/2 max-lg:h-2/5 max-lg:w-screen'>
+      <div className='h-screen w-1/2 max-lg:h-1/3 max-lg:w-screen'>
         <Canvas camera={{ position: [-5, 0, -23], fov: 55 }} style={{ width: '100%', height: '100%' }}>
           <pointLight position={[10, 10, 10]} intensity={1.5} />
           <Suspense fallback={null}>
@@ -24,7 +24,7 @@ export default function LandingSection() {
         </Canvas>
       </div>
 
-      <div className='w-1/2 p-8 max-lg:w-screen'>
+      <div className='w-1/2 p-8 max-lg:h-2/3 max-lg:w-screen'>
         <div className='mb-3'>
           <h1 className='mb-3 text-4xl font-bold'>
             👋 Hi there! I'm <span className='text-lime-400'>Enea</span>
