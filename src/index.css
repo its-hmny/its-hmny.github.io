@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  *::selection {
+    color: theme('colors.white');
+    background-color: theme('colors.lime.400', '#ff9800');
+  }
+}
