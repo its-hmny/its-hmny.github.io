@@ -23,6 +23,7 @@
     "three": "^0.158.0"
   },
   "devDependencies": {
+    "@react-spring/web": "^9.7.3",
     "@react-three/drei": "^9.88.11",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
