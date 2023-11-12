@@ -8,7 +8,7 @@ import * as THREE from 'three';
 
 export default function MacbookAir() {
   // Gets a mutable reference to the 'main' group for the model
-  const group = useRef();
+  const group = useRef<THREE.Group>();
   // Loads the GLTF model asynchronously
   const { nodes, materials } = useGLTF('/MacbookAir.glb') as any;
 
