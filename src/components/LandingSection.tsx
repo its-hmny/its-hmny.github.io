@@ -1,8 +1,10 @@
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
+import { Github } from 'lucide-react';
 import { Suspense } from 'react';
 
 import MacbookAir from './MacbookAir';
+import Spinner from './Spinner';
 
 export default function LandingSection() {
   return (
@@ -17,10 +19,10 @@ export default function LandingSection() {
           <directionalLight position={[4, -6, -4]} intensity={1} />
           <group rotation={[0, Math.PI, 0]} position={[0, 0, 0]}>
             {/* Macbook Air model with simple open/close interaction */}
-          <Suspense fallback={null}>
+            <Suspense fallback={<Spinner />}>
               <MacbookAir />
             </Suspense>
-            </group>
+          </group>
           <OrbitControls enableZoom={true} enablePan={false} />
         </Canvas>
       </div>
@@ -39,8 +41,12 @@ export default function LandingSection() {
         </div>
 
         <div className='mb-4 mt-8 '>
-          <button onClick={alert} className='rounded-full bg-orange-400 px-4 py-2 text-lg text-white'>
-            💼 See some of my work
+          <button
+            onClick={() => window.open('https://github.com/its-hmny', '_blank')}
+            className='rounded-full bg-orange-400 px-4 py-2 text-lg text-white'
+          >
+            <Github strokeWidth={2} className='mr-1 inline' />
+            <span>See some of my work</span>
           </button>
         </div>
       </div>
