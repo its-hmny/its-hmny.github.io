@@ -3,6 +3,7 @@
   //           Code Spell Checker configuration            //
   // ----------------------------------------------------- //
   "cSpell.words": ["Enea", "Guidi"],
+  "cSpell.allowCompoundWords": true,
 
   // ----------------------------------------------------- //
   //  Typescript, JSX and Tailwind CSS related extensions  //
