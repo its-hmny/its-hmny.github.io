@@ -1,4 +1,4 @@
-import { Environment, OrbitControls } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 
@@ -9,17 +9,18 @@ export default function LandingSection() {
     <section className='flex h-screen items-center justify-evenly bg-black align-middle text-white max-lg:w-screen max-lg:flex-col'>
       <div className='h-screen w-1/2 max-lg:h-1/3 max-lg:w-screen'>
         <Canvas camera={{ position: [-5, 0, -23], fov: 55 }} style={{ width: '100%', height: '100%' }}>
-          <pointLight position={[10, 10, 10]} intensity={1.5} />
+          {/* Generic and simple diffusion lighting */}
+          <ambientLight />
+          {/* Studio-like lighting (top-left-behind, top-right-behind, refractive light on the bottom) */}
+          <directionalLight position={[1, 4, 0]} intensity={2} />
+          <directionalLight position={[-1, 4, 0]} intensity={2} />
+          <directionalLight position={[4, -6, -4]} intensity={1} />
+          <group rotation={[0, Math.PI, 0]} position={[0, 0, 0]}>
+            {/* Macbook Air model with simple open/close interaction */}
           <Suspense fallback={null}>
-            <group rotation={[0, Math.PI, 0]} position={[0, 1, 0]}>
               <MacbookAir />
+            </Suspense>
             </group>
-            {/* TODO(Enea): Remove the <Environment /> preset in favor of something more lean */}
-            {/* While this 'Environment' component is really good for quick iteration is better to remove it before
-            production given that is pretty heavy and slows down the 3D model rendering, I think it can be simply
-            implemented with an 'AmbientLight' component plus some minor tweaking (reflective surface, ...) */}
-            <Environment preset='city' />
-          </Suspense>
           <OrbitControls enableZoom={true} enablePan={false} />
         </Canvas>
       </div>
