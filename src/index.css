@@ -8,3 +8,6 @@
     background-color: theme('colors.lime.400', '#ff9800');
   }
 }
+
+/* TODO(Enea): Only to debug the boxes while developing, remove before prod */
+/* body * { border: 1px solid white; } */
