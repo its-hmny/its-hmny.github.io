@@ -3,10 +3,10 @@ import { Canvas } from '@react-three/fiber';
 import { Github } from 'lucide-react';
 import { Suspense } from 'react';
 
-import MacbookAir from '../models/Macbook.Model';
+import Macbook from '../models/Macbook.Model';
 import Spinner from '../models/Spinner.Model';
 
-export default function LandingSection() {
+export default function Landing() {
   return (
     <section className='flex h-screen items-center justify-evenly bg-black align-middle text-white max-lg:w-screen max-lg:flex-col'>
       <div className='h-screen w-1/2 max-lg:h-1/3 max-lg:w-screen'>
@@ -17,13 +17,13 @@ export default function LandingSection() {
           <directionalLight position={[1, 4, 0]} intensity={2} />
           <directionalLight position={[-1, 4, 0]} intensity={2} />
           <directionalLight position={[4, -6, -4]} intensity={1} />
+          {/* Macbook Air model with simple open/close interaction */}
           <group rotation={[0, Math.PI, 0]} position={[0, 0, 0]}>
-            {/* Macbook Air model with simple open/close interaction */}
             <Suspense fallback={<Spinner />}>
-              <MacbookAir />
+              <Macbook />
             </Suspense>
           </group>
-          <OrbitControls enableZoom={true} enablePan={false} />
+          <OrbitControls maxDistance={30} minDistance={20} enableZoom={true} enablePan={false} />
         </Canvas>
       </div>
 
