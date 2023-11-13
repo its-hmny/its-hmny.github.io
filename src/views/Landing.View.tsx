@@ -3,8 +3,8 @@ import { Canvas } from '@react-three/fiber';
 import { Github } from 'lucide-react';
 import { Suspense } from 'react';
 
-import MacbookAir from './MacbookAir';
-import Spinner from './Spinner';
+import MacbookAir from '../models/Macbook.Model';
+import Spinner from '../models/Spinner.Model';
 
 export default function LandingSection() {
   return (

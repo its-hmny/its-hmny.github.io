@@ -4,11 +4,12 @@ import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as THREE from 'three';
+import { Group } from 'three';
 
 
 export default function MacbookAir() {
   // Gets a mutable reference to the 'main' group for the model
-  const group = useRef<THREE.Group>();
+  const group = useRef<Group>(null!);
   // Loads the GLTF model asynchronously
   const { nodes, materials } = useGLTF('/MacbookAir.glb') as any;
 
