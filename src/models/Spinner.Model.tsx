@@ -1,10 +1,10 @@
 import { Torus } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
-import * as THREE from 'three';
+import { Mesh } from 'three';
 
 export default function Spinner() {
-  const ref = useRef<THREE.TorusGeometry>();
+  const ref = useRef<Mesh>(null!);
 
   useFrame((_, delta) => {
     ref.current.rotation.x += delta * 5;

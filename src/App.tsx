@@ -1,4 +1,4 @@
-import LandingSection from './components/LandingSection';
+import LandingSection from './views/Landing.View';
 
 export default function App() {
   return (
