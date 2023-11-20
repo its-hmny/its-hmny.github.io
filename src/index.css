@@ -10,7 +10,7 @@
 }
 
 /* TODO(hmny): Isn't a better way to manage the theme/overide */
-html { background-color: black; }
+html { background-color: black; overflow-x: hidden; }
 
 /* TODO(Enea): Only to debug the boxes while developing, remove before prod */
 /* body * { border: 1px solid white; } */
