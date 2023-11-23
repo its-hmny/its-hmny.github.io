@@ -1,5 +1,5 @@
-import LandingSection from './views/Landing.View.tsx';
-import WorkSection from './views/Work.View.tsx';
+import LandingSection from './views/LandingSection.tsx';
+import WorkSection from './views/WorkSection.tsx';
 
 export default function App() {
   return (

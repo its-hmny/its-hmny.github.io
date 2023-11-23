@@ -1,12 +1,10 @@
-import { OrbitControls } from '@react-three/drei';
+import { Environment, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { Github } from 'lucide-react';
-import { Suspense } from 'react';
 
-import Macbook from '../models/Macbook.Model';
-import Spinner from '../models/Spinner.Model';
+import Macbook from '../components/Macbook';
 
-export default function Landing() {
+export default function LandingSection() {
   return (
     <section className='flex h-screen items-center justify-evenly bg-black align-middle text-white max-lg:w-screen max-lg:flex-col'>
       <div className='h-screen w-5/12 max-lg:h-2/5 max-lg:w-screen'>
@@ -19,9 +17,7 @@ export default function Landing() {
           <directionalLight position={[4, -6, -4]} intensity={1} />
           {/* Macbook Air model with simple open/close interaction */}
           <group rotation={[0, Math.PI, 0]} position={[0, 0, 0]}>
-            <Suspense fallback={<Spinner />}>
-              <Macbook />
-            </Suspense>
+            <Macbook />
           </group>
           <OrbitControls maxDistance={30} minDistance={20} enableZoom={true} enablePan={false} />
         </Canvas>

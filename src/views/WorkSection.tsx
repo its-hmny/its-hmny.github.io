@@ -1,10 +1,8 @@
-import { CameraControls } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { Suspense } from 'react';
 
-import WorkExperienceData from '../data/WorkExperience.Data';
-import NonEuclideanBox from '../models/NonEuclideanBox.Model';
-import Spinner from '../models/Spinner.Model';
+import NonEuclideanBox from '../components/NonEuclideanBox';
+import WorkExperiences from '../data/WorkExperiences';
 
 /* 
  This view is the second section of my portfolio, as other sections of the website it's also split in two section:
@@ -27,7 +25,7 @@ export default function WorkSection() {
 
         {/* Past work experiences timeline */}
         <ol className='relative border-s border-gray-200 dark:border-orange-400'>
-          {WorkExperienceData.map(item => (
+          {WorkExperiences.map(item => (
             <li className='mb-10 ms-4'>
               <div className='absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-orange-400' />
               <time className='mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500'>
@@ -58,10 +56,7 @@ export default function WorkSection() {
       {/* Second half of the page with the 3D model */}
       <div className='h-full w-5/12'>
         <Canvas shadows camera={{ position: [-3, 0.5, 3] }} style={{ width: '100%', height: '100%' }}>
-          <CameraControls makeDefault />
-          <Suspense fallback={<Spinner />}>
-            <NonEuclideanBox />
-          </Suspense>
+          <NonEuclideanBox />
         </Canvas>
       </div>
     </section>
