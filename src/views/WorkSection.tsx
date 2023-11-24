@@ -1,7 +1,7 @@
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 
-import NonEuclideanBox from '../components/NonEuclideanBox';
+import NonEuclideanCube from '../components/NonEuclideanCube';
 import WorkExperiences from '../data/WorkExperiences';
 
 /* 
@@ -16,7 +16,7 @@ export default function WorkSection() {
     <section className='flex h-screen w-screen flex-row items-center justify-evenly bg-black align-middle text-white'>
       {/* First half of the page */}
       <div className='h-full w-6/12 p-10'>
-        <h3 className='font-italic mb-3 text-2xl text-orange-400'>My work experience</h3>
+        <h3 className='font-italic mb-3 text-3xl text-orange-400'>My work experience</h3>
         <p className='text-md mb-10 text-justify text-gray-500'>
           Don't let my young age fool you! In my previous work experiences I was fortunate enough to explore and broaden
           my skillset: from delving into the intricacies of blockchain technology to exploring the creative realms of 3D
@@ -56,7 +56,8 @@ export default function WorkSection() {
       {/* Second half of the page with the 3D model */}
       <div className='h-full w-5/12'>
         <Canvas shadows camera={{ position: [-3, 0.5, 3] }} style={{ width: '100%', height: '100%' }}>
-          <NonEuclideanBox />
+          <OrbitControls maxDistance={5} minDistance={2} enableZoom={true} enablePan={false} />
+          <NonEuclideanCube />
         </Canvas>
       </div>
     </section>
