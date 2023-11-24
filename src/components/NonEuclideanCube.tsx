@@ -44,9 +44,19 @@ function NonEuclideanBoxSide({ index, color, rotation, children }: NonEuclideanB
   );
 }
 
-export default function NonEuclideanBox() {
+export default function NonEuclideanCube() {
+  // Gets a mutable reference to the 'mesh' component that will contain the 'children' element
+  const mesh = useRef<Mesh>(null!);
+
+  // Slowly rotates the 'NonEuclideanCube' to tempt the user interaction
+  useFrame((_, delta) => {
+    mesh.current.rotation.x += delta * 0.3;
+    mesh.current.rotation.y += delta * 0.1;
+    mesh.current.rotation.z += delta * 0.2;
+  });
+
   return (
-    <mesh castShadow receiveShadow>
+    <mesh castShadow receiveShadow ref={mesh}>
       <boxGeometry args={[2, 2, 2]} />
       {/* When used, with the 'NonEuclideanBoxSide' this component will complete the 'hollow box' effect */}
       <Edges />
