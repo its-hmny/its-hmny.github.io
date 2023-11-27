@@ -41,12 +41,14 @@ export default function WorkSection() {
               <p className='mb-4 text-base font-normal text-gray-500 dark:text-gray-400'>
                 {item.description}
                 <br />
-                {item.skills.map(skill => (
-                  <span className='mr-2 inline-flex items-center rounded-full bg-lime-100 px-2.5 py-0.5 text-xs font-medium text-lime-600 dark:bg-lime-700 dark:text-lime-300'>
-                    <span className='me-1 h-2 w-2 rounded-full bg-lime-500' />
-                    {skill}
-                  </span>
-                ))}
+                <div className='max-sm:mt-1 max-sm:flex max-sm:flex-row max-sm:flex-wrap max-sm:justify-evenly'>
+                  {item.skills.map(skill => (
+                    <span className='mr-2 inline-flex items-center rounded-full bg-lime-100 px-2.5 py-0.5 text-xs font-medium text-lime-600 dark:bg-lime-700 dark:text-lime-300 max-lg:m-[8px]'>
+                      <span className='me-1 h-2 w-2 rounded-full bg-lime-500' />
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </p>
             </li>
           ))}
@@ -54,7 +56,7 @@ export default function WorkSection() {
       </div>
 
       {/* Second half of the page with the 3D model */}
-      <div className='h-full w-5/12 :h-auto max-lg:h-[30vh] max-lg:w-screen'>
+      <div className='h-full w-5/12 max-lg:h-[30vh] max-lg:w-screen'>
         <Canvas shadows camera={{ position: [-3, 0.5, 3] }} style={{ width: '100%', height: '100%' }}>
           <OrbitControls maxDistance={5} minDistance={2} enableZoom={true} enablePan={false} />
           <NonEuclideanCube />
