@@ -1,7 +1,25 @@
+import { Center, OrbitControls } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+
+import IPhoneX from '../components/iPhoneX';
+
 export default function ContactSection() {
   return (
     <section className='flex h-screen w-screen items-center justify-evenly bg-black align-middle text-white max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
       <div className='h-screen w-5/12 max-lg:h-[40vh] max-lg:w-screen'>
+        <Canvas camera={{ position: [0, 0, 5], fov: 55 }} style={{ width: '100%', height: '100%' }}>
+          {/* Generic and simple diffusion lighting */}
+          <ambientLight />
+          {/* Studio-like lighting (top-left-behind, top-right-behind, refractive light on the bottom) */}
+          <directionalLight position={[1, 4, 0]} intensity={1} />
+          <directionalLight position={[-1, 4, 0]} intensity={1} />
+          <directionalLight position={[4, -6, -4]} intensity={1} />
+          {/* TODO(Enea): Add comment to the 3D section */}
+          <Center>
+            <IPhoneX />
+          </Center>
+          <OrbitControls enableZoom={true} enablePan={false} />
+        </Canvas>
       </div>
 
       <div className='w-6/12 p-8 max-lg:h-auto max-lg:w-screen'>
@@ -32,7 +50,7 @@ export default function ContactSection() {
             <h1 className='font-italic mb-3 text-center text-xl text-lime-400'>Have a private chat with me</h1>
             <img src='/socials/Telegram.svg' className='h-20 w-20 self-center' />
           </div>
-          
+
           {/* One medium, one small box: Personal blog and e-mail for business enquiries */}
           <div className='col-span-2 row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
             <h1 className='font-italic mb-3 text-center text-xl text-lime-400'>Read my articles and blogposts</h1>
