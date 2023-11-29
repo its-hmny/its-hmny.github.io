@@ -4,7 +4,7 @@ import { Group, Vector2 } from 'three';
 
 export default function iPhoneX() {
   const group = useRef<Group>(null!);
-  const { nodes, materials } = useGLTF('/iPhoneX.gltf') as any;
+  const { nodes, materials } = useGLTF('/3d-models/iPhoneX.gltf') as any;
   const texture = useVideoTexture('/Particles.mp4', { start: true });
 
   // Overwrites the VideoTexture before applying to the Mesh

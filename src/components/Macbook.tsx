@@ -9,7 +9,7 @@ export default function Macbook() {
   // Gets a mutable reference to the 'main' group for the model
   const group = useRef<Group>(null!);
   // Loads the GLTF model asynchronously
-  const { nodes, materials } = useGLTF('/MacbookAir.glb') as any;
+  const { nodes, materials } = useGLTF('/3d-models/MacbookAir.glb') as any;
 
   // Take care of cursor state 'onHover' and trigger the animation with 'onClick'
   const [isHovered, setHovered] = useState(false);
