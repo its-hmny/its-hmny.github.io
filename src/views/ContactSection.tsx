@@ -23,17 +23,12 @@ export default function ContactSection() {
       </div>
 
       <div className='w-6/12 p-8 max-lg:h-auto max-lg:w-screen'>
-        <h3 className='font-italic mb-3 text-3xl text-orange-400'>Let's keep in touch!</h3>
+        <h3 className='font-italic mb-3 text-3xl text-orange-400'>📱 Let's keep in touch!</h3>
         <p className='text-md mb-10 text-justify text-gray-500'>
-          Don't let my young age fool you! In my previous work experiences I was fortunate enough to explore and broaden
-          my skillset: from delving into the intricacies of blockchain technology to exploring the creative realms of 3D
-          development, I bring a diverse range of expertise to the table.
+          I'm always open to new opportunities, collaborations, and friendly conversations. Feel free to drop me a line
+          if you have a project in mind, want to discuss the latest tech trends or just want to connect. Your feedback
+          and ideas are always welcome! Looking forward to hearing from you soon!
         </p>
-        {/* One big box: The link to my GitHub profile */}
-        <div className='grid auto-rows-[192px] grid-cols-3 gap-4'>
-          <div className='col-span-3 row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
-            <h1 className='font-italic mb-3 text-center text-xl text-lime-400'>Enough talk! Let me see the code</h1>
-            <img src='/socials/GitHub.svg' className='h-20 w-20 self-center dark:invert' />
           </div>
 
           {/* Three small boxes: LinkedIn, Twitter, and Telegram */}
