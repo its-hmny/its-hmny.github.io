@@ -29,31 +29,54 @@ export default function ContactSection() {
           if you have a project in mind, want to discuss the latest tech trends or just want to connect. Your feedback
           and ideas are always welcome! Looking forward to hearing from you soon!
         </p>
+        <div className='m-7 grid auto-rows-[192px] grid-cols-3 gap-4'>
+          {/* One small, one medium: The link to my resume and  GitHub profile */}
+          <div className='col-span-1 row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
+            <h5 className='font-italic mb-3 text-center text-xl text-lime-400 max-sm:text-sm max-sm:font-semibold'>
+              Download my resume
+            </h5>
+            <img src='/socials/Resume.svg' className='h-20 w-20 self-center max-md:h-10 max-md:w-10' />
+          </div>
+          <div className='col-span-2 row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
+            <h5 className='font-italic mb-3 text-center text-xl text-lime-400 max-sm:text-sm max-sm:font-semibold'>
+              Enough talk! Let me see the code
+            </h5>
+            <img src='/socials/GitHub.svg' className='h-20 w-20 self-center dark:invert max-md:h-10 max-md:w-10' />
           </div>
 
           {/* Three small boxes: LinkedIn, Twitter, and Telegram */}
           <div className='row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
-            <h1 className='font-italic mb-3 text-center text-xl text-lime-400'>Work, skills and past experiences</h1>
-            <img src='/socials/LinkedIn.svg' className='h-20 w-20 self-center' />
+            <h5 className='font-italic mb-3 text-center text-xl text-lime-400 max-sm:text-sm max-sm:font-semibold'>
+              Past work experience and skills
+            </h5>
+            <img src='/socials/LinkedIn.svg' className='h-20 w-20 self-center max-md:h-10 max-md:w-10' />
           </div>
           <div className='row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
             {/* TODO (Enea): Find new X.com SVG logo */}
-            <h1 className='font-italic mb-3 text-center text-xl text-lime-400'>See my posts and discussions</h1>
-            <img src='/socials/Twitter.svg' className='h-20 w-20 self-center' />
+            <h5 className='font-italic mb-3 text-center text-xl text-lime-400 max-sm:text-sm max-sm:font-semibold'>
+              See my posts and discussions
+            </h5>
+            <img src='/socials/Twitter.svg' className='h-20 w-20 self-center max-md:h-10 max-md:w-10' />
           </div>
           <div className='row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
-            <h1 className='font-italic mb-3 text-center text-xl text-lime-400'>Have a private chat with me</h1>
-            <img src='/socials/Telegram.svg' className='h-20 w-20 self-center' />
+            <h5 className='font-italic mb-3 text-center text-xl text-lime-400 max-sm:text-sm max-sm:font-semibold'>
+              Have a private chat with me
+            </h5>
+            <img src='/socials/Telegram.svg' className='h-20 w-20 self-center max-md:h-10 max-md:w-10' />
           </div>
 
           {/* One medium, one small box: Personal blog and e-mail for business enquiries */}
           <div className='col-span-2 row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
-            <h1 className='font-italic mb-3 text-center text-xl text-lime-400'>Read my articles and blogposts</h1>
-            <img src='/socials/Medium.svg' className='h-20 w-20 self-center dark:invert' />
+            <h5 className='font-italic mb-3 text-center text-xl text-lime-400 max-sm:text-sm max-sm:font-semibold'>
+              Read my articles and blogposts
+            </h5>
+            <img src='/socials/Medium.svg' className='h-20 w-20 self-center dark:invert max-md:h-10 max-md:w-10' />
           </div>
           <div className='row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
-            <h1 className='font-italic mb-3 text-center text-xl text-lime-400'>Send your business enquiries</h1>
-            <img src='/socials/Email.svg' className='h-20 w-20 self-center' />
+            <h5 className='font-italic mb-3 text-center text-xl text-lime-400 max-sm:text-sm max-sm:font-semibold'>
+              Send business enquiries
+            </h5>
+            <img src='/socials/Email.svg' className='h-20 w-20 self-center max-md:h-10 max-md:w-10' />
           </div>
         </div>
       </div>
