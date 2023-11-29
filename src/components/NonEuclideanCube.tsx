@@ -14,7 +14,7 @@ function NonEuclideanBoxSide({ index, color, rotation, children }: NonEuclideanB
   // Gets a mutable reference to the 'mesh' component that will contain the 'children' element
   const mesh = useRef<Mesh>(null!);
   // Loads the GLTF model asynchronously, we need especially the 'Ambient Occlusion Map'.
-  const { nodes } = useGLTF('/NonEuclideanBox.glb') as any;
+  const { nodes } = useGLTF('/3d-models/NonEuclideanBox.glb') as any;
 
   // This rotation velocity is equal for every content/shape available in every side of the
   // 'NonEuclideanBox' component, given a seamless rotation effect when exploring the scene.
