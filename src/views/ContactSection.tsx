@@ -32,50 +32,78 @@ export default function ContactSection() {
         <div className='m-7 grid auto-rows-[192px] grid-cols-3 gap-4'>
           {/* One small, one medium: The link to my resume and  GitHub profile */}
           <div className='col-span-1 row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
-            <h5 className='font-italic mb-3 text-center text-xl text-lime-400 max-sm:text-sm max-sm:font-semibold'>
+            <a
+              target='_blank'
+              href='/public/Resume.pdf'
+              className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
+            >
               Download my resume
-            </h5>
+            </a>
             <img src='/socials/Resume.svg' className='h-20 w-20 self-center max-md:h-10 max-md:w-10' />
           </div>
           <div className='col-span-2 row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
-            <h5 className='font-italic mb-3 text-center text-xl text-lime-400 max-sm:text-sm max-sm:font-semibold'>
+            <a
+              target='_blank'
+              href='https://www.github.com/its-hmny'
+              className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
+            >
               Enough talk! Let me see the code
-            </h5>
+            </a>
             <img src='/socials/GitHub.svg' className='h-20 w-20 self-center dark:invert max-md:h-10 max-md:w-10' />
           </div>
 
           {/* Three small boxes: LinkedIn, Twitter, and Telegram */}
           <div className='row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
-            <h5 className='font-italic mb-3 text-center text-xl text-lime-400 max-sm:text-sm max-sm:font-semibold'>
+            <a
+              target='_blank'
+              href='https://www.linkedin.com/in/enea-guidi/'
+              className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
+            >
               Past work experience and skills
-            </h5>
+            </a>
             <img src='/socials/LinkedIn.svg' className='h-20 w-20 self-center max-md:h-10 max-md:w-10' />
           </div>
           <div className='row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
             {/* TODO (Enea): Find new X.com SVG logo */}
-            <h5 className='font-italic mb-3 text-center text-xl text-lime-400 max-sm:text-sm max-sm:font-semibold'>
+            <a
+              target='_blank'
+              href='https://twitter.com/its_hmny'
+              className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
+            >
               See my posts and discussions
-            </h5>
+            </a>
             <img src='/socials/Twitter.svg' className='h-20 w-20 self-center max-md:h-10 max-md:w-10' />
           </div>
           <div className='row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
-            <h5 className='font-italic mb-3 text-center text-xl text-lime-400 max-sm:text-sm max-sm:font-semibold'>
+            <a
+              target='_blank'
+              href='https://t.me/its_hmny'
+              className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
+            >
               Have a private chat with me
-            </h5>
+            </a>
             <img src='/socials/Telegram.svg' className='h-20 w-20 self-center max-md:h-10 max-md:w-10' />
           </div>
 
           {/* One medium, one small box: Personal blog and e-mail for business enquiries */}
           <div className='col-span-2 row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
-            <h5 className='font-italic mb-3 text-center text-xl text-lime-400 max-sm:text-sm max-sm:font-semibold'>
+            <a
+              target='_blank'
+              href='https://dev.to/its_hmny'
+              className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
+            >
               Read my articles and blogposts
-            </h5>
+            </a>
             <img src='/socials/Medium.svg' className='h-20 w-20 self-center dark:invert max-md:h-10 max-md:w-10' />
           </div>
           <div className='row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
-            <h5 className='font-italic mb-3 text-center text-xl text-lime-400 max-sm:text-sm max-sm:font-semibold'>
+            <a
+              target='_blank'
+              href='mailto:guidi.enea@gmail.com'
+              className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
+            >
               Send business enquiries
-            </h5>
+            </a>
             <img src='/socials/Email.svg' className='h-20 w-20 self-center max-md:h-10 max-md:w-10' />
           </div>
         </div>
