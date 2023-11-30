@@ -1,11 +1,11 @@
 <p align="center">
-    <img alt="Logo" width="400" src=https://github.com/its-hmny/its-hmny.github.io/blob/main/public/logo.png?raw=true">
+    <img alt="Logo" width="400" src=./src/public/PenroseTriangle.png">
 </p>
 
 <p align="center">
     <img alt="GPLv3 License" src="https://img.shields.io/badge/License-GPL%20v3-yellow.svg">
     <img alt="Code Size" src="https://img.shields.io/github/languages/code-size/its-hmny/its-hmny.github.io?color=green&label=Code%20Size">
-    <img alt="Deploy" src="https://github.com/its-hmny/its-hmny.github.io/actions/workflows/pages.yml/badge.svg">
+    <img alt="Deploy" src="https://github.com/its-hmny/its-hmny.github.io/actions/workflows/gh-pages.yml/badge.svg">
     <img alt="Release" src="https://img.shields.io/github/v/release/its-hmny/its-hmny.github.io?label=Version">
 </p>
 
@@ -13,32 +13,25 @@
 
 ## My personal website, hosted at https://its-hmny.github.io
 
-The site consist of only a Spline scene but when the user interacts with it there's some code that intercepts the event and shows UI accordingly. Most the data is static (embedded directly into code) but, for the `Projects` and `Blog` sections, updated data from the GitHub and Dev.to public APIs is fetched.
+This single page website is my personal portfolio, it's meant to be really minimal and clean. Showcase my skills as Fullstack Developer and give the interested reader a lot of external references to my articles, repositories and social media.
 
-The site itself doesn't have many more functionalities, it's meant to be just a portfolio with a 3D flavour on it.
+I sprinkled in some 3D models because everything is better when there's an interactive 3D model on the side, also I wanted to experiment further with React Three Fiber (R3F) after [3D Cellular Automata](https://github.com/its-hmny/3D-Cellular-Automata).
 
 ## Installation
 
 To install the dependencies and run the site locally, simply type in your terminal:
 
 ```bash
-  # NOTE: npm or pnpm can be used as well
-  yarn install
-  yarn start:dev
-```
-
-You can also build a production version, both with an embedded Node.js server as well as standalone HTML (thanks to `next export`):
-
-```bash
-  yarn build:all  # With embedded Node.js server
-  yarn build:html # Plain HTML, CSS and JS files exported
+  yarn install  # NOTE: npm or pnpm can be used as well
+  yarn dev      # Start a hot reloadable dev server
+  yarn build    # Build the bundled website for deploy
 ```
 
 ## Technology Stack
 
 - [Typescript](https://www.typescriptlang.org/)
-- [Next.js](https://nextjs.org/) / [React](https://reactjs.org/)
-- [Spline](https://spline.design/) / [SWR](https://swr.vercel.app/) / [NextUI](https://nextui.org/)
+- [Vite](https://vitejs.dev/) | [React](https://reactjs.org/)
+- [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) | [drei](https://github.com/pmndrs/drei#readme) | [three.js](https://threejs.org/)
 
 ## Authors
 
