@@ -10,7 +10,11 @@
 }
 
 /* TODO(hmny): Isn't a better way to manage the theme/overide */
-html { background-color: black; overflow-x: hidden; }
+html {
+  overflow-x: hidden;
+  background-color: black;
+  font-family: 'Ubuntu', sans-serif;
+}
 
-/* TODO(Enea): Only to debug the boxes while developing, remove before prod */
+/* TODO(hmny): Only to debug the boxes while developing, remove before prod */
 /* body * { border: 1px solid white; } */
