@@ -34,7 +34,7 @@ export default function ContactSection() {
           <div className='col-span-1 row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
             <a
               target='_blank'
-              href='/public/Resume.pdf'
+              href='/Resume.pdf'
               className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
             >
               Download my resume
