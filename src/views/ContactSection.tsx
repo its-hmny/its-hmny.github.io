@@ -14,7 +14,7 @@ export default function ContactSection() {
           <directionalLight position={[1, 4, 0]} intensity={1} />
           <directionalLight position={[-1, 4, 0]} intensity={1} />
           <directionalLight position={[4, -6, -4]} intensity={1} />
-          {/* TODO(Enea): Add comment to the 3D section */}
+          {/* Simple iPhone X model with looped video as the screen material */}
           <Center>
             <IPhoneX />
           </Center>
@@ -64,8 +64,7 @@ export default function ContactSection() {
             <img src='/socials/LinkedIn.svg' className='h-20 w-20 self-center max-md:h-10 max-md:w-10' />
           </div>
           <div className='row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
-            {/* TODO (Enea): Find new X.com SVG logo */}
-            <a
+            <a // TODO (hmny): Find new X.com SVG logo
               target='_blank'
               href='https://twitter.com/its_hmny'
               className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
