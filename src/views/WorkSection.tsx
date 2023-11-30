@@ -4,13 +4,6 @@ import { Canvas } from '@react-three/fiber';
 import NonEuclideanCube from '../components/NonEuclideanCube';
 import WorkExperiences from '../data/WorkExperiences';
 
-/* 
- This view is the second section of my portfolio, as other sections of the website it's also split in two section:
- the first contains my work experience timeline with a brief explanaton about each one of them, the second is just
- another R3F Canvas that will contain some sorts of interactive 3D elements.
- 
- TODO (Enea): I think it would be nice to have one model for each experience with a seamless animation when scrolling
-*/
 export default function WorkSection() {
   return (
     <section className='flex h-auto min-h-screen w-screen flex-row items-center justify-evenly bg-black align-middle text-white max-lg:h-auto max-lg:min-h-screen max-lg:flex-col-reverse'>

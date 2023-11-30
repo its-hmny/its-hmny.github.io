@@ -16,5 +16,5 @@ html {
   font-family: 'Ubuntu', sans-serif;
 }
 
-/* TODO(hmny): Only to debug the boxes while developing, remove before prod */
+/* ? Only to debug the boxes while developing, remove before prod */
 /* body * { border: 1px solid white; } */
