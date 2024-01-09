@@ -16,5 +16,11 @@ html {
   font-family: 'Ubuntu', sans-serif;
 }
 
+/* Helper class with strange CSS property in Splashcreen.tsx */
+.circle {
+  offset-distance: 0%;
+  offset-path: circle(125px at center);
+}
+
 /* ? Only to debug the boxes while developing, remove before prod */
 /* body * { border: 1px solid white; } */
