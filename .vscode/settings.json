@@ -1,5 +1,10 @@
 {
   // ----------------------------------------------------- //
+  //             Generic VS Code configuration             //
+  // ----------------------------------------------------- //
+  "files.exclude": { ".pnpm-store": true },
+  
+  // ----------------------------------------------------- //
   //           Code Spell Checker configuration            //
   // ----------------------------------------------------- //
   "cSpell.words": ["aluminium", "Botika", "Enea", "GLTF", "Guidi", "lerp", "Moonia"],
