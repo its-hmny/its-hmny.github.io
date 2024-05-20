@@ -1,3 +1,5 @@
+'use client'
+
 import { useSpring } from '@react-spring/core';
 import { a as three } from '@react-spring/three';
 import { useGLTF } from '@react-three/drei';

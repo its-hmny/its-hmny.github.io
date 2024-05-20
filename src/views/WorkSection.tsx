@@ -1,3 +1,5 @@
+'use client'
+
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 
@@ -19,7 +21,7 @@ export default function WorkSection() {
         {/* Past work experiences timeline */}
         <ol className='relative border-s border-gray-200 dark:border-orange-400'>
           {WorkExperiences.map(item => (
-            <li className='mb-10 ms-4'>
+            <li key={item.company} className='mb-10 ms-4'>
               <div className='absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-orange-400' />
               <time className='mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500'>
                 {item.period[0]} - {item.period[1]}
@@ -36,7 +38,7 @@ export default function WorkSection() {
                 <br />
                 <div className='max-sm:mt-1 max-sm:flex max-sm:flex-row max-sm:flex-wrap max-sm:justify-evenly'>
                   {item.skills.map(skill => (
-                    <span className='mr-2 inline-flex items-center rounded-full bg-lime-100 px-2.5 py-0.5 text-xs font-medium text-lime-600 dark:bg-lime-700 dark:text-lime-300 max-lg:m-[8px]'>
+                    <span key={skill} className='mr-2 inline-flex items-center rounded-full bg-lime-100 px-2.5 py-0.5 text-xs font-medium text-lime-600 dark:bg-lime-700 dark:text-lime-300 max-lg:m-[8px]'>
                       <span className='me-1 h-2 w-2 rounded-full bg-lime-500' />
                       {skill}
                     </span>

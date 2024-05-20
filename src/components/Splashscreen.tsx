@@ -1,3 +1,5 @@
+'use client'
+
 import { useProgress } from '@react-three/drei';
 import { ReactNode, Suspense } from 'react';
 
