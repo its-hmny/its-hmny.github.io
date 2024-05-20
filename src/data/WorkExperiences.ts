@@ -1,6 +1,7 @@
 import { Bitcoin, ServerCog, Store } from 'lucide-react';
 
 // TODO(hmny): Would be nice to use LinkedIn APIs and populate this content dynamically
+// TODO(hmny): Use 'use server' directive for this to allow for static generation
 export default [
   {
     icon: Bitcoin,

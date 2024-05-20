@@ -1,8 +1,10 @@
+'use client'
+
 import { useGLTF, useVideoTexture } from '@react-three/drei';
 import { useEffect } from 'react';
 import { Vector2 } from 'three';
 
-export default function iPhoneX() {
+export default function Phone() {
   // Loads the GLTF model asynchronously
   const { nodes, materials } = useGLTF('/3d-models/iPhoneX.gltf') as any;
   // Uses the given video as animated texture for the 'SCREEN' mesh

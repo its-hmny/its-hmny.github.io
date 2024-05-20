@@ -1,7 +1,9 @@
+'use client'
+
+import IPhoneX from '@hmny.dev/ui/iPhoneX';
 import { Center, OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 
-import IPhoneX from '../components/iPhoneX';
 
 export default function ContactSection() {
   return (
@@ -39,7 +41,7 @@ export default function ContactSection() {
             >
               Download my resume
             </a>
-            <img src='/socials/Resume.svg' className='h-20 w-20 self-center max-md:h-10 max-md:w-10' />
+            <img alt="" src='/socials/Resume.svg' className='h-20 w-20 self-center max-md:h-10 max-md:w-10' />
           </div>
           <div className='col-span-2 row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
             <a
