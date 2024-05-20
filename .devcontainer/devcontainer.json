@@ -2,12 +2,12 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
 	"name": "Ego",
-	"image": "node:lts-bookworm", // The default image is way too heavy
+	"image": "ubuntu:latest", // This allows for smaller Docker containers
 	// I want my local project folder to be kept in synch while I make changes
 	// "workspaceMount": "source=${localWorkspaceFolder}",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	"features": { "ghcr.io/devcontainers/features/node:1": {} },
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
