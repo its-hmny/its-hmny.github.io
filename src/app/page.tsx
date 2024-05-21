@@ -6,7 +6,7 @@ import { Github } from 'lucide-react';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
-function LandingSection() {
+function Landing() {
   return (
     <section className='flex h-screen w-screen items-center justify-evenly bg-black align-middle text-white max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
       <div className='h-screen w-5/12 max-lg:h-[40vh] max-lg:w-screen'>
@@ -42,7 +42,7 @@ function LandingSection() {
 export default function Home() {
   return (
     <>
-      <LandingSection />
+      <Landing />
       <WorkSection />
       <ContactSection />
     </>

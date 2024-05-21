@@ -16,6 +16,6 @@
   //  Typescript, JSX and Tailwind CSS related extensions  //
   // ----------------------------------------------------- //
   "tailwind-fold.foldStyle": "QUOTES",
-  "tailwind-fold.foldLengthThreshold": 20,
+  "tailwind-fold.foldLengthThreshold": 10,
   "prettier.configPath": "./prettier.config.js"
 }

@@ -13,10 +13,9 @@
 html {
   overflow-x: hidden;
   background-color: black;
-  font-family: 'Ubuntu', sans-serif;
 }
 
-/* Helper class with strange CSS property in Splashcreen.tsx */
+/* Helper class with strange CSS property in 'SplashScreen.tsx' */
 .circle {
   offset-distance: 0%;
   offset-path: circle(125px at center);
