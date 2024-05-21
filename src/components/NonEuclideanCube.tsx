@@ -1,18 +1,18 @@
-'use client'
+'use client';
 
-import { Edges, MeshPortalMaterial, useGLTF } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
+import { Edges, MeshPortalMaterial, OrbitControls, useGLTF } from '@react-three/drei';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { ReactNode, useRef } from 'react';
 import { Mesh } from 'three';
 
-type NonEuclideanBoxSideProps = {
+type CubeSideProps = Readonly<{
   index: number;
   color: string;
   children: ReactNode;
   rotation: [number, number, number];
-};
+}>;
 
-function NonEuclideanBoxSide({ index, color, rotation, children }: NonEuclideanBoxSideProps) {
+function CubeSide({ index, color, rotation, children }: CubeSideProps) {
   // Gets a mutable reference to the 'mesh' component that will contain the 'children' element
   const mesh = useRef<Mesh>(null!);
   // Loads the GLTF model asynchronously, we need especially the 'Ambient Occlusion Map'.
@@ -46,7 +46,7 @@ function NonEuclideanBoxSide({ index, color, rotation, children }: NonEuclideanB
   );
 }
 
-export default function NonEuclideanCube() {
+function NonEuclideanCube() {
   // Gets a mutable reference to the 'mesh' component that will contain the 'children' element
   const mesh = useRef<Mesh>(null!);
 
@@ -64,34 +64,43 @@ export default function NonEuclideanCube() {
       <Edges />
 
       {/* First cube side */}
-      <NonEuclideanBoxSide rotation={[0, 0, 0]} color='#006E90' index={0}>
+      <CubeSide rotation={[0, 0, 0]} color='#006E90' index={0}>
         <torusGeometry args={[0.65, 0.3, 64]} />
-      </NonEuclideanBoxSide>
+      </CubeSide>
 
       {/* Second cube side */}
-      <NonEuclideanBoxSide rotation={[0, Math.PI / 2, 0]} color='#f0abfc' index={5}>
+      <CubeSide rotation={[0, Math.PI / 2, 0]} color='#f0abfc' index={5}>
         <dodecahedronGeometry />
-      </NonEuclideanBoxSide>
+      </CubeSide>
 
       {/* Third cube side */}
-      <NonEuclideanBoxSide rotation={[0, Math.PI, 0]} color='#F18F01' index={1}>
+      <CubeSide rotation={[0, Math.PI, 0]} color='#F18F01' index={1}>
         <torusKnotGeometry args={[0.55, 0.2, 128, 32]} />
-      </NonEuclideanBoxSide>
+      </CubeSide>
 
       {/* Fourth cube side */}
-      <NonEuclideanBoxSide rotation={[0, -Math.PI / 2, 0]} color='#22D3EE' index={4}>
+      <CubeSide rotation={[0, -Math.PI / 2, 0]} color='#22D3EE' index={4}>
         <sphereGeometry />
-      </NonEuclideanBoxSide>
+      </CubeSide>
 
       {/* Top cube side */}
-      <NonEuclideanBoxSide rotation={[0, Math.PI / 2, Math.PI / 2]} color='#ADCAD6' index={2}>
+      <CubeSide rotation={[0, Math.PI / 2, Math.PI / 2]} color='#ADCAD6' index={2}>
         <boxGeometry args={[1.15, 1.15, 1.15]} />
-      </NonEuclideanBoxSide>
+      </CubeSide>
 
       {/* Bottom cube side */}
-      <NonEuclideanBoxSide rotation={[0, Math.PI / 2, -Math.PI / 2]} color='#A3E635' index={3}>
+      <CubeSide rotation={[0, Math.PI / 2, -Math.PI / 2]} color='#A3E635' index={3}>
         <octahedronGeometry />
-      </NonEuclideanBoxSide>
+      </CubeSide>
     </mesh>
+  );
+}
+
+export default function Playground() {
+  return (
+    <Canvas shadows camera={{ position: [-3, 0.5, 3] }} style={{ width: '100%', height: '100%' }}>
+      <OrbitControls maxDistance={5} minDistance={2} enableZoom={true} enablePan={false} />
+      <NonEuclideanCube />
+    </Canvas>
   );
 }
