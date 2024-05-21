@@ -1,13 +1,13 @@
-'use client'
+'use client';
 
 import { useSpring } from '@react-spring/core';
 import { a as three } from '@react-spring/three';
-import { useGLTF } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
+import { OrbitControls, useGLTF } from '@react-three/drei';
+import { Canvas, useFrame } from '@react-three/fiber';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Group, MathUtils } from 'three';
 
-export default function Macbook() {
+function Model() {
   // Gets a mutable reference to the 'main' group for the model
   const group = useRef<Group>(null!);
   // Loads the GLTF model asynchronously
@@ -65,5 +65,23 @@ export default function Macbook() {
 
       <mesh material={materials.touchbar} geometry={nodes.touchbar.geometry} position={[0, -0.03, 1.2]} />
     </group>
+  );
+}
+
+export default function Playground() {
+  return (
+    <Canvas camera={{ position: [-5, 0, -23], fov: 55 }} style={{ width: '100%', height: '100%' }}>
+      {/* Generic and simple diffusion lighting */}
+      <ambientLight />
+      {/* Studio-like lighting (top-left-behind, top-right-behind, refractive light on the bottom) */}
+      <directionalLight position={[1, 4, 0]} intensity={2} />
+      <directionalLight position={[-1, 4, 0]} intensity={2} />
+      <directionalLight position={[4, -6, -4]} intensity={1} />
+      {/* Macbook Air model with simple open/close interaction */}
+      <group rotation={[0, Math.PI, 0]} position={[0, 0, 0]}>
+        <Model />
+      </group>
+      <OrbitControls maxDistance={30} minDistance={20} enableZoom={true} enablePan={false} />
+    </Canvas>
   );
 }
