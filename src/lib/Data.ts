@@ -1,8 +1,6 @@
 import { Bitcoin, ServerCog, Store } from 'lucide-react';
 
-// TODO(hmny): Would be nice to use LinkedIn APIs and populate this content dynamically
-// TODO(hmny): Use 'use server' directive for this to allow for static generation
-export default [
+export const Jobs = [
   {
     icon: Bitcoin,
     role: 'Backend Developer',
@@ -31,5 +29,50 @@ export default [
     skills: ['Golang', 'Typescript', 'Next.js', 'Nest.js', 'Python'],
     description:
       "Developed 'Meeters', a webapp for the organization, management and participation to virtual fairs/expositions during the Covid-19 pandemic. The platform has been used by national and international fairs with up-to 7.000+ online simultaneous users.",
+  },
+] as const;
+
+export const Contacts = [
+  {
+    size: 'col-span-1',
+    icon: '/socials/Resume.svg',
+    href: '/Resume.pdf',
+    description: 'Download my resume',
+  },
+  {
+    size: 'col-span-2',
+    icon: '/socials/GitHub.svg',
+    href: 'https://www.github.com/its-hmny',
+    description: 'Enough talk! Let me see the code',
+  },
+  {
+    size: 'col-span-1',
+    icon: '/socials/LinkedIn.svg',
+    href: 'https://www.linkedin.com/in/enea-guidi',
+    description: "let's connect",
+  },
+  {
+    size: 'col-span-1',
+    icon: '/socials/Twitter.svg',
+    href: 'https://twitter.com/its_hmny',
+    description: 'See my posts and discussions',
+  },
+  {
+    size: 'col-span-1',
+    icon: '/socials/Telegram.svg',
+    href: 'https://t.me/its_hmny',
+    description: 'Have a private chat',
+  },
+  {
+    size: 'col-span-2',
+    icon: '/socials/Medium.svg',
+    href: 'https://dev.to/its_hmny',
+    description: 'Read my articles and blogposts',
+  },
+  {
+    size: 'col-span-1',
+    icon: '/socials/Email.svg',
+    href: 'mailto:guidi.enea@gmail.com',
+    description: 'Send business enquiries',
   },
 ] as const;

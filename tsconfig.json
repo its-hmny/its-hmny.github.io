@@ -14,7 +14,7 @@
     "incremental": true,
     "plugins": [{ "name": "next" }],
     "paths": {
-      "@hmny.dev/data/*": ["./src/data/*"],
+      "@hmny.dev/lib/*": ["./src/lib/*"],
       "@hmny.dev/ui/*": ["./src/components/*"]
     }
   },
