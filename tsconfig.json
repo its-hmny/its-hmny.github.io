@@ -14,9 +14,8 @@
     "incremental": true,
     "plugins": [{ "name": "next" }],
     "paths": {
-      "@hmny.dev/ui/*": ["./src/components/*"],
       "@hmny.dev/data/*": ["./src/data/*"],
-      "@hmny.dev/composite/*": ["./src/views/*"]
+      "@hmny.dev/ui/*": ["./src/components/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
