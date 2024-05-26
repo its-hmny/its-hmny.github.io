@@ -96,16 +96,16 @@ function ContactsList() {
         <div className='m-7 grid auto-rows-[192px] grid-cols-3 gap-4'>
           {Contacts.map(c => (
             <div
-              key={c.href}
-              className={`${c.size} row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900`}
+              key={c.link}
+              className={`${c.size === 'small' ? 'col-span-1' : 'col-span-2'} row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900`}
             >
-              <a
+              <Link
+                href={c.link}
                 target='_blank'
-                href={c.href}
                 className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
               >
                 {c.description}
-              </a>
+              </Link>
               <Image
                 width={80}
                 height={80}

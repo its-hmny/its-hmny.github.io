@@ -15,9 +15,8 @@ export function Title({ job }: { job: Job }) {
 
 export function Description({ job }: { job: Job }) {
   return (
-    <p className='mb-4 text-base font-normal text-gray-500 dark:text-gray-400'>
-      {job.description}
-      <br />
+    <div className='mt-2 text-base font-normal text-gray-500 dark:text-gray-400'>
+      <p>{job.description}</p>
       <div className='max-sm:mt-1 max-sm:flex max-sm:flex-row max-sm:flex-wrap max-sm:justify-evenly'>
         {job.skills.map(skill => (
           <span
@@ -29,6 +28,6 @@ export function Description({ job }: { job: Job }) {
           </span>
         ))}
       </div>
-    </p>
+    </div>
   );
 }

@@ -41,47 +41,49 @@ export const Jobs: Job[] = [
   },
 ];
 
-export const Contacts = [
+export type Contact = { size: string; icon: string; link: string; description: string };
+
+export const Contacts: Contact[] = [
   {
-    size: 'col-span-1',
+    size: 'small',
     icon: '/socials/Resume.svg',
-    href: '/Resume.pdf',
+    link: '/Resume.pdf',
     description: 'Download my resume',
   },
   {
-    size: 'col-span-2',
+    size: 'medium',
     icon: '/socials/GitHub.svg',
-    href: 'https://www.github.com/its-hmny',
+    link: 'https://www.github.com/its-hmny',
     description: 'Enough talk! Let me see the code',
   },
   {
-    size: 'col-span-1',
+    size: 'small',
     icon: '/socials/LinkedIn.svg',
-    href: 'https://www.linkedin.com/in/enea-guidi',
-    description: "let's connect",
+    link: 'https://www.linkedin.com/in/enea-guidi',
+    description: "Let's connect",
   },
   {
-    size: 'col-span-1',
+    size: 'small',
     icon: '/socials/Twitter.svg',
-    href: 'https://twitter.com/its_hmny',
-    description: 'See my posts and discussions',
+    link: 'https://twitter.com/its_hmny',
+    description: 'Posts & discussions',
   },
   {
-    size: 'col-span-1',
+    size: 'small',
     icon: '/socials/Telegram.svg',
-    href: 'https://t.me/its_hmny',
-    description: 'Have a private chat',
+    link: 'https://t.me/its_hmny',
+    description: 'Private message',
   },
   {
-    size: 'col-span-2',
+    size: 'medium',
     icon: '/socials/Medium.svg',
-    href: 'https://dev.to/its_hmny',
+    link: 'https://dev.to/its_hmny',
     description: 'Read my articles and blogposts',
   },
   {
-    size: 'col-span-1',
+    size: 'small',
     icon: '/socials/Email.svg',
-    href: 'mailto:guidi.enea@gmail.com',
+    link: 'mailto:guidi.enea@gmail.com',
     description: 'Send business enquiries',
   },
-] as const;
+];
