@@ -1,11 +1,15 @@
-import ContactSection from '@hmny.dev/composite/ContactSection';
 import WorkExperiences from '@hmny.dev/data/WorkExperiences';
 import Laptop from '@hmny.dev/ui/Laptop';
 import NonEuclideanCube from '@hmny.dev/ui/NonEuclideanCube';
+import Phone from '@hmny.dev/ui/Phone';
 import Spinner from '@hmny.dev/ui/Spinner';
 import { Github } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
+
+// TODO(hmny): Should try View to manage everything through one canvas
+// ? https://github.com/pmndrs/drei?tab=readme-ov-file#view
 
 function Landing() {
   return (
@@ -40,7 +44,8 @@ function Landing() {
   );
 }
 
-function WorkExperience() { // TODO(hmny): Should move some basic pieces to 'components' (tags, roadmap, ...)
+function WorkExperience() {
+  // TODO(hmny): Should move some basic pieces to 'components' (tags, roadmap, ...)
   return (
     <section className='flex h-auto min-h-screen w-screen flex-row items-center justify-evenly bg-black align-middle text-white max-lg:h-auto max-lg:min-h-screen max-lg:flex-col-reverse'>
       {/* First half of the page */}
@@ -97,12 +102,150 @@ function WorkExperience() { // TODO(hmny): Should move some basic pieces to 'com
   );
 }
 
+function Contacts() {
+  return (
+    <section className='flex h-screen w-screen items-center justify-evenly bg-black align-middle text-white max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
+      <div className='h-screen w-5/12 max-lg:h-[40vh] max-lg:w-screen'>
+        <Phone />
+      </div>
+
+      <div className='w-6/12 p-8 max-lg:h-auto max-lg:w-screen'>
+        <h3 className='font-italic mb-3 text-3xl text-orange-400'>📱 Let's keep in touch!</h3>
+        <p className='text-md mb-10 text-justify text-gray-500'>
+          I'm always open to new opportunities, collaborations, and friendly conversations. Feel free to drop me a line
+          if you have a project in mind, want to discuss the latest tech trends or just want to connect. Your feedback
+          and ideas are always welcome! Looking forward to hearing from you soon!
+        </p>
+        <div className='m-7 grid auto-rows-[192px] grid-cols-3 gap-4'>
+          {/* One small, one medium: The link to my resume and  GitHub profile */}
+          <div className='col-span-1 row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
+            <a
+              target='_blank'
+              href='/Resume.pdf'
+              className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
+            >
+              Download my resume
+            </a>
+            <Image
+              width={80}
+              height={80}
+              alt='Resume link'
+              src='/socials/Resume.svg'
+              className='self-center max-md:h-10 max-md:w-10'
+            />
+          </div>
+          <div className='col-span-2 row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
+            <a
+              target='_blank'
+              href='https://www.github.com/its-hmny'
+              className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
+            >
+              Enough talk! Let me see the code
+            </a>
+            <Image
+              width={80}
+              height={80}
+              alt='GitHub link'
+              src='/socials/GitHub.svg'
+              className='self-center max-md:h-10 max-md:w-10 dark:invert'
+            />
+          </div>
+
+          {/* Three small boxes: LinkedIn, Twitter, and Telegram */}
+          <div className='row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
+            <a
+              target='_blank'
+              href='https://www.linkedin.com/in/enea-guidi/'
+              className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
+            >
+              Past work experience and skills
+            </a>
+            <Image
+              width={80}
+              height={80}
+              alt='LinkedIn link'
+              src='/socials/LinkedIn.svg'
+              className='self-center max-md:h-10 max-md:w-10'
+            />
+          </div>
+          <div className='row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
+            <a // TODO (hmny): Find new X.com SVG logo
+              target='_blank'
+              href='https://twitter.com/its_hmny'
+              className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
+            >
+              See my posts and discussions
+            </a>
+            <Image
+              width={80}
+              height={80}
+              alt='Twitter link'
+              src='/socials/Twitter.svg'
+              className='self-center max-md:h-10 max-md:w-10'
+            />
+          </div>
+          <div className='row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
+            <a
+              target='_blank'
+              href='https://t.me/its_hmny'
+              className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
+            >
+              Have a private chat with me
+            </a>
+            <Image
+              width={80}
+              height={80}
+              alt='Telegram link'
+              src='/socials/Telegram.svg'
+              className='self-center max-md:h-10 max-md:w-10'
+            />
+          </div>
+
+          {/* One medium, one small box: Personal blog and e-mail for business enquiries */}
+          <div className='col-span-2 row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
+            <a
+              target='_blank'
+              href='https://dev.to/its_hmny'
+              className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
+            >
+              Read my articles and blogposts
+            </a>
+            <Image
+              width={80}
+              height={80}
+              alt='Medium link'
+              src='/socials/Medium.svg'
+              className='self-center max-md:h-10 max-md:w-10 dark:invert'
+            />
+          </div>
+          <div className='row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900'>
+            <a
+              target='_blank'
+              href='mailto:guidi.enea@gmail.com'
+              className='font-italic mb-3 text-center text-xl text-lime-400 hover:underline max-sm:text-sm'
+            >
+              Send business enquiries
+            </a>
+            <Image
+              width={80}
+              height={80}
+              alt='Email link'
+              src='/socials/Email.svg'
+              className='self-center max-md:h-10 max-md:w-10'
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
     <>
       <Landing />
       <WorkExperience />
-      <ContactSection />
+      <Contacts />
     </>
   );
 }
