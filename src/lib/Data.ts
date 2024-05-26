@@ -1,10 +1,19 @@
-import { Bitcoin, ServerCog, Store } from 'lucide-react';
+import { Bitcoin, ServerCog, Store, type LucideIcon } from 'lucide-react';
 
-export const Jobs = [
+export type Job = {
+  role: string;
+  icon: LucideIcon;
+  skills: string[];
+  description: string;
+  company: { name: string; website: string };
+  period: { start: string | Date; end: string | Date };
+};
+
+export const Jobs: Job[] = [
   {
     icon: Bitcoin,
-    role: 'Backend Developer',
-    period: ['October 2022', 'Present'],
+    role: 'Backend Developer (Blockchain)',
+    period: { start: 'October 2022', end: 'Present' },
     company: { name: 'BKN301', website: 'https://bkn301.com/' },
     skills: ['Golang', 'C#', 'Python', 'Stellar', 'Docker', 'Terraform'],
     description:
@@ -13,10 +22,10 @@ export const Jobs = [
 
   {
     icon: ServerCog,
-    role: 'Fullstack Developer',
-    period: ['February 2022', 'October 2022'],
+    role: 'Fullstack Developer (Web3)',
+    period: { start: 'February 2022', end: 'October 2022' },
     company: { name: 'Moonia', website: 'https://www.moonia.it/' },
-    skills: ['Solidity', 'Typescript', 'Ethereum', 'Solana', 'Hardhat'],
+    skills: ['Solidity', 'Typescript', 'Hardhat', 'Ethereum', 'Solana'],
     description:
       "Developed, tested and released two NFT collections on both Ethereum and Solana with special focus on maximizing cost efficiency. Designed and developed the MVP for 'Moonium': a SaaS product that aimed to simplify the management, discovery and interaction of Web3 communities (especially the ones spanning across multiple blockchains).",
   },
@@ -24,13 +33,13 @@ export const Jobs = [
   {
     icon: Store,
     role: 'Fullstack Developer',
-    period: ['March 2021', 'October 2022'],
+    period: { start: 'March 2021', end: 'October 2022' },
     company: { name: 'Botika', website: 'https://botika.ai/' },
     skills: ['Golang', 'Typescript', 'Next.js', 'Nest.js', 'Python'],
     description:
       "Developed 'Meeters', a webapp for the organization, management and participation to virtual fairs/expositions during the Covid-19 pandemic. The platform has been used by national and international fairs with up-to 7.000+ online simultaneous users.",
   },
-] as const;
+];
 
 export const Contacts = [
   {
