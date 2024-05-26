@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
-import { Ubuntu } from 'next/font/google'; // TODO(hmny): Change the font as well
+import { Ubuntu } from 'next/font/google';
 
 import './index.css';
 
 const inter = Ubuntu({ weight: '400', subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  // TODO(hmny): Add full metadata generation
   title: 'Enea Guidi',
   icons: '/PenroseTriangle.png',
   description: 'TODO as well',
