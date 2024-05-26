@@ -1,33 +1,44 @@
-import { Bitcoin, ServerCog, Store, type LucideIcon } from 'lucide-react';
+import { Bitcoin, Network, ServerCog, Store, type LucideIcon } from 'lucide-react';
+import { type ReactNode } from 'react';
 
 export type Job = {
   role: string;
   icon: LucideIcon;
   skills: string[];
-  description: string;
+  description: ReactNode;
   company: { name: string; website: string };
   period: { start: string | Date; end: string | Date };
 };
 
 export const Jobs: Job[] = [
   {
-    icon: Bitcoin,
-    role: 'Backend Developer (Blockchain)',
-    period: { start: 'October 2022', end: 'Present' },
+    icon: Network,
+    role: 'Team Leader - Core System Team',
+    period: { start: 'December 2023', end: 'Present' },
     company: { name: 'BKN301', website: 'https://bkn301.com/' },
-    skills: ['Golang', 'C#', 'Python', 'Stellar', 'Docker', 'Terraform'],
+    skills: ['C#', '.NET Core', 'Playwright', 'Docker', 'Kubernetes'],
     description:
-      "Designed and implemented '301chain': a scalable Closed Payment Circuit (CPC), based on Stellar blockchain, capable of handling 2+ Mln dollars in daily transactions. Contributed to the design and development of BKN301's core banking system ('301core') as well as the backend of '301wallet', the company instant card issuing product.",
+      "Contributed to the design and development of '301core': BKN301's Core Banking systems and foundation of BKN301's flagship product: the Banking-as-a-Service suite. Managed priorities and business requirements for the whole development team, while enabling quick iteration on the product itself. Worked in tight loop with compliance, administrative and technical offices of multiple international banking institutions.",
+  },
+
+  {
+    icon: Bitcoin,
+    role: 'Backend Developer - Blockchain Team',
+    period: { start: 'October 2022', end: 'December 2023' },
+    company: { name: 'BKN301', website: 'https://bkn301.com/' },
+    skills: ['Golang', 'Python', 'Terraform', 'Stellar', 'Docker'],
+    description:
+      "Designed and implemented '301chain': a scalable and robust Closed Payment Circuit (CPC), based on the Stellar blockchain, capable of handling millions of dollars in daily transactions. Worked on R&D project '301stablecoin' aimed at releasing the first stablecoin based on a basket of multiple FIAT currencies as collateral to the token value.",
   },
 
   {
     icon: ServerCog,
-    role: 'Fullstack Developer (Web3)',
+    role: 'Fullstack Developer - Web3',
     period: { start: 'February 2022', end: 'October 2022' },
     company: { name: 'Moonia', website: 'https://www.moonia.it/' },
     skills: ['Solidity', 'Typescript', 'Hardhat', 'Ethereum', 'Solana'],
     description:
-      "Developed, tested and released two NFT collections on both Ethereum and Solana with special focus on maximizing cost efficiency. Designed and developed the MVP for 'Moonium': a SaaS product that aimed to simplify the management, discovery and interaction of Web3 communities (especially the ones spanning across multiple blockchains).",
+      "Developed, tested and released two NFT collections on Ethereum and Solana blockchains with special focus on maximizing cost efficiency. Designed and developed the MVP for 'Moonium': a SaaS product that aimed to simplify the management, discovery and interaction of Web3 communities (especially the ones spanning across multiple blockchains).",
   },
 
   {
@@ -37,7 +48,7 @@ export const Jobs: Job[] = [
     company: { name: 'Botika', website: 'https://botika.ai/' },
     skills: ['Golang', 'Typescript', 'Next.js', 'Nest.js', 'Python'],
     description:
-      "Developed 'Meeters', a webapp for the organization, management and participation to virtual fairs/expositions during the Covid-19 pandemic. The platform has been used by national and international fairs with up-to 7.000+ online simultaneous users.",
+      "Developed 'Meeters', a webapp for the organization, management and participation to virtual fairs and expositions during the Covid-19 pandemic. The platform has been utilized by both national and international fairs with up-to 10.000+ online simultaneous users. Developed custom products for international companies based on their requirements and with a special focus on speed, stability and cost-efficiency.",
   },
 ];
 
