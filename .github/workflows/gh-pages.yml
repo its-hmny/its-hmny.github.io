@@ -33,15 +33,15 @@ jobs:
         uses: actions/configure-pages@v1
 
       - name: Install dependencies
-        run: yarn install
+        run: pnpm install
       
       - name: Build with Next.js
-        run: yarn build
+        run: pnpm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./dist
+          path: ./out
 
   deploy: # Deployment of the artifact to GitHUb Pages
     needs: build
