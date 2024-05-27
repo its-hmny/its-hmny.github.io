@@ -15,7 +15,8 @@
     "plugins": [{ "name": "next" }],
     "paths": {
       "@hmny.dev/lib/*": ["./src/lib/*"],
-      "@hmny.dev/ui/*": ["./src/components/*"]
+      "@hmny.dev/ui/*": ["./src/components/*"],
+      "@hmny.dev/3d/*": ["./src/components/3d_models/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
