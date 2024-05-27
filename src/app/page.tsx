@@ -93,11 +93,11 @@ function ContactsList() {
           if you have a project in mind, want to discuss the latest tech trends or just want to connect. Your feedback
           and ideas are always welcome! Looking forward to hearing from you soon!
         </p>
-        <div className='m-7 grid auto-rows-[192px] grid-cols-3 gap-4'>
+        <div className='m-7 grid auto-rows-[192px] grid-cols-3 gap-4 max-sm:grid-cols-4'>
           {Contacts.map(c => (
             <div
               key={c.link}
-              className={`${c.size === 'small' ? 'col-span-1' : 'col-span-2'} row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle dark:bg-neutral-900`}
+              className={`${c.size === 'small' ? 'col-span-1' : 'col-span-2'} row-span-1 flex flex-col justify-center rounded-xl border-2 border-slate-400/10 bg-neutral-100 p-4 align-middle max-sm:col-span-2 dark:bg-neutral-900`}
             >
               <Link
                 href={c.link}
