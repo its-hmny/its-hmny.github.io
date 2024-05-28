@@ -1,12 +1,14 @@
 import Laptop from '@hmny.dev/3d/Laptop';
 import NonEuclideanCube from '@hmny.dev/3d/NonEuclideanCube';
 import Phone from '@hmny.dev/3d/Phone';
-import { Contacts, Jobs } from '@hmny.dev/lib/Data';
+import { Contacts, Jobs, Projects } from '@hmny.dev/lib/Data';
+import Carousel from '@hmny.dev/ui/Carousel';
 import * as Contact from '@hmny.dev/ui/Contact';
 import * as Job from '@hmny.dev/ui/Job';
 import Spinner from '@hmny.dev/ui/Spinner';
 import * as Timeline from '@hmny.dev/ui/Timeline';
 import { Github } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
@@ -76,6 +78,28 @@ export default function Home() {
             <NonEuclideanCube />
           </Suspense>
         </div>
+      </section>
+
+      <section className='h-full w-full flex-col justify-evenly bg-black p-20 text-white'>
+        <h3 className='font-italic mb-3 text-3xl text-orange-400'>💼 My work experience</h3>
+        <p className='text-md mb-10 text-justify text-gray-500'>
+          Don't let my young age fool you! In my previous work experiences I was fortunate enough to explore and broaden
+          my skillset: from delving into the intricacies of blockchain technology to exploring the creative realms of 3D
+          development, I bring a diverse range of expertise to the table.
+        </p>
+
+        <Carousel>
+          {Projects.map((p, i) => (
+            <div
+              key={i}
+              className='relative h-96 w-72 flex-shrink-0 flex-row justify-center rounded-lg bg-gradient-to-br from-neutral-800 to-neutral-900 p-3'
+            >
+              <p className='mb-2 text-center text-2xl text-orange-400'>{p.name}</p>
+              <p className='text-white-500 mb-6 text-center text-lg'>{p.description}</p>
+              <Image height={200} width={200} alt={p.name} src={p.static.logo} className='m-[auto]' />
+            </div>
+          ))}
+        </Carousel>
       </section>
 
       <section className='flex h-screen w-screen items-center justify-evenly bg-black align-middle text-white max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>

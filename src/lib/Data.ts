@@ -52,6 +52,75 @@ export const Jobs: Job[] = [
   },
 ];
 
+export type Project = {
+  name: string;
+  tags: string[];
+  description: string;
+  static: { logo: string; readme: string };
+};
+
+export const Projects: Project[] = [
+  {
+    name: '3D Cellular Automata',
+    tags: ['React', 'three.js', 'Cellular Automata', '3D Graphics'],
+    description: 'A Three.js webapp to simulate cellular automata in 3D',
+    static: {
+      logo: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/public/logo.png',
+      readme: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/README.md',
+    },
+  },
+
+  {
+    name: 'MyPantryPal',
+    tags: ['Mobile Dev', 'Ionic', 'Capacitor', 'Groceries', 'Pantry Tracker'],
+    description: 'Mobile app to keep track of your grocery list via barcode',
+    static: {
+      logo: 'https://raw.githubusercontent.com/its-hmny/MyPantryPal/main/public/assets/icon/icon.png',
+      readme: 'https://raw.githubusercontent.com/its-hmny/MyPantryPal/main/README.md',
+    },
+  },
+
+  {
+    name: '3D Cellular Automata',
+    description: 'A Three.js webapp to simulate cellular automata in 3D',
+    tags: ['React', 'three.js', 'Cellular Automata', '3D Graphics'],
+    static: {
+      logo: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/public/logo.png',
+      readme: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/README.md',
+    },
+  },
+
+  {
+    name: '3D Cellular Automata',
+    description: 'A Three.js webapp to simulate cellular automata in 3D',
+    tags: ['React', 'three.js', 'Cellular Automata', '3D Graphics'],
+    static: {
+      logo: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/public/logo.png',
+      readme: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/README.md',
+    },
+  },
+
+  {
+    name: '3D Cellular Automata',
+    description: 'A Three.js webapp to simulate cellular automata in 3D',
+    tags: ['React', 'three.js', 'Cellular Automata', '3D Graphics'],
+    static: {
+      logo: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/public/logo.png',
+      readme: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/README.md',
+    },
+  },
+
+  {
+    name: '3D Cellular Automata',
+    description: 'A Three.js webapp to simulate cellular automata in 3D',
+    tags: ['React', 'three.js', 'Cellular Automata', '3D Graphics'],
+    static: {
+      logo: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/public/logo.png',
+      readme: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/README.md',
+    },
+  },
+];
+
 export type Contact = { size: string; icon: string; link: string; description: string };
 
 export const Contacts: Contact[] = [
