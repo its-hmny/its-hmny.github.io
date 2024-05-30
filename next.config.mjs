@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const config = {
-  output: 'export', // Opt-in to static site genration (since we deploy on GitHub pages)
+  // output: 'export', // Opt-in to static site genration (since we deploy on GitHub pages)
+
+  images: {
+    remotePatterns: [
+      { protocol: 'https', hostname: 'raw.githubusercontent.com' }
+    ],
+  },
 
   // ! A must do operation when having <Suspense /> boundaries in a static generated site (SSG)
   // ! https://nextjs.org/docs/app/building-your-application/deploying#streaming-and-suspense

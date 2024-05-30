@@ -61,12 +61,42 @@ export type Project = {
 
 export const Projects: Project[] = [
   {
+    name: 'its-hmny.github.io',
+    tags: ['React', 'Portfolio', 'three.js', '3D'],
+    description: 'My personal website, hosted at https://its-hmny.github.io',
+    static: {
+      readme: 'https://raw.githubusercontent.com/its-hmny/its-hmny.github.io/main/README.md',
+      logo: 'https://raw.githubusercontent.com/its-hmny/its-hmny.github.io/main/public/PenroseTriangle.png',
+    },
+  },
+
+  {
     name: '3D Cellular Automata',
     tags: ['React', 'three.js', 'Cellular Automata', '3D Graphics'],
     description: 'A Three.js webapp to simulate cellular automata in 3D',
     static: {
-      logo: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/public/logo.png',
       readme: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/README.md',
+      logo: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/public/logo.png',
+    },
+  },
+
+  {
+    name: 'Choreia',
+    tags: ['golang', 'Static Analysis', 'Choreography Automata'],
+    description: 'A static analyzer to generate Choreography Automata from Go source',
+    static: {
+      readme: 'https://raw.githubusercontent.com/its-hmny/Choreia/main/README.md',
+      logo: 'https://raw.githubusercontent.com/egonelbre/gophers/master/vector/science/scientist.svg',
+    },
+  },
+
+  {
+    name: 'ChimeraScript',
+    tags: ['golang', 'Static Analysis', 'Choreography Automata'],
+    description: 'A suit of Python scripts for my everyday usage',
+    static: {
+      readme: 'https://raw.githubusercontent.com/its-hmny/ChimeraScript/main/README.md',
+      logo: 'https://raw.githubusercontent.com/its-hmny/ChimeraScript/main/assets/ChimeraScript.png',
     },
   },
 
@@ -75,48 +105,8 @@ export const Projects: Project[] = [
     tags: ['Mobile Dev', 'Ionic', 'Capacitor', 'Groceries', 'Pantry Tracker'],
     description: 'Mobile app to keep track of your grocery list via barcode',
     static: {
-      logo: 'https://raw.githubusercontent.com/its-hmny/MyPantryPal/main/public/assets/icon/icon.png',
       readme: 'https://raw.githubusercontent.com/its-hmny/MyPantryPal/main/README.md',
-    },
-  },
-
-  {
-    name: '3D Cellular Automata',
-    description: 'A Three.js webapp to simulate cellular automata in 3D',
-    tags: ['React', 'three.js', 'Cellular Automata', '3D Graphics'],
-    static: {
-      logo: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/public/logo.png',
-      readme: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/README.md',
-    },
-  },
-
-  {
-    name: '3D Cellular Automata',
-    description: 'A Three.js webapp to simulate cellular automata in 3D',
-    tags: ['React', 'three.js', 'Cellular Automata', '3D Graphics'],
-    static: {
-      logo: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/public/logo.png',
-      readme: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/README.md',
-    },
-  },
-
-  {
-    name: '3D Cellular Automata',
-    description: 'A Three.js webapp to simulate cellular automata in 3D',
-    tags: ['React', 'three.js', 'Cellular Automata', '3D Graphics'],
-    static: {
-      logo: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/public/logo.png',
-      readme: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/README.md',
-    },
-  },
-
-  {
-    name: '3D Cellular Automata',
-    description: 'A Three.js webapp to simulate cellular automata in 3D',
-    tags: ['React', 'three.js', 'Cellular Automata', '3D Graphics'],
-    static: {
-      logo: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/public/logo.png',
-      readme: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/README.md',
+      logo: 'https://raw.githubusercontent.com/its-hmny/MyPantryPal/main/public/assets/icon/icon.png',
     },
   },
 ];

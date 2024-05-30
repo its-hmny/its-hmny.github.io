@@ -8,7 +8,7 @@ export default function Carousel({ children }: Props) {
   const [direction, setDirection] = useState<1 | -1>(1);
   const [offset, setOffset] = useState(0);
 
-  const [min, step, max] = useMemo(() => [0, 10, 50], []);
+  const [min, step, max] = useMemo(() => [0, 11, 22], []);
 
   const advance = useCallback(() => {
     const updated = offset + step * direction;
@@ -18,7 +18,7 @@ export default function Carousel({ children }: Props) {
   }, [offset, direction, max, min, step]);
 
   useEffect(() => {
-    const id = setTimeout(advance, 1500);
+    const id = setTimeout(advance, 2000);
     return () => clearTimeout(id);
   }, [advance]);
 
