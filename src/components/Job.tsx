@@ -1,4 +1,4 @@
-import { type Job } from '@hmny.dev/lib/Data';
+import { type Job } from '@hmny.dev/lib/types';
 import Link from 'next/link';
 
 export function Title({ job }: { job: Job }) {

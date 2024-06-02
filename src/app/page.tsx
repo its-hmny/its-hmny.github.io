@@ -1,7 +1,7 @@
 import Laptop from '@hmny.dev/3d/Laptop';
 import NonEuclideanCube from '@hmny.dev/3d/NonEuclideanCube';
 import Phone from '@hmny.dev/3d/Phone';
-import { Contacts, Jobs } from '@hmny.dev/lib/Data';
+import { Contacts, Jobs } from '@hmny.dev/lib/data';
 import * as Contact from '@hmny.dev/ui/Contact';
 import * as Job from '@hmny.dev/ui/Job';
 import Spinner from '@hmny.dev/ui/Spinner';

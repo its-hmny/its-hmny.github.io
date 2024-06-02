@@ -1,14 +1,5 @@
-import { Bitcoin, Network, ServerCog, Store, type LucideIcon } from 'lucide-react';
-import { type ReactNode } from 'react';
-
-export type Job = {
-  role: string;
-  icon: LucideIcon;
-  skills: string[];
-  description: ReactNode;
-  company: { name: string; website: string };
-  period: { start: string | Date; end: string | Date };
-};
+import { type Contact, type Job } from '@hmny.dev/lib/types';
+import { Bitcoin, Network, ServerCog, Store } from 'lucide-react';
 
 export const Jobs: Job[] = [
   {
@@ -51,8 +42,6 @@ export const Jobs: Job[] = [
       "Developed 'Meeters', a webapp for the organization, management and participation to virtual fairs and expositions during the Covid-19 pandemic. The platform has been utilized by both national and international fairs with up-to 10.000+ online simultaneous users. Developed custom products for international companies based on their requirements and with a special focus on speed, stability and cost-efficiency.",
   },
 ];
-
-export type Contact = { size: string; icon: string; link: string; description: string };
 
 export const Contacts: Contact[] = [
   {

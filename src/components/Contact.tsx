@@ -1,4 +1,4 @@
-import { type Contact } from '@hmny.dev/lib/Data';
+import { type Contact } from '@hmny.dev/lib/types';
 import Image from 'next/image';
 import Link from 'next/link';
 
