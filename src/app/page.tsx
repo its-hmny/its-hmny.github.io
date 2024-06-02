@@ -15,7 +15,7 @@ import { Suspense } from 'react';
 
 export default function Home() {
   return (
-    <main className='bg-theme_bg text-theme_fg'>
+    <main>
       <section className='flex h-screen w-screen items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
         <div className='h-screen w-5/12 max-lg:h-[40vh] max-lg:w-screen'>
           <Suspense fallback={<Spinner />}>
