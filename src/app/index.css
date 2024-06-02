@@ -4,18 +4,17 @@
 
 @layer utilities {
   *::selection {
-    color: theme('colors.white');
-    background-color: theme('colors.lime.400', '#ff9800');
+    color: theme('colors.theme_fg');
+    background-color: theme('colors.theme_secondary.400', '#ff9800');
   }
 }
 
 /* TODO(hmny): Isn't a better way to manage the theme/overide */
 html {
   overflow-x: hidden;
-  background-color: black;
 }
 
-/* Helper class with strange CSS property in 'SplashScreen.tsx' */
+/* Helper class with strange CSS property in 'Spinner.tsx' */
 .circle {
   offset-distance: 0%;
   offset-path: circle(125px at center);

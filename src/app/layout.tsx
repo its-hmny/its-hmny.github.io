@@ -5,8 +5,9 @@ import './index.css';
 
 const inter = Ubuntu({ weight: '400', subsets: ['latin'] });
 
+// TODO(hmny): Add full metadata generation, per-route basis
+// TODO(hmny): Check support for 'vercel/og' with static exports
 export const metadata: Metadata = {
-  // TODO(hmny): Add full metadata generation
   title: 'Enea Guidi',
   icons: '/PenroseTriangle.png',
   description: 'TODO as well',

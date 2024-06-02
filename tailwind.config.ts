@@ -1,14 +1,24 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
+import colors from 'tailwindcss/colors';
 
 const config: Config = {
   content: [
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
 
   theme: {
     extend: {
+      colors: {
+        theme_primary: colors.orange,
+        theme_secondary: colors.lime,
+        theme_bg: colors.black,
+        theme_bg_accent: colors.neutral['900'],
+        theme_fg: colors.white,
+        theme_fg_accent: colors.gray['500'],
+      },
+
       keyframes: { circle: { to: { 'offset-distance': '100%' } } },
       animation: {
         'spin-slow': 'circle 5s linear infinite',
@@ -16,8 +26,6 @@ const config: Config = {
       },
     },
   },
-
-  // ? It seems like Next.js 13 supports only package.json setup
-  // ? plugins: ['prettier-plugin-tailwindcss'],
 };
+
 export default config;

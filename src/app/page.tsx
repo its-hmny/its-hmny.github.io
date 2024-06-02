@@ -11,12 +11,12 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 
 // TODO(hmny): Should try View to manage everything through one canvas
-// ? https://github.com/pmndrs/drei?tab=readme-ov-file#view
+// ? Reference: https://github.com/pmndrs/drei?tab=readme-ov-file#view
 
 export default function Home() {
   return (
-    <main>
-      <section className='flex h-screen w-screen items-center justify-evenly bg-black align-middle text-white max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
+    <main className='bg-theme_bg text-theme_fg'>
+      <section className='flex h-screen w-screen items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
         <div className='h-screen w-5/12 max-lg:h-[40vh] max-lg:w-screen'>
           <Suspense fallback={<Spinner />}>
             <Laptop />
@@ -26,10 +26,12 @@ export default function Home() {
         <div className='w-6/12 p-8 max-lg:h-auto max-lg:w-screen'>
           <div className='mb-3'>
             <h1 className='mb-3 text-4xl font-bold'>
-              👋 Hi there! I'm <span className='text-lime-400'>Enea</span>
+              👋 Hi there! I'm <span className='text-theme_secondary-400'>Enea</span>
             </h1>
-            <h4 className='font-italic mb-3 text-2xl text-orange-400'>Fullstack Developer & Blockchain Specialist</h4>
-            <p className='text-justify text-lg text-gray-500'>
+            <h4 className='font-italic text-theme_primary-400 mb-3 text-2xl'>
+              Fullstack Developer & Blockchain Specialist
+            </h4>
+            <p className='text-theme_fg_accent text-justify text-lg'>
               I architect and deliver unique digital experiences on the Frontend while implementing robust and
               extensible server on the Backend. In order to deliver a reliable solution in the least amount of time I
               adopt already established tech stacks and mix it with some of the most cutting-edge solutions available on
@@ -38,10 +40,7 @@ export default function Home() {
           </div>
 
           <div className='mb-4 mt-8 '>
-            <Link
-              href='https://github.com/its-hmny'
-              className='rounded-full bg-orange-400 px-4 py-4 text-lg text-white'
-            >
+            <Link href='https://github.com/its-hmny' className='bg-theme_primary-400 rounded-full px-4 py-4 text-lg'>
               <Github strokeWidth={2} className='mr-1 inline' />
               <span>See some of my work</span>
             </Link>
@@ -49,11 +48,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='flex h-auto min-h-screen w-screen flex-row items-center justify-evenly bg-black align-middle text-white max-lg:h-auto max-lg:min-h-screen max-lg:flex-col-reverse'>
+      <section className='flex h-auto min-h-screen w-screen flex-row items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col-reverse'>
         {/* First half of the page */}
         <div className='h-full w-6/12 p-10 max-lg:h-auto max-lg:w-screen'>
-          <h3 className='font-italic mb-3 text-3xl text-orange-400'>💼 My work experience</h3>
-          <p className='text-md mb-10 text-justify text-gray-500'>
+          <h3 className='font-italic text-theme_primary-400 mb-3 text-3xl'>💼 My work experience</h3>
+          <p className='text-md text-theme_fg_accent mb-10 text-justify'>
             Don't let my young age fool you! In my previous work experiences I was fortunate enough to explore and
             broaden my skillset: from delving into the intricacies of blockchain technology to exploring the creative
             realms of 3D development, I bring a diverse range of expertise to the table.
@@ -78,14 +77,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='flex h-screen w-screen items-center justify-evenly bg-black align-middle text-white max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
+      <section className='flex h-screen w-screen items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
         <div className='h-screen w-5/12 max-lg:h-[40vh] max-lg:w-screen'>
           <Phone />
         </div>
 
         <div className='w-6/12 p-8 max-lg:h-auto max-lg:w-screen'>
-          <h3 className='font-italic mb-3 text-3xl text-orange-400'>📱 Let's keep in touch!</h3>
-          <p className='text-md mb-10 text-justify text-gray-500'>
+          <h3 className='font-italic text-theme_primary-400 mb-3 text-3xl'>📱 Let's keep in touch!</h3>
+          <p className='text-md text-theme_fg_accent mb-10 text-justify'>
             I'm always open to new opportunities, collaborations, and friendly conversations. Feel free to drop me a
             line if you have a project in mind, want to discuss the latest tech trends or just want to connect. Your
             feedback and ideas are always welcome! Looking forward to hearing from you soon!
