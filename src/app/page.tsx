@@ -5,6 +5,7 @@ import { Contacts, Jobs, Projects } from '@hmny.dev/lib/Data';
 import Carousel from '@hmny.dev/ui/Carousel';
 import * as Contact from '@hmny.dev/ui/Contact';
 import * as Job from '@hmny.dev/ui/Job';
+import Modal from '@hmny.dev/ui/Modal';
 import * as Project from '@hmny.dev/ui/Project';
 import Spinner from '@hmny.dev/ui/Spinner';
 import * as Timeline from '@hmny.dev/ui/Timeline';
@@ -96,6 +97,10 @@ export default function Home() {
             <Project.Summary key={p.name} project={p} />
           ))}
         </Carousel>
+
+        <Modal>
+          <h1>Hi there baby</h1>
+        </Modal>
       </section>
 
       <section className='flex h-screen w-screen items-center justify-evenly bg-black align-middle text-white max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
