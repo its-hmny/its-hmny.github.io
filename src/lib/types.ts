@@ -17,3 +17,17 @@ export type Contact = {
   description: string;
 };
 
+export type Article = {
+  slug: string;
+
+  title: string;
+  date: string;
+  coverImage: string;
+  //   ogImage: { url: string };
+
+  author: { name: string; picture: string };
+
+  excerpt: string;
+  content: string;
+  //   preview?: boolean;
+};
