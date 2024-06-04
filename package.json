@@ -10,14 +10,12 @@
     "type": "git",
     "url": "https://github.com/its-hmny/its-hmny.github.io.git"
   },
-
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
-
   "dependencies": {
     "@react-three/fiber": "^8.16.6",
     "next": "14.2.3",
@@ -25,7 +23,6 @@
     "react-dom": "^18.3.1",
     "three": "^0.158.0"
   },
-
   "devDependencies": {
     "@react-spring/core": "^9.7.3",
     "@react-spring/three": "^9.7.3",
@@ -39,10 +36,13 @@
     "@typescript-eslint/parser": "^6.21.0",
     "@vitejs/plugin-react-swc": "^3.6.0",
     "autoprefixer": "^10.4.19",
+    "classnames": "^2.5.1",
+    "date-fns": "^3.6.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.292.0",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
@@ -51,7 +51,6 @@
     "typescript": "^5.4.5",
     "vite": "^4.5.3"
   },
-
   "prettier": {
     "plugins": [
       "prettier-plugin-tailwindcss"

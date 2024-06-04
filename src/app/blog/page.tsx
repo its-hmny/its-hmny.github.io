@@ -1,34 +1,39 @@
 import { getArticlesList } from '@hmny.dev/lib/blog';
+import * as Article from '@hmny.dev/ui/Articles';
+import Link from 'next/link';
 
-export default function Blog() {
-  const [main, ...others] = getArticlesList();
+export default async function Blog() {
+  const [main, ...others] = await getArticlesList();
+
+  const subtitle = `  {
+    "articles_count": ${others.length + 1},
+    "updated_at": "${main.date}",
+    "topics": ["tech", "coding", "languages"],
+    "disclaimer": "Opinions are my own, let's discuss"
+  }`;
 
   return (
-    <main>
-      <div className='container mx-auto px-5'>
-        <section className='mb-16 mt-16 flex flex-col items-center md:mb-12 md:flex-row md:justify-between'>
-          <h1 className='text-5xl font-bold leading-tight tracking-tighter md:pr-8 md:text-8xl'>Blog.</h1>
-          <h4 className='mt-5 text-center text-lg md:pl-8 md:text-left'>
-            A statically generated blog example using{' '}
-            <a
-              href='https://nextjs.org/'
-              className='hover:text-theme_secondary-500 underline transition-colors duration-200'
-            >
-              Next.js
-            </a>
-            and something else.
-          </h4>
-        </section>
+    <main className='container mx-auto px-5'>
+      <section className='mb-8 mt-8 flex flex-col items-center md:mb-12 md:flex-row md:justify-between'>
+        <h1 className='text-5xl font-bold leading-tight tracking-tighter md:pr-8'>
+          <Link href='/' className='text-theme_primary-500 hover:underline'>
+            its_hmny
+          </Link>
+          's blog.
+        </h1>
+        <pre>{subtitle}</pre>
+      </section>
 
-        <h3 className='text-theme_primary-300 text-xl'>Main article</h3>
-        <pre className='m-8 mb-16'>{JSON.stringify(main, null, 2)}</pre>
+      <Article.Hero post={main} />
 
-        <h3 className='text-theme_primary-300 text-xl'>Other articles</h3>
-        <pre>{JSON.stringify(others, null, 2)}</pre>
-
-        {/* <Article.Hero post={main} /> */}
-        {/* {others.length > 0 && <MoreStories posts={others} />} */}
-      </div>
+      <section>
+        <h2 className='mb-8 text-5xl font-bold leading-tight tracking-tighter'>More Stories</h2>
+        <div className='mb-32 grid grid-cols-1 gap-x-16 gap-y-20 md:grid-cols-2'>
+          {others.map(p => (
+            <Article.Preview key={p.slug} post={p} />
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
