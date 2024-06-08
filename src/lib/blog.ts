@@ -6,13 +6,12 @@ import { join } from 'path';
 const ArticlesDirectory = join(process.cwd(), 'articles');
 
 export async function getArticleBySlug(slug: string) {
-  const realSlug = decodeURI(slug).replace(/\.md$/, '');
-  const fullPath = join(ArticlesDirectory, `${realSlug}.md`);
-  const fileContents = await readFile(fullPath, 'utf8');
+  const unescapedPath = decodeURI(slug).replace(/\.md$/, '');
+  const fileContent = await readFile(join(ArticlesDirectory, `${unescapedPath}.md`), 'utf8');
 
-  const { data, content } = matter(fileContents);
-
-  return { ...data, slug: realSlug, content } as Article;
+  // Extracts the metadata in the .md header from the articles content
+  const { data: metadata, content } = matter(fileContent);
+  return { ...metadata, date: new Date(metadata.date), slug: unescapedPath, content } as Article;
 }
 
 export async function getArticlesList(): Promise<Article[]> {
@@ -20,5 +19,5 @@ export async function getArticlesList(): Promise<Article[]> {
   const posts = await Promise.all(slugs.map(slug => getArticleBySlug(slug)));
 
   // Before returning sorts the posts by date in descending order
-  return posts.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  return posts.sort((a, b) => (a.date > b.date ? -1 : 1));
 }

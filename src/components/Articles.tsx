@@ -2,11 +2,8 @@ import { type Article } from '@hmny.dev/lib/types';
 import Image from 'next/image';
 import Link from 'next/link';
 
-type Props = { post: Article };
-
-export function Hero({ post }: Props) {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' } as const;
-  const fmtDate = new Intl.DateTimeFormat(undefined, options).format(new Date(post.date));
+export function Hero({ post }: Readonly<{ post: Article }>) {
+  const dateFmtOpt = { year: 'numeric', month: 'long', day: 'numeric' } as const;
 
   return (
     <section>
@@ -16,7 +13,7 @@ export function Hero({ post }: Props) {
             <Image
               width={1300}
               height={630}
-              src={post.coverImage}
+              src={post.cover}
               className='w-full shadow-sm'
               alt={`Cover Image for ${post.title}`}
             />
@@ -31,8 +28,8 @@ export function Hero({ post }: Props) {
             </Link>
           </h3>
           <div className='mb-4 text-lg md:mb-0'>
-            <time className='text-theme_secondary-500' dateTime={post.date}>
-              {fmtDate}
+            <time className='text-theme_secondary-500' dateTime={post.date.toISOString()}>
+              {new Intl.DateTimeFormat(undefined, dateFmtOpt).format(post.date)}
             </time>
           </div>
         </div>
@@ -54,9 +51,8 @@ export function Hero({ post }: Props) {
   );
 }
 
-export function Preview({ post }: Props) {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' } as const;
-  const fmtDate = new Intl.DateTimeFormat(undefined, options).format(new Date(post.date));
+export function Preview({ post }: Readonly<{ post: Article }>) {
+  const dateFmtOpt = { year: 'numeric', month: 'long', day: 'numeric' } as const;
 
   return (
     <div>
@@ -66,7 +62,7 @@ export function Preview({ post }: Props) {
             <Image
               width={1300}
               height={630}
-              src={post.coverImage}
+              src={post.cover}
               className='w-full shadow-sm'
               alt={`Cover Image for ${post.title}`}
             />
@@ -79,8 +75,8 @@ export function Preview({ post }: Props) {
         </Link>
       </h3>
       <div className='mb-4 text-lg'>
-        <time className='text-theme_secondary-500' dateTime={post.date}>
-          {fmtDate}
+        <time className='text-theme_secondary-500' dateTime={post.date.toISOString()}>
+          {new Intl.DateTimeFormat(undefined, dateFmtOpt).format(post.date)}
         </time>
       </div>
       <p className='mb-4 text-lg leading-relaxed'>{post.excerpt}</p>

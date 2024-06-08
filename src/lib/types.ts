@@ -18,16 +18,14 @@ export type Contact = {
 };
 
 export type Article = {
+  date: Date;
   slug: string;
-
   title: string;
-  date: string;
-  coverImage: string;
-  //   ogImage: { url: string };
 
-  author: { name: string; picture: string };
-
+  cover: string;
   excerpt: string;
   content: string;
-  //   preview?: boolean;
+  
+  //   ogImage: { url: string };  
+  author: { name: string; picture: string };
 };

@@ -7,7 +7,7 @@ export default async function Blog() {
 
   const subtitle = `  {
     "articles_count": ${others.length + 1},
-    "updated_at": "${main.date}",
+    "updated_at": "${main.date.toISOString()}",
     "topics": ["tech", "coding", "languages"],
     "disclaimer": "Opinions are my own, let's discuss"
   }`;
