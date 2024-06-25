@@ -6,7 +6,7 @@ export function Hero({ post }: Readonly<{ post: Article }>) {
   const dateFmtOpt = { year: 'numeric', month: 'long', day: 'numeric' } as const;
 
   return (
-    <section>
+    <article>
       <div className='mb-8 md:mb-16'>
         <div className='sm:mx-0'>
           <Link href={`/blog/${post.slug}`} aria-label={post.title}>
@@ -47,7 +47,7 @@ export function Hero({ post }: Readonly<{ post: Article }>) {
           </div>
         </div>
       </div>
-    </section>
+    </article>
   );
 }
 
@@ -55,7 +55,7 @@ export function Preview({ post }: Readonly<{ post: Article }>) {
   const dateFmtOpt = { year: 'numeric', month: 'long', day: 'numeric' } as const;
 
   return (
-    <div>
+    <article>
       <div className='mb-5'>
         <div className='sm:mx-0'>
           <Link href={`/blog/${post.slug}`} aria-label={post.title}>
@@ -90,6 +90,6 @@ export function Preview({ post }: Readonly<{ post: Article }>) {
         />
         <div className='text-xl font-bold'>{post.author.name}</div>
       </div>
-    </div>
+    </article>
   );
 }
