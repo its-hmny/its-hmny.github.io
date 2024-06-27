@@ -6,12 +6,14 @@ type Props = Readonly<{ children: React.ReactNode }>;
 export default async function RootLayout({ children }: Props) {
   const [main, ...others] = await getArticlesList();
 
+  // This is purposefully formatted to that when put in the <pre> tag we will
+  // not have any formatting issues, JSON.stringify couldn't make it beautiful.
   const subtitle = `  {
-        "articles_count": ${others.length + 1},
-        "updated_at": "${main.date.toISOString()}",
-        "topics": ["tech", "coding", "languages"],
-        "disclaimer": "Opinions are my own, let's discuss"
-      }`;
+    "articles_count": ${others.length + 1},
+    "updated_at": "${main.date.toISOString()}",
+    "topics": ["tech", "coding", "languages"],
+    "disclaimer": "Opinions are my own, let's discuss"
+  }`;
 
   return (
     <main className='container mx-auto px-5'>
