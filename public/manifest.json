@@ -1,0 +1,10 @@
+{
+    "name": "Enea Guidi's personal website",
+    "short_name": "Enea Guidi (hmny)",
+    "theme_color": "#f97316",
+    "background_color": "#000000",
+    "display": "browser",
+    "orientation": "landscape",
+    "scope": "/",
+    "start_url": "/"
+}
