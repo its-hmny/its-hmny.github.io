@@ -1,5 +1,18 @@
 import { getArticlesList } from '@hmny.dev/lib/blog';
+import { Metadata } from 'next';
 import Link from 'next/link';
+
+// TODO(hmny): Check support for 'vercel/og' with static exports
+export const metadata: Metadata = {
+  keywords: ['blog', 'articles', 'tech', 'technology', 'developer', 'works'],
+  description:
+    'Showcase of the work by Enea Guidi, a skilled Fullstack Developer and Blockchain Specialist. Explore reliable, fast, and cutting-edge applications built for various clients using the latest technologies.',
+  robots: { index: true, follow: true },
+  applicationName: "Enea Guidi's (hmny) personal blog",
+  alternates: { canonical: 'https://its-hmny.github.io/blog' },
+
+  // openGraph: { images: [HOME_OG_IMAGE_URL] },s
+};
 
 type Props = Readonly<{ children: React.ReactNode }>;
 
@@ -12,7 +25,7 @@ export default async function RootLayout({ children }: Props) {
     "articles_count": ${others.length + 1},
     "updated_at": "${main.date.toISOString()}",
     "topics": ["tech", "coding", "languages"],
-    "disclaimer": "Opinions are my own, let's discuss"
+    "disclaimer": "Opinions are my own, let's chat"
   }`;
 
   return (

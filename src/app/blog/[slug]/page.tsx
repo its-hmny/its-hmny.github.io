@@ -9,6 +9,15 @@ export async function generateStaticParams() {
   return posts.map(post => ({ slug: post.slug }));
 }
 
+// TODO(hmny): Check support for 'vercel/og' with static exports
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const post = await getArticleBySlug(params.slug);
+  return {
+    description: post.excerpt,
+    alternates: { canonical: `https://its-hmny.github.io/blog/${params.slug}` },
+  };
+}
+
 export default async function Post({ params }: Readonly<{ params: { slug: string } }>) {
   const post = await getArticleBySlug(params.slug);
   if (!post) return notFound();
