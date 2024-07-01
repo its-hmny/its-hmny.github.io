@@ -9,8 +9,10 @@ export async function generateStaticParams() {
   return posts.map(post => ({ slug: post.slug }));
 }
 
+type StaticProps = Readonly<{ params: { slug: string } }>;
+
 // TODO(hmny): Check support for 'vercel/og' with static exports
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: StaticProps) {
   const post = await getArticleBySlug(params.slug);
   return {
     description: post.excerpt,
@@ -18,7 +20,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function Post({ params }: Readonly<{ params: { slug: string } }>) {
+export default async function Post({ params }: StaticProps) {
   const post = await getArticleBySlug(params.slug);
   if (!post) return notFound();
 
