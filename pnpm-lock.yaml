@@ -9,89 +9,89 @@ importers:
   .:
     dependencies:
       '@react-three/fiber':
-        specifier: ^8.16.6
+        specifier: 8.16.6
         version: 8.16.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.158.0)
       next:
         specifier: 14.2.3
         version: 14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
-        specifier: ^18.3.1
+        specifier: 18.3.1
         version: 18.3.1
       react-dom:
-        specifier: ^18.3.1
+        specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
       three:
-        specifier: ^0.158.0
+        specifier: 0.158.0
         version: 0.158.0
     devDependencies:
       '@react-spring/core':
-        specifier: ^9.7.3
+        specifier: 9.7.3
         version: 9.7.3(react@18.3.1)
       '@react-spring/three':
-        specifier: ^9.7.3
+        specifier: 9.7.3
         version: 9.7.3(@react-three/fiber@8.16.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.158.0))(react@18.3.1)(three@0.158.0)
       '@react-spring/web':
-        specifier: ^9.7.3
+        specifier: 9.7.3
         version: 9.7.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-three/drei':
-        specifier: ^9.105.6
+        specifier: 9.105.6
         version: 9.105.6(@react-three/fiber@8.16.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.158.0))(@types/react@18.3.2)(@types/three@0.158.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.158.0)
       '@types/node':
-        specifier: ^20.12.12
+        specifier: 20.12.12
         version: 20.12.12
       '@types/react':
-        specifier: ^18.3.2
+        specifier: 18.3.2
         version: 18.3.2
       '@types/react-dom':
-        specifier: ^18.3.0
+        specifier: 18.3.0
         version: 18.3.0
       '@types/three':
-        specifier: ^0.158.3
+        specifier: 0.158.3
         version: 0.158.3
       '@typescript-eslint/eslint-plugin':
-        specifier: ^6.21.0
+        specifier: 6.21.0
         version: 6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5)
       '@typescript-eslint/parser':
-        specifier: ^6.21.0
+        specifier: 6.21.0
         version: 6.21.0(eslint@8.57.0)(typescript@5.4.5)
       '@vitejs/plugin-react-swc':
-        specifier: ^3.6.0
+        specifier: 3.6.0
         version: 3.6.0(@swc/helpers@0.5.5)(vite@4.5.3(@types/node@20.12.12))
       autoprefixer:
-        specifier: ^10.4.19
+        specifier: 10.4.19
         version: 10.4.19(postcss@8.4.38)
       eslint:
-        specifier: ^8.57.0
+        specifier: 8.57.0
         version: 8.57.0
       eslint-config-next:
         specifier: 14.2.3
         version: 14.2.3(eslint@8.57.0)(typescript@5.4.5)
       eslint-plugin-react-hooks:
-        specifier: ^4.6.2
+        specifier: 4.6.2
         version: 4.6.2(eslint@8.57.0)
       eslint-plugin-react-refresh:
-        specifier: ^0.4.7
+        specifier: 0.4.7
         version: 0.4.7(eslint@8.57.0)
       lucide-react:
-        specifier: ^0.292.0
+        specifier: 0.292.0
         version: 0.292.0(react@18.3.1)
       postcss:
-        specifier: ^8.4.38
+        specifier: 8.4.38
         version: 8.4.38
       prettier:
-        specifier: ^3.2.5
+        specifier: 3.2.5
         version: 3.2.5
       prettier-plugin-tailwindcss:
-        specifier: ^0.5.14
+        specifier: 0.5.14
         version: 0.5.14(prettier@3.2.5)
       tailwindcss:
-        specifier: ^3.4.3
+        specifier: 3.4.3
         version: 3.4.3
       typescript:
-        specifier: ^5.4.5
+        specifier: 5.4.5
         version: 5.4.5
       vite:
-        specifier: ^4.5.3
+        specifier: 4.5.3
         version: 4.5.3(@types/node@20.12.12)
 
 packages:
@@ -257,6 +257,7 @@ packages:
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
+    deprecated: Use @eslint/config-array instead
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -264,6 +265,7 @@ packages:
 
   '@humanwhocodes/object-schema@2.0.3':
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
+    deprecated: Use @eslint/object-schema instead
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -1210,6 +1212,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   globals@13.24.0:
     resolution: {integrity: sha512-AhO5QUcj8llrbG09iWhPU2B204J1xnPeL8kQmVorSsy+Sjj1sk8gIyh6cUocGmH4L0UuhAJy+hJMRA4mgA4mFQ==}
@@ -1284,6 +1287,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -1885,6 +1889,7 @@ packages:
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rollup@3.29.4:
