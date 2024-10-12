@@ -4,6 +4,10 @@ import Spinner from '@hmny.dev/ui/Spinner';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
+// ! This is not the standard way of doing 'Not Found' pages on Next.js
+// ! but it is required in order to make the custom 404 page work when
+// ! deploying on GitHub pages that requires to provide a '404.html' file. 
+
 export default function NotFound() {
   return (
     <main className='bg-theme_bg text-theme_fg'>
