@@ -18,7 +18,7 @@ function StormTrooper() {
   }, [actions]);
 
   return (
-    <group name='Sketchfab_Scene' ref={ref} dispose={null}>
+    <group name='Sketchfab_Scene' ref={ref as React.MutableRefObject<THREE.Group>} dispose={null}>
       <group name='Sketchfab_model' rotation={[-Math.PI / 2, 0, 0]}>
         <group name='f8ce42897676455090b6ff376356f84cfbx' rotation={[Math.PI / 2, 0, 0]}>
           <group name='Object_2'>
@@ -28,8 +28,8 @@ function StormTrooper() {
                 <skinnedMesh
                   castShadow
                   name='Object_7'
-                  geometry={nodes.Object_7.geometry}
-                  skeleton={nodes.Object_7.skeleton}
+                  geometry={(nodes.Object_7 as THREE.Mesh).geometry}
+                  skeleton={(nodes.Object_7 as THREE.SkinnedMesh).skeleton}
                   material={materials.Stormtroopermat}
                 ></skinnedMesh>
               </group>
