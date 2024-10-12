@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export function Title({ job }: { job: Job }) {
   return (
-    <h3 className='text-theme_fg text-lg font-semibold'>
+    <h3 className='text-lg font-semibold text-theme_fg'>
       <job.icon className='mr-1 inline' />
       {job.role} @{' '}
       <Link href={job.company.website} target='_blank' className='text-theme_primary-500 hover:underline'>
@@ -15,15 +15,15 @@ export function Title({ job }: { job: Job }) {
 
 export function Description({ job }: { job: Job }) {
   return (
-    <div className='text-theme_fg_accent mt-2 text-base font-normal'>
+    <div className='mt-2 text-base font-normal text-theme_fg_accent'>
       <p>{job.description}</p>
       <div className='max-sm:mt-1 max-sm:flex max-sm:flex-row max-sm:flex-wrap max-sm:justify-evenly'>
         {job.skills.map(skill => (
           <span
             key={skill}
-            className='bg-theme_secondary-700 text-theme_secondary-300 mr-2 inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium max-lg:m-[8px]'
+            className='mr-2 inline-flex items-center rounded-full bg-theme_secondary-700 px-2.5 py-0.5 text-xs font-medium text-theme_secondary-300 max-lg:m-[8px]'
           >
-            <span className='bg-theme_secondary-500 me-1 h-2 w-2 rounded-full' />
+            <span className='me-1 h-2 w-2 rounded-full bg-theme_secondary-500' />
             {skill}
           </span>
         ))}
