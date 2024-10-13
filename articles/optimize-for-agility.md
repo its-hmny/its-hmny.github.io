@@ -1,0 +1,115 @@
+---
+title: "Optimize for agility: How to simplify an overengineered codebase"
+date: "2024-10-10"
+
+excerpt: "A story of how a rigid, overengineered and prematurely optimized codebase was transformed through simplification. By focusing on code readability, colocation and predictability  we simplified maintainance costs, allowed for faster updates and reduced the overall complexity of the system."
+
+author:
+  name: Enea Guidi
+  picture: "/blog/hmny.jpeg"
+
+images:
+  og: "/blog/optimize-for-agility/cover_small.webp"
+  cover_large: "/blog/optimize-for-agility/cover_large.jpg"
+  cover_small: "/blog/optimize-for-agility/cover_small.webp"
+---
+
+<p align="center">
+    <img alt="Article cover image" width="600" height="400" src="../public/blog/optimize-for-agility/cover_small.webp">
+    <h1>Optimize for agility: How to simplify an overengineered codebase</h1>
+</p>
+
+## Introduction
+
+At the time of this story I was working for a fintech company, we were actively developing a modular banking product, designed with a service-based architecture in order to be a composable be rapidly integrated by any third party that wanted to provide financial services.
+The core idea of this product was to provide something new in the financial world: a **simple product** that could be integrated **rapidly**. The funny thing? Working on that codebase was everything apart from simple or fast: it often took *weeks* and *herculean efforts* to deliver even the simplest changes.
+
+About 90% of the code was completely unmanageable. The complexity, fragmentation, and micro-abstraction in the code made the process of understanding a feature implementation an ordeal. I'm not talking about novel or intricate logic but  basic features like authentication, external service integrations and basic database operations, tasks most developers have handled numerous times. It was a complete mess.
+
+*In a startup, iteration speed is key to survival*, but the complexity of that setup became a critical choke point. It didn't just slow down new feature development but also turned bug fixing into a headache, leaving the product full of issues while progress ground to a halt. By now, I am  used to hearing: "make it fast, then make it pretty" mantra, the problem was we had neither.
+
+## The problems we faced
+
+### *Microservices done wrong*
+
+Before my time there, someone chose to adopt microservices architecture, it made sense given our modularity requirements. The thing is that no one there had worked with microservices and this inexperience and lack of knowledge about the downside they bring was exactly why it failed.
+
+Since the Dev Team didn't have any idea about how small each service should be they went to an extreme side that I personally called **nanoservices**.
+By that I meant that such services offered only basic features without providing any real abstraction about the domain. Most times we had more configuration files than source code files, in some cases I think we were more on the FaaS spectrum than in the microservice one, for example: every message receiver for RabbitMQ was deployed as a standalone service on Kubernetes for *scalability*.
+
+In such fragmented architecture observability is a must and we lacked everything.When something went wrong, tracking down the issue was nearly impossible. I remember multiple day spent searching for an bug in prod by reading the log of 5/6 services and trying to find a correlation between them.
+
+Even one day by day development wasn't easy, we didn't use a monorepo so every project was its own repository and had its own **handwritten** API clients to communicate with the others. To give you an idea of how difficult it was, for any breaking change in a given API it was required to:
+
+- Find every external reference to the service and update the affected service (we had more than 100 repos and no documentation about how service interacted between each other).
+- Update the necessary code in each service and test it locally by bootstrapping good part of the system (since everything depended on everythin else).
+- Deploy everything at the same time by coordinating PR merges, one time I had to enumerate the PR so that I could remember in which order they had to be closed.
+
+![Me starting to work on said codebases](/blog/optimize-for-agility/dumpster_fire.webp)
+
+### *Overcomplicated Code*
+
+Even by taking each service individually the situation wasn't better, the code was overly abstracted and prematurely optimized at the expense of clarity and readability. The result was that it became a nightmare to maintain or even comprehend what each service was doing. You literally had to dig behind a mountain of abstractions (most of them leaking between each, btw).
+
+The excessive use of interfaces everywhere, without any rationale behind them, added unnecessary indirection and made reading the code and following the logic flow harder than required.
+
+Overall there was a blind (hence wrong) application of Clean Code patterns. We had so many small and useless methods in our classes I even found some where the function name was actually longer than the line of code it encapsulated. It was common to hop between 4/5 files and 15 different methods just to 'replay' the execution flow of basic requests, for more complex processes it was even worse.
+
+To top it all off, there were several unusual and bad practices that I encountered for the first time in my experience, also these contributed in creating even more entropy in an already chaotic project and slowing us down significantly. For example:
+
+- Handwritten SQL queries instead of using 'standard' Entity Framework.
+- Handwritten cron jobs built with Thread.Sleep instead of using 'standard' Quartz or Hangfire.
+- Custom-made CSV and XML deserializer were used instead of using built-in libraries.
+
+While this may not be necessarily bad you have to keep in mind that they were not shared across the services but just copy-pasted. With time they grew apart from eah other and become their own different things making it difficult to have 'standards' for even common operations like DB interactions.
+
+## ... and how we fixed them
+
+![TODO](/blog/optimize-for-agility/tweet.png)
+
+To address the chaos caused by hundreds of isolated repositories, we took a more practical approach (the one that we should've applied from the start in my opinion) and we executed our vision in multiple phases:
+
+1. **Consolidating repositories**: We grouped all of our code into 3/4 monorepos based on business domains, such as: *Core Banking Systems*, *Other Services (Notification, Auth, etc)*, *API Gateways* and *App & Web Clients*. This drastically simplified the process of managing and deploying code.
+
+2. **Removing redundancies**: Once our code was co-located, we began eliminating code duplication within each monorepo. This included cutting multiple implementation of the same API clients or the same class/enums definitions across the entire project.
+
+    1. This, in turn, made it easier to define and enforce pattern: for every piece of logic we selected the best implementation and propagated that to the whole monorepo. Coincidentally this also lead to the purge of 'non-standard' behavior like handwritten SQL queries and CSV parsers.
+
+    2. One pattern we wanted to enforce immediately was *Observability*, thanks to the Shared folder in each monorepo adopting observability into most services became a two-line code change at the entrypoint of the program.  
+
+3. **Accelerating iteration**: Colocating code allowed us to move faster with new features and breaking API changes, now instead of managing tenths of sparse and different integrations, we only needed to manage one (at worst a couple). Also by aggregating multiple *nanoservices* together our infrastructure became easier to manage freeing up the dev team's time as well as cutting our cloud costs.
+
+4. **Cleaning up the mess**: Mind you, most of our codebase was still an overabstracted and unreadable dump of shit, so we started to clean it up. For this task we also adopted a set of basic and pragmatic guiding principles, here some:
+  
+    1. *You can use an interface only if you have **already** multiple implementations for it*
+
+    2. *Until we have metrics that say otherwise **we do not optimize** code for performance*
+
+    3. *The **simplest solution** for our requirement is the one we are gonna go with*
+
+    4. ***Code duplication is actually good**, if the other option is to jump over 15 files*
+
+    5. *The **quality of your code** is defined on how easy I can take it apart and rewrite it from scratch*
+
+While we could have taken our approach to further extremes by creating a single monorepo, we chose not to. In my opinion a single monorepo would have added more complexities thana advantages and,ultimately, slowed us down (just think about merge conflicts, code navigation, PR reviewal and many more things).
+
+Also, applying patterns blindly just because other (like Google) do it was exactly what got us into this mess in the first place There's value in tailoring solutions to specific contexts, for example:
+
+- The Gateways monorepo benefitted from a leaner project structure cause most of the work 'coordination' of other services.
+- The Core System one instead required a specific architecture to support legacy banking technology and multiple service providers.
+
+In the end the few times we needed to have shared logic across monorepo we just got by by copy-pasting the code and let it evolve naturally inside its new home.
+
+## Conclusion
+
+So you're probably asking yourself: "How do they managed to let it go this bad?", to be honest we could've fixed most problems at their inception making better choices when we had the opportunity, apart from the classic 'chaos elements' of every startup like rushed deadlines and crazy release schedules (there's not much you can do about it) I identified some peculiar behaviors during my time there:
+
+- **Desire to feel clever**: Developers (especially the worst ones) often want to adopt "smart" solutions to simple problems, just to feel smart or because "this is how they do it at Meta". All of this complications do compound over time and making the code so smart that no one actually understood it.
+
+- **Assumed correctness**: There was a widespread assumption that the way things were done originally must have had a reason, while this reasoning may have sense the problem was that no one actually questioned such reasoning. Most just keep overlooking the problems and never raised the hand to ask: "why are we doing this?". Once we started to ask question we found out that most time there wasn't a reason (see the point before).
+
+- **Fear of change**: The team hesitated to rewrite or refactor existing code, fearing that making changes would introduce new bugs. Ironically, before this effort took place, all the products were crippled with bugs and the reason was precisely that no one knew what the code did.
+
+All of this together and prolonged for years led to a codebase that was incredibly fragile, hard to maintain, and ultimately unfit to support the company’s needs. What seemed like “smart” coding practices built an intricate maze that collapsed under its own complexity.
+
+The vicious cycle of fear, complexity, and inaction is a cautionary tale about the dangers of overengineering. While this 'migration' is still ongoing, we are starting to see the benefits of the changes we implemented, unlocking new possibilities for our products. Iteration times are faster, new developers are onboarded easily and, overall, we're reducing the number of bugs in production. We'll see what challenges the future will reserve!
