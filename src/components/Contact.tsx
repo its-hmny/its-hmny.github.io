@@ -1,5 +1,4 @@
-import { type Contact } from '@hmny.dev/lib/Data';
-import Image from 'next/image';
+import { type Contact } from '@hmny.dev/lib/types';
 import Link from 'next/link';
 
 export function Card({ contact }: { contact: Contact }) {
@@ -15,7 +14,7 @@ export function Card({ contact }: { contact: Contact }) {
       >
         {contact.description}
       </Link>
-      <Image
+      <img
         width={80}
         height={80}
         src={contact.icon}

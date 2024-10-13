@@ -1,14 +1,5 @@
-import { Bitcoin, Network, ServerCog, Store, type LucideIcon } from 'lucide-react';
-import { type ReactNode } from 'react';
-
-export type Job = {
-  role: string;
-  icon: LucideIcon;
-  skills: string[];
-  description: ReactNode;
-  company: { name: string; website: string };
-  period: { start: string | Date; end: string | Date };
-};
+import { type Contact, type Job } from '@hmny.dev/lib/types';
+import { Bitcoin, Network, ServerCog, Store } from 'lucide-react';
 
 export const Jobs: Job[] = [
   {
@@ -52,8 +43,6 @@ export const Jobs: Job[] = [
   },
 ];
 
-export type Contact = { size: string; icon: string; link: string; description: string };
-
 export const Contacts: Contact[] = [
   {
     size: 'small',
@@ -88,7 +77,7 @@ export const Contacts: Contact[] = [
   {
     size: 'medium',
     icon: '/socials/Medium.svg',
-    link: 'https://dev.to/its_hmny',
+    link: '/blog',
     description: 'Read my articles and blogposts',
   },
   {

@@ -1,7 +1,7 @@
 import Laptop from '@hmny.dev/3d/Laptop';
 import NonEuclideanCube from '@hmny.dev/3d/NonEuclideanCube';
 import Phone from '@hmny.dev/3d/Phone';
-import { Contacts, Jobs } from '@hmny.dev/lib/Data';
+import { Contacts, Jobs } from '@hmny.dev/lib/data';
 import * as Contact from '@hmny.dev/ui/Contact';
 import * as Job from '@hmny.dev/ui/Job';
 import Spinner from '@hmny.dev/ui/Spinner';
@@ -15,7 +15,7 @@ import { Suspense } from 'react';
 
 export default function Home() {
   return (
-    <main className='bg-theme_bg text-theme_fg'>
+    <main>
       <section className='flex h-screen w-screen items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
         <div className='h-screen w-5/12 max-lg:h-[40vh] max-lg:w-screen'>
           <Suspense fallback={<Spinner />}>
