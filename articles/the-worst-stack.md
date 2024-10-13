@@ -1,0 +1,110 @@
+---
+title: "The worst stack I ever used (and what I learned from it)"
+date: "2024-09-24"
+
+excerpt: "When I first encountered this tech stack, I thought: 'It can't be this bad'. Spoiler: IT WAS - clunky, insecure and riddled with an infinite number of other issues.Pushing through the chaos and delivering a product with it against the clock gave me a new perspective, taught me one of the best lessons of my carer and shaped how I approach development today."
+
+author:
+  name: Enea Guidi
+  picture: "/blog/hmny.jpeg"
+
+images:
+  og: "/blog/the-worst-stack/cover_small.jpg"
+  cover_large: "/blog/the-worst-stack/cover_large.jpg"
+  cover_small: "/blog/the-worst-stack/cover_small.jpg"
+---
+
+<p align="center">
+    <img alt="Article cover image" width="600" height="400" src="../public//blog/the-worst-stack/cover_small.jpg">
+    <h1>The worst stack I ever used <i>(and what I learned from it)</i></h1>
+</p>
+
+## Introduction
+
+My first job as a fullstack developer  was at a scrappy startup with about 10 people. It wasn’t one of those heavily funded tech companies with cash flowing from investors. No, we were a small team, barely scraping by with limited financing and a less-than-ideal client base — mostly small, regional enterprises that never paid well and always demanded way too much.
+
+At the time, our main focus was a platform called **Meeters**, aimed at organizing virtual fairs during the height of the COVID-19 pandemic. In Europe, and especially in Italy, the lockdowns stretched longer than in other parts of the world, and we thought Meeters could fill the gap in a world where social distancing was the norm. The problem? We couldn’t get our foot in the door with the bigger fairs, and we were stuck working for small events that came with tiny budgets and endless feature demands.
+
+Our CEO didn’t make things any easier. He was the type to say “yes” to every client request, no matter how ridiculous or costly, without stopping to consider whether it was worth the effort. More often than not, we were cranking out features at a loss, just to get our name out there. With little money for marketing and only a small team — one designer, two front-end developers, and a part-time backend developer — we had to work fast, cheap, and cut corners wherever possible.
+
+Yet somehow, despite all of this, we managed to accomplish quite a bit. How? Through sheer persistence and one of the most convoluted, half-baked tech stacks I’ve ever had the displeasure of working with. Let me explain how that mess of a stack worked…
+
+## The specifics
+
+The architecture of our platform was, in a word, basic. Given the constraints we faced — both financial and personnel — there wasn’t much room for overengineering or trying out the latest things. We were a small team, and time was our most valuable resource. Unfortunately, it didn’t help that my mentor and all the other developer in the company were not exactly eager to push beyond their comfort zones.
+
+So, we ended up with **two separate React projects**, both built with Create React App, nothing fancy like Next.js or any of the newer frameworks. Both of these web apps were served by a **single Go server**, sitting behind an **ArgoDB database**, if you’re unfamiliar with ArangoDB, just think of it as the *poor man's MongoDB*. It’s a document store that works fine but doesn’t come with many bells and whistles, which, given our circumstances, felt appropriate.
+
+The server and database lived on the smallest tier available on DigitalOcean (2 CPUs, 2 GB of RAM). Since we never had more than a thousand concurrent users and the fairs we hosted weren’t exactly riveting, the minimal setup worked... *most of the time* (**most is a keyword here**).
+
+If you taught the infrastructure was a mess you should've seen the deployment process. It was manual and slow: no CI/CD pipeline to speak of, we built everything locally and moved either the static assets or raw executables via SFTP. Since doing so made each deployment feel like throwing a dart in the dark and hoping it hit the target we didn't release regularly, that combined with no automated tests caused problem on most releases. The closest thing we had to QA was our designer, who was also juggling his roles as the CEO’s secretary and Sales Rep.
+
+![The full system architecture diagram](/blog/the-worst-stack/architechture.svg)
+
+The thing you never gonna guess is that **the server had less than 10 endpoint** available. Mind you, the webapp had really complex app logic and lots of features (events, stands, metrics collection, connection request and  at some point even a marketplace) so how could we manage to do that?
+
+The bulk of the work was done by just two endpoint: `POST /exec` and `POST /auth/exec`. These endpoints were as reckless as they sound, they took raw ArangoDB queries directly from the frontend and executed them on the database with no real validation or security checks. The only difference between them was that `POST /auth/exec` checked the JWT before execution but, if you knew what you were doing, you could just bypass it by sending the same to the *regular* `POST /exec`.
+
+This meant that, in effect, we the frontend developers became full-stack by default. We wrote queries in the frontend using messy template literals and sent them off to be executed, without any check performed by the backend. Security? What’s that? We enforced RBAC client-side.
+
+![The Drake 'Hotline Bling' meme with my own captions](/blog/the-worst-stack/drake_meme.jpg)
+
+## Working with it
+
+On paper, what I’ve just described may raise some eyebrows (or outright disgust). But despite the chaos, this project went from zero to hero with, at most, two developers working full time on it for around nine months. If you think about it it's quite an accomplishment considering that neither of us where particularly skilled at the moment.
+
+The speed and flexibility we had were incredible and unmatched, this allowed us to churn features out of the door like hell. As  a junior developer I was able to iterate quickly and pull data directly from the database (in whatever shape I wanted) and plug it straight to the UI without having to wait everytime for the Backend team to update a REST endpoint or add support for a new query params.
+
+I was the solo owner of every feature from start to finish, if I needed something new, I could build and ship it myself in a matter of few days:
+
+- Want to join two entities from two different tables? **DONE**.
+- Want to add a new filter, sort options or a search bar? **DONE**.
+- Want to produce complex statistic by aggregating lots of data? **DONE**.
+
+I specifically remember one time when I added [Inverted Index Search](https://en.wikipedia.org/wiki/Inverted_index) support **for the whole platform**. It took me more time to test manually that everything worked as expected than it did to actually implement the feature! To give you an idea an approximation of the work breakdown on a given task 90% of my time was used to work on the frontend (Responsiveness, Accessibility and i18n) and just the remaining 10% was used to work on the backend.
+
+![An image of Connor signing autographs in bulk, meant to represent how fast we were able to deploy](/blog/the-worst-stack/conor.webp)
+
+The lack of traffic in the early days meant we didn’t need advanced features like response caching. We just sent the same query for execution every time a request was made, without worrying too much about optimization. That worked well enough until it didn't (you'll find out in the conclusion) but at the same time it helped us on building features quickly.
+
+Now, I’m not trying to downplay the massive security risks. Anyone with a basic knowledge of Chrome Inspector or Postman could have uncovered our dirty little secret and wipe down the entire production database (without any kind of backup, by the way). But beyond that glaring security flaw and lack of all basic best practices in general, there was some brilliance in the approach. For all its flaws, this stack allowed us to move fast.
+
+In a way, we were ahead of the curve. If you think about it, we were doing something conceptually similar to what [Supabase](https://supabase.com/) did with [PostgREST](https://supabase.com/docs/guides/api/sql-to-api) and [Row Level Security (RLS)](https://supabase.com/docs/guides/database/postgres/row-level-security) a few years later, enabling startup to handle full-stack development with a minimal backend footprint.
+
+*The sad reality of product startup is that (unless you're selling to developers) no one cares about the backend, most user just want a beautiful UI with lots of animations, 3D effects and whatever is trendy in the moment. Minimizing the time spent doing backend work meant maximize the effort on the UI and this in turn helped adoption od the product.*
+
+## The downfall
+
+Despite the glaring security and performance issues, there was never a real effort from management to invest time in fixing this known problems. We never got a week to refactor, optimize, or future-proof the product. As a result, the platform slowly became bloated and unstable over time:
+
+- The codebase was riddled with temporary workarounds and patches added to meet deadlines.
+- Our queries grew sluggish and inefficient at the same time the database needed restructuring to avoid unnecessary joining of data.
+- You can only optimize so much with queries written inside a JavaScript string literals.
+- We had no caching, no proper authentication enforcement and not even basic indexes on the most frequently accessed data.
+
+For months, everything limped along on our modest 2 CPU, 2 GB RAM server, until it inevitably didn’t. When we landed a big contract with one of Italy’s major fairs, the excitement was palpable. But while we’d previously handled no more than 200/300 attendees (spread over a multiple days period), this fair brought over 5,000 participants, many of whom attended all the events all the days.
+
+Imagine it: 5,000 people connecting to the same talk in a five-minute window, each triggering 1-2 read queries and 3-4 write queries (logging and metrics). Everything on a tiny 2 CPU + 2 GB machine running a document database.
+The result? The database crashed, killed by the OS for consuming too many resources, and without an automatic service restart it stayed down for hours. Soon after, the web server followed suit under the weight of people frantically refreshing their browsers and trying to log back in the platform. Even those who had managed to get into the event early were eventually kicked out.
+
+Naturally, our client was furious and sued the company into oblivion for the damages caused by the outage. Since management didn't address the problem during the first day we had the same situation happen the next. In the end, attendees paid for a three-day event but only got to attend the final day.
+
+We already managed to secure larger fairs before this happened (with 10,000+ participants), management remained unwilling to invest in a proper backend overhaul. Instead, our workaround was to scale up the server to a 16-core, 16 GB machine for the duration of the events and then scale it back down afterward. This approach worked, but it didn’t inspire confidence: during every event, we were on edge, checking service availability manually multiple times a day, just hoping the system wouldn’t collapse.
+
+## The end
+
+As social distancing measures were lifted, the demand for our platform waned. Unable to compete with better-funded rivals, our product faded into obscurity. With that chapter closed, management quickly shifted its focus to other ventures, coincidentally, the NFT bull run was gaining momentum so we pivoted to becoming a Web3 company.
+Unfortunately, this new project was pursued with the same underfunded, rushed, and shortsighted approach as before. This time the product itself didn't even have a real use case and, as expected, it quickly failed.
+
+However, I came better prepared for this round. I tried to keep every concept that worked from our previous iteration, while trying to minimize (at least design wise) each of the pitfall encountered. At the same time, I tried to package it in a more composable and extensible solution so that any extension required could be done quickly and without rewriting the product from scratch.
+We made a lot of changes bt adopting [Nest.js](https://nestjs.com) as our backend framework and using [TypeOrm](https://typeorm.io) with [PostgreSQL](https://www.postgresql.org/). In the end, everything came together thanks to a 3rd-party library called [nestjsx/crud](https://github.com/nestjsx/crud) that allowed us to manage REST APIs with full CRUD access with just a couple lines of configuration and only our entity classes provided by us.
+
+This approach solved many of the problems that we had before while still giving us plenty of flexibility. For example:
+
+- We could now enforce data access policies:
+  - Grant access to specific tables (or joins) only to admin users.
+  - Perform server-side checks to ensure a user had permission to access or modify a resource.
+- We could build features that didn't require a database easily (asset serving, cron jobs, websockets, etc).
+- We significantly improved performance through response caching and horizontal scaling.
+
+In the end, the journey is the destination. This second iteration of the cursed tech stack I ever used gave me one of the best setups I’ve ever worked with. Looking back, I realize that I wouldn’t have arrived at this all round solution without first enduring the chaos of the thing that came before. The concept of writing a query directly from the frontend (without using complex tech like GraphQL) was so beyond my experience that, without encountering an extreme example like the one I just shared, I don’t think I would have ever come up with it myself.
