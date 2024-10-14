@@ -22,3 +22,20 @@ html {
 
 /* ? Only to debug the boxes while developing, remove before prod */
 /* body * { border: 1px solid white; } */
+
+/* Markdown rendering CSS overrides, the 'markdown' class has to be injected */
+#markdown {  @apply text-lg leading-relaxed; }
+
+#markdown h1 {  @apply mb-4 mt-16 text-4xl leading-snug; }
+#markdown h2 {  @apply mb-4 mt-12 text-3xl text-theme_primary-400 leading-snug; }
+#markdown h3 { @apply mb-4 mt-8 text-2xl text-theme_secondary-400 leading-snug; }
+
+#markdown p, #markdown blockquote { @apply my-6 text-lg; }
+#markdown pre { @apply mt-3 p-4 bg-theme_bg_accent; }
+#markdown code { @apply p-1 rounded-md font-medium bg-theme_bg_accent; }
+#markdown strong { @apply font-extrabold text-lg; }
+
+#markdown img { @apply m-auto w-2/3;  }
+
+#markdown ul { @apply ml-6 list-disc; }
+#markdown ol { @apply ml-6 list-decimal; }

@@ -31,6 +31,7 @@
 				"eamodio.gitlens",
 				"mhutchie.git-graph",
 				// Markdown related extension(s)
+				"unifiedjs.vscode-mdx",
 				"davidanson.vscode-markdownlint",
 				// React + HTML + Tailwind CSS related extension(s)
 				"stivo.tailwind-fold",

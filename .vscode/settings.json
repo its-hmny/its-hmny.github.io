@@ -7,6 +7,7 @@
   // ----------------------------------------------------- //
   //           Code Spell Checker configuration            //
   // ----------------------------------------------------- //
+  "markdownlint.config": { "MD033": false },
   "cSpell.allowCompoundWords": true,
   "cSpell.words": [
     "aluminium", "Botika", "Enea", "GLTF", "Guidi", "lerp",

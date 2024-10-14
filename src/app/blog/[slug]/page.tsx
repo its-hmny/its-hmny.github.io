@@ -71,7 +71,7 @@ export default async function Post({ params }: StaticProps) {
         </div>
       </div>
 
-      <div className='mx-auto max-w-7xl text-justify'>
+      <div id='markdown' className='mx-auto max-w-7xl text-justify'>
         <MDXRemote source={post.content} />
       </div>
     </article>
