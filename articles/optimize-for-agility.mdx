@@ -60,8 +60,6 @@ While this may not be necessarily bad you have to keep in mind that they were no
 
 ## ... and how we fixed them
 
-![TODO](/blog/optimize-for-agility/tweet.png)
-
 To address the chaos caused by hundreds of isolated repositories, we took a more practical approach (the one that we should've applied from the start in my opinion) and we executed our vision in multiple phases:
 
 1. **Consolidating repositories**: We grouped all of our code into 3/4 monorepos based on business domains, such as: *Core Banking Systems*, *Other Services (Notification, Auth, etc)*, *API Gateways* and *App & Web Clients*. This drastically simplified the process of managing and deploying code.
@@ -85,6 +83,8 @@ To address the chaos caused by hundreds of isolated repositories, we took a more
     4. ***Code duplication is actually good**, if the other option is to jump over 15 files*
 
     5. *The **quality of your code** is defined on how easy I can take it apart and rewrite it from scratch*
+
+![An insightful tweet from Twitch streamer @tsoding](/blog/optimize-for-agility/tweet.png)
 
 While we could have taken our approach to further extremes by creating a single monorepo, we chose not to. In my opinion a single monorepo would have added more complexities thana advantages and,ultimately, slowed us down (just think about merge conflicts, code navigation, PR reviewal and many more things).
 

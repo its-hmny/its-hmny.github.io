@@ -10,8 +10,8 @@
   "markdownlint.config": { "MD033": false },
   "cSpell.allowCompoundWords": true,
   "cSpell.words": [
-    "aluminium", "Botika", "Enea", "GLTF", "Guidi", "lerp",
-    "hmny", "Moonia", "Lucide",
+    "Botika", "Enea", "GLTF", "Guidi",
+    "hmny", "lerp", "Lucide", "Moonia",
   ],
 
   // ----------------------------------------------------- //
