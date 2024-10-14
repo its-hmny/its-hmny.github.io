@@ -6,8 +6,8 @@ import { join } from 'path';
 const ArticlesDirectory = join(process.cwd(), 'articles');
 
 export async function getArticleBySlug(slug: string) {
-  const unescapedPath = decodeURI(slug).replace(/\.md$/, '');
-  const fileContent = await readFile(join(ArticlesDirectory, `${unescapedPath}.md`), 'utf8');
+  const unescapedPath = decodeURI(slug).replace(/\.mdx$/, '');
+  const fileContent = await readFile(join(ArticlesDirectory, `${unescapedPath}.mdx`), 'utf8');
 
   // Extracts the metadata in the .md header from the articles content
   const { data: metadata, content } = matter(fileContent);
