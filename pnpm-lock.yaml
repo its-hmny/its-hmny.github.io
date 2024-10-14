@@ -25,13 +25,13 @@ importers:
         version: 0.169.0
     devDependencies:
       '@mdx-js/loader':
-        specifier: ^3.0.1
+        specifier: 3.0.1
         version: 3.0.1(webpack@5.95.0)
       '@mdx-js/react':
-        specifier: ^3.0.1
+        specifier: 3.0.1
         version: 3.0.1(@types/react@18.3.2)(react@18.3.1)
       '@next/mdx':
-        specifier: ^14.2.15
+        specifier: 14.2.15
         version: 14.2.15(@mdx-js/loader@3.0.1(webpack@5.95.0))(@mdx-js/react@3.0.1(@types/react@18.3.2)(react@18.3.1))
       '@react-spring/core':
         specifier: 9.7.3
@@ -46,7 +46,7 @@ importers:
         specifier: 9.105.6
         version: 9.105.6(@react-three/fiber@8.16.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.169.0))(@types/react@18.3.2)(@types/three@0.158.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.169.0)
       '@types/mdx':
-        specifier: ^2.0.13
+        specifier: 2.0.13
         version: 2.0.13
       '@types/node':
         specifier: 20.12.12
@@ -68,7 +68,7 @@ importers:
         version: 6.21.0(eslint@8.57.0)(typescript@5.4.5)
       '@vitejs/plugin-react-swc':
         specifier: 3.6.0
-        version: 3.6.0(@swc/helpers@0.5.5)(vite@4.5.3(@types/node@20.12.12)(terser@5.34.1))
+        version: 3.6.0(@swc/helpers@0.5.5)(vite@4.5.5(@types/node@20.12.12)(terser@5.34.1))
       autoprefixer:
         specifier: 10.4.19
         version: 10.4.19(postcss@8.4.38)
@@ -91,7 +91,7 @@ importers:
         specifier: 0.292.0
         version: 0.292.0(react@18.3.1)
       next-mdx-remote:
-        specifier: ^5.0.0
+        specifier: 5.0.0
         version: 5.0.0(@types/react@18.3.2)(react@18.3.1)
       postcss:
         specifier: 8.4.38
@@ -109,8 +109,8 @@ importers:
         specifier: 5.4.5
         version: 5.4.5
       vite:
-        specifier: 4.5.3
-        version: 4.5.3(@types/node@20.12.12)(terser@5.34.1)
+        specifier: 4.5.5
+        version: 4.5.5(@types/node@20.12.12)(terser@5.34.1)
 
 packages:
 
@@ -1333,6 +1333,7 @@ packages:
   eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -2801,8 +2802,8 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
-  vite@4.5.3:
-    resolution: {integrity: sha512-kQL23kMeX92v3ph7IauVkXkikdDRsYMGTVl5KY2E9OY4ONLvkHf04MDTbnfo6NKxZiDLWzVpP5oTa8hQD8U3dg==}
+  vite@4.5.5:
+    resolution: {integrity: sha512-ifW3Lb2sMdX+WU91s3R0FyQlAyLxOzCSCP37ujw0+r5POeHPwe6udWVIElKQq8gk3t7b8rkmvqC6IHBpCff4GQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
@@ -3554,10 +3555,10 @@ snapshots:
       '@use-gesture/core': 10.3.1
       react: 18.3.1
 
-  '@vitejs/plugin-react-swc@3.6.0(@swc/helpers@0.5.5)(vite@4.5.3(@types/node@20.12.12)(terser@5.34.1))':
+  '@vitejs/plugin-react-swc@3.6.0(@swc/helpers@0.5.5)(vite@4.5.5(@types/node@20.12.12)(terser@5.34.1))':
     dependencies:
       '@swc/core': 1.7.35(@swc/helpers@0.5.5)
-      vite: 4.5.3(@types/node@20.12.12)(terser@5.34.1)
+      vite: 4.5.5(@types/node@20.12.12)(terser@5.34.1)
     transitivePeerDependencies:
       - '@swc/helpers'
 
@@ -6092,7 +6093,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@4.5.3(@types/node@20.12.12)(terser@5.34.1):
+  vite@4.5.5(@types/node@20.12.12)(terser@5.34.1):
     dependencies:
       esbuild: 0.18.20
       postcss: 8.4.38
