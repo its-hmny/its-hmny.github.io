@@ -11,10 +11,9 @@ export type Job = {
 };
 
 export type Contact = {
-  size: string;
+  name: string;
   icon: string;
   link: string;
-  description: string;
 };
 
 export type Article = {

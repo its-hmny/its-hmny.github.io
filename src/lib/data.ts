@@ -45,45 +45,38 @@ export const Jobs: Job[] = [
 
 export const Contacts: Contact[] = [
   {
-    size: 'small',
-    icon: '/socials/Resume.svg',
-    link: '/Resume.pdf',
-    description: 'Download my resume',
-  },
-  {
-    size: 'medium',
-    icon: '/socials/GitHub.svg',
-    link: 'https://www.github.com/its-hmny',
-    description: 'Enough talk! Let me see the code',
-  },
-  {
-    size: 'small',
-    icon: '/socials/LinkedIn.svg',
-    link: 'https://www.linkedin.com/in/enea-guidi',
-    description: "Let's connect",
-  },
-  {
-    size: 'small',
-    icon: '/socials/Twitter.svg',
-    link: 'https://twitter.com/its_hmny',
-    description: 'Posts & discussions',
-  },
-  {
-    size: 'small',
-    icon: '/socials/Telegram.svg',
-    link: 'https://t.me/its_hmny',
-    description: 'Private message',
-  },
-  {
-    size: 'medium',
-    icon: '/socials/Medium.svg',
-    link: '/blog',
-    description: 'Read my articles and blogposts',
-  },
-  {
-    size: 'small',
-    icon: '/socials/Email.svg',
+    name: 'Mail',
+    icon: '/socials/gmail.png',
     link: 'mailto:guidi.enea@gmail.com',
-    description: 'Send business enquiries',
+  },
+  {
+    name: 'GitHub',
+    icon: '/socials/github.png',
+    link: 'https://www.github.com/its-hmny',
+  },
+  {
+    name: 'LinkedIn',
+    icon: '/socials/linkedin.png',
+    link: 'https://www.linkedin.com/in/enea-guidi',
+  },
+  {
+    name: 'X',
+    icon: '/socials/x.png',
+    link: 'https://twitter.com/its_hmny',
+  },
+  {
+    name: 'Telegram',
+    icon: '/socials/telegram.png',
+    link: 'https://t.me/its_hmny',
+  },
+  {
+    name: 'Medium',
+    icon: '/socials/medium.png',
+    link: '/blog',
+  },
+  {
+    name: 'Resume',
+    icon: '/socials/files.png',
+    link: '/Resume.pdf',
   },
 ];

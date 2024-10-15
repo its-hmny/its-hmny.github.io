@@ -1,8 +1,7 @@
 import Laptop from '@hmny.dev/3d/Laptop';
 import NonEuclideanCube from '@hmny.dev/3d/NonEuclideanCube';
 import Phone from '@hmny.dev/3d/Phone';
-import { Contacts, Jobs } from '@hmny.dev/lib/data';
-import * as Contact from '@hmny.dev/ui/Contact';
+import { Jobs } from '@hmny.dev/lib/data';
 import * as Job from '@hmny.dev/ui/Job';
 import Spinner from '@hmny.dev/ui/Spinner';
 import * as Timeline from '@hmny.dev/ui/Timeline';
@@ -89,11 +88,11 @@ export default function Home() {
             line if you have a project in mind, want to discuss the latest tech trends or just want to connect. Your
             feedback and ideas are always welcome! Looking forward to hearing from you soon!
           </p>
-          <div className='m-7 grid auto-rows-[192px] grid-cols-3 gap-4 max-sm:grid-cols-4'>
+          {/* <div className='m-7 grid auto-rows-[192px] grid-cols-3 gap-4 max-sm:grid-cols-4'>
             {Contacts.map(c => (
               <Contact.Card key={c.link} contact={c} />
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
     </main>
