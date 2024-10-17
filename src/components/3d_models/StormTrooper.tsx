@@ -1,3 +1,5 @@
+'use client';
+
 import { Center, useAnimations, useGLTF } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { useEffect } from 'react';

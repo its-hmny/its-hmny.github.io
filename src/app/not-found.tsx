@@ -1,12 +1,11 @@
-'use client';
-import Stormtrooper from '@hmny.dev/ui/3d_models/StormTrooper';
+import Stormtrooper from '@hmny.dev/3d/StormTrooper';
 import Spinner from '@hmny.dev/ui/Spinner';
 import Link from 'next/link';
 import { Suspense } from 'react';
 
 // ! This is not the standard way of doing 'Not Found' pages on Next.js
 // ! but it is required in order to make the custom 404 page work when
-// ! deploying on GitHub pages that requires to provide a '404.html' file. 
+// ! deploying on GitHub pages that requires to provide a '404.html' file.
 
 export default function NotFound() {
   return (
@@ -30,7 +29,6 @@ export default function NotFound() {
 
           <div className='mb-4 mt-8'>
             <Link href='/' className='rounded-full bg-theme_primary-400 px-4 py-4 text-lg'>
-              {/* <Home strokeWidth={2} className='mr-1 inline' /> */}
               <span>Go back to home</span>
             </Link>
           </div>
