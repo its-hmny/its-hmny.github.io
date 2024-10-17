@@ -3,6 +3,7 @@
 import { Center, useAnimations, useGLTF } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { useEffect } from 'react';
+import * as THREE from 'three';
 
 /*
   Title: DANCING STORMTROOPER

@@ -4,7 +4,7 @@
 
 @layer utilities {
   *::selection {
-    color: theme('colors.theme_fg');
+    color: theme('colors.theme_bg');
     background-color: theme('colors.theme_secondary.400', '#ff9800');
   }
 }
