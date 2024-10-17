@@ -1,8 +1,9 @@
 'use client';
+
 import { Contacts } from '@hmny.dev/lib/data';
 import { Center, OrbitControls, useGLTF } from '@react-three/drei';
 import { Canvas, ThreeEvent, useLoader } from '@react-three/fiber';
-import { Container, Image, Root, Text } from '@react-three/uikit';
+import * as UIKit from '@react-three/uikit';
 import { useEffect } from 'react';
 import * as THREE from 'three';
 
@@ -112,7 +113,7 @@ function Phone() {
       </group>
 
       <group position={[0.4, 0, 0.1]}>
-        <Root
+        <UIKit.Root
           width={150}
           height={240}
           positionTop={-150}
@@ -122,10 +123,10 @@ function Phone() {
           alignItems='center'
           justifyContent='center'
         >
-          <Text marginTop={2} color='black' width='90%' fontSize={13} textAlign='center'>
+          <UIKit.Text marginTop={2} color='black' width='90%' fontSize={13} textAlign='center'>
             Click on the app icon to open the link on a new tab
-          </Text>
-          <Container
+          </UIKit.Text>
+          <UIKit.Container
             width='100%'
             height='50%'
             flexWrap='wrap'
@@ -134,7 +135,7 @@ function Phone() {
             justifyContent='space-evenly'
           >
             {Contacts.map(c => (
-              <Container
+              <UIKit.Container
                 key={c.name}
                 width={30}
                 margin={5}
@@ -146,14 +147,14 @@ function Phone() {
                   event.stopPropagation();
                 }}
               >
-                <Image width={28} height={28} alt={c.name} src={c.icon} />
-                <Text marginTop={1} color='white' fontSize={10} textAlign='center'>
+                <UIKit.Image width={28} height={28} src={c.icon} />
+                <UIKit.Text marginTop={1} color='white' fontSize={10} textAlign='center'>
                   {c.name}
-                </Text>
-              </Container>
+                </UIKit.Text>
+              </UIKit.Container>
             ))}
-          </Container>
-        </Root>
+          </UIKit.Container>
+        </UIKit.Root>
       </group>
     </group>
   );

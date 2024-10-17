@@ -78,7 +78,9 @@ export default function Home() {
 
       <section className='flex h-screen w-screen items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
         <div className='h-screen w-5/12 max-lg:h-[40vh] max-lg:w-screen'>
-          <Phone />
+          <Suspense fallback={<Spinner />}>
+            <Phone />
+          </Suspense>
         </div>
 
         <div className='w-6/12 p-8 max-lg:h-auto max-lg:w-screen'>
@@ -88,11 +90,6 @@ export default function Home() {
             line if you have a project in mind, want to discuss the latest tech trends or just want to connect. Your
             feedback and ideas are always welcome! Looking forward to hearing from you soon!
           </p>
-          {/* <div className='m-7 grid auto-rows-[192px] grid-cols-3 gap-4 max-sm:grid-cols-4'>
-            {Contacts.map(c => (
-              <Contact.Card key={c.link} contact={c} />
-            ))}
-          </div> */}
         </div>
       </section>
     </main>
