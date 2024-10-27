@@ -3,9 +3,12 @@
 import { Contacts } from '@hmny.dev/lib/data';
 import { Center, OrbitControls, useGLTF } from '@react-three/drei';
 import { Canvas, ThreeEvent, useLoader } from '@react-three/fiber';
-import * as UIKit from '@react-three/uikit';
 import { useEffect } from 'react';
 import * as THREE from 'three';
+// ! This is required for now in order to complete a production build w/o errors
+// ! is probably related to circular/hidden dependencies in '@react-three/uikit'.
+// ? import * as UIKit from '@react-three/uikit';
+const UIKit = require('@react-three/uikit');
 
 function Phone() {
   // Loads the GLTF model asynchronously
