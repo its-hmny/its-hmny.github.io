@@ -2,6 +2,7 @@
   // ----------------------------------------------------- //
   //             Generic VS Code configuration             //
   // ----------------------------------------------------- //
+  "editor.wordWrap": "on",
   "files.exclude": { ".pnpm-store": true },
   
   // ----------------------------------------------------- //
@@ -10,7 +11,7 @@
   "markdownlint.config": { "MD033": false },
   "cSpell.allowCompoundWords": true,
   "cSpell.words": [
-    "Botika", "Enea", "GLTF", "Guidi",
+    "Bento", "Botika", "Enea", "GLTF", "Guidi",
     "hmny", "lerp", "Lucide", "Moonia",
   ],
 
@@ -18,6 +19,6 @@
   //  Typescript, JSX and Tailwind CSS related extensions  //
   // ----------------------------------------------------- //
   "tailwind-fold.foldStyle": "QUOTES",
-  "tailwind-fold.foldLengthThreshold": 10,
+  "tailwind-fold.foldLengthThreshold": 100000,
   "prettier.configPath": "./prettier.config.js"
 }

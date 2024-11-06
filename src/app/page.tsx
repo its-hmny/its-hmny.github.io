@@ -15,10 +15,15 @@ import { Suspense, useMemo } from 'react';
 // ? Reference: https://github.com/pmndrs/drei?tab=readme-ov-file#view
 
 export default function Home() {
-  const items = useMemo(() => {
-    const SizeMap = { tech: 'small', project: 'medium', product: 'large' } as const;
-    const ComponentMap = { tech: Tech, project: Project, product: Product } as const;
-    return Skills.map(skill => ({ ...skill, size: SizeMap[skill.type], component: ComponentMap[skill.type] }));
+  const skills = useMemo(() => {
+    const sizeMap = { tech: 'small', project: 'medium', product: 'large' } as const;
+    const componentMap = { tech: Tech, project: Project, product: Product } as const;
+
+    return Skills.map(skill => ({
+      ...skill,
+      size: sizeMap[skill.type],
+      component: componentMap[skill.type],
+    }));
   }, []);
 
   return (
@@ -94,7 +99,7 @@ export default function Home() {
         </p>
 
         <Bento.Grid>
-          {items.map(skill => (
+          {skills.map(skill => (
             <Bento.Item key={skill.name} size={skill.size}>
               <skill.component skill={skill} />
             </Bento.Item>
@@ -112,9 +117,9 @@ export default function Home() {
         <div className='w-6/12 p-8 max-lg:h-auto max-lg:w-screen'>
           <h3 className='font-italic mb-3 text-3xl text-theme_primary-400'>📱 Let's keep in touch!</h3>
           <p className='text-md mb-10 text-justify text-theme_fg_accent'>
-            I'm always open to new opportunities, collaborations, and friendly conversations. Feel free to drop me a
-            line if you have a project in mind, want to discuss the latest tech trends or just want to connect. Your
-            feedback and ideas are always welcome! Looking forward to hearing from you soon!
+            I'm always open to new opportunities, collaborations and friendly conversations. Feel free to drop me a line
+            if you have a project in mind, want to discuss the latest tech trends or just want to connect. Your feedback
+            and ideas are always welcome! Looking forward to hearing from you soon!
           </p>
         </div>
       </section>
