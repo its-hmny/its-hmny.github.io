@@ -76,6 +76,17 @@ export default function Home() {
         </div>
       </section>
 
+      <section className='align-evenly flex h-full w-full flex-col justify-evenly p-20'>
+        <h3 className='font-italic mb-3 text-3xl text-theme_primary-400'>💻 Projects and Technologies</h3>
+        <p className='text-md mb-10 text-justify text-theme_fg_accent'>
+          I thrive on the freedom to innovate and explore new technologies, frameworks and tools. Whether through side
+          projects or challenging professional experiences. This section showcases my personal projects, the key
+          technologies and tools I know as well as the significant work-related projects I undertook at different
+          companies. Each one of them has been a chance to delve deep, experiment and expand my technical skills.
+        </p>
+
+      </section>
+
       <section className='flex h-screen w-screen items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
         <div className='h-screen w-5/12 max-lg:h-[40vh] max-lg:w-screen'>
           <Suspense fallback={<Spinner />}>
