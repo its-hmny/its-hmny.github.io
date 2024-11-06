@@ -31,7 +31,7 @@ export type Product = {
   excerpt: string;
 };
 
-export type Skill = Tech | Product | Project;
+export type Experience = Tech | Product | Project;
 
 export type Contact = {
   name: string;

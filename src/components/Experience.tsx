@@ -1,11 +1,11 @@
 'use client';
 
-import { type Product, type Project, type Skill, type Tech } from '@hmny.dev/lib/types';
+import { type Experience, type Product, type Project, type Tech } from '@hmny.dev/lib/types';
 import { Github } from 'lucide-react';
 import { useCallback } from 'react';
 
-export function Tech({ skill }: { skill: Skill }) {
-  const tech = skill as Tech;
+export function Tech({ exp }: { exp: Experience }) {
+  const tech = exp as Tech;
 
   return (
     <div>
@@ -17,8 +17,8 @@ export function Tech({ skill }: { skill: Skill }) {
   );
 }
 
-export function Project({ skill }: { skill: Skill }) {
-  const project = skill as Project;
+export function Project({ exp }: { exp: Experience }) {
+  const project = exp as Project;
 
   const openGitHub = useCallback(() => {
     window.open(project.github, '_blank');
@@ -41,8 +41,8 @@ export function Project({ skill }: { skill: Skill }) {
   );
 }
 
-export function Product({ skill }: { skill: Skill }) {
-  const product = skill as Product;
+export function Product({ exp }: { exp: Experience }) {
+  const product = exp as Product;
 
   return (
     <div className='flex-column flex h-full items-center justify-center gap-2'>

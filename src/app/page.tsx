@@ -1,10 +1,10 @@
 import Laptop from '@hmny.dev/3d/Laptop';
 import NonEuclideanCube from '@hmny.dev/3d/NonEuclideanCube';
 import Phone from '@hmny.dev/3d/Phone';
-import { Jobs, Skills } from '@hmny.dev/lib/data';
+import { Experiences, Jobs } from '@hmny.dev/lib/data';
 import * as Bento from '@hmny.dev/ui/Bento';
 import * as Job from '@hmny.dev/ui/Job';
-import { Product, Project, Tech } from '@hmny.dev/ui/Skill';
+import { Product, Project, Tech } from '@hmny.dev/ui/Experience';
 import Spinner from '@hmny.dev/ui/Spinner';
 import * as Timeline from '@hmny.dev/ui/Timeline';
 import { Github } from 'lucide-react';
@@ -15,11 +15,11 @@ import { Suspense, useMemo } from 'react';
 // ? Reference: https://github.com/pmndrs/drei?tab=readme-ov-file#view
 
 export default function Home() {
-  const skills = useMemo(() => {
+  const experiences = useMemo(() => {
     const sizeMap = { tech: 'small', project: 'medium', product: 'large' } as const;
     const componentMap = { tech: Tech, project: Project, product: Product } as const;
 
-    return Skills.map(skill => ({
+    return Experiences.map(skill => ({
       ...skill,
       size: sizeMap[skill.type],
       component: componentMap[skill.type],
@@ -99,9 +99,9 @@ export default function Home() {
         </p>
 
         <Bento.Grid>
-          {skills.map(skill => (
-            <Bento.Item key={skill.name} size={skill.size}>
-              <skill.component skill={skill} />
+          {experiences.map(exp => (
+            <Bento.Item key={exp.name} size={exp.size}>
+              <exp.component exp={exp} />
             </Bento.Item>
           ))}
         </Bento.Grid>

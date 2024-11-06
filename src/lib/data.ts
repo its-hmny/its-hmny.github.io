@@ -1,4 +1,4 @@
-import { Skill, type Contact, type Job } from '@hmny.dev/lib/types';
+import { type Experience, type Contact, type Job } from '@hmny.dev/lib/types';
 import { Bitcoin, Network, ServerCog, Store } from 'lucide-react';
 
 export const Jobs: Job[] = [
@@ -43,7 +43,7 @@ export const Jobs: Job[] = [
   },
 ];
 
-export const Skills: Skill[] = [
+export const Experiences: Experience[] = [
   {
     type: 'tech',
     name: 'C# and .NET',
