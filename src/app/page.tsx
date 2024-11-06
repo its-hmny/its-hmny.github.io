@@ -63,11 +63,11 @@ export default function Home() {
       <section className='flex h-auto min-h-screen w-screen flex-row items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col-reverse'>
         {/* First half of the page */}
         <div className='h-full w-6/12 p-10 max-lg:h-auto max-lg:w-screen'>
-          <h3 className='font-italic mb-3 text-3xl text-theme_primary-400'>💼 My work experience</h3>
+          <h3 className='font-italic mb-7 text-4xl text-theme_primary-400'>💼 My work experience</h3>
           <p className='text-md mb-10 text-justify text-theme_fg_accent'>
             Don't let my young age fool you! In my previous work experiences I was fortunate enough to explore and
-            broaden my skillset: from delving into the intricacies of blockchain technology to exploring the creative
-            realms of 3D development, I bring a diverse range of expertise to the table.
+            broaden my skillset: from delving into the intricacies of blockchains to exploring the creative realms of 3D
+            development, I bring a diverse range of expertise to the table.
           </p>
           <Timeline.Vertical>
             {Jobs.map(j => (
@@ -90,12 +90,13 @@ export default function Home() {
       </section>
 
       <section className='align-evenly flex h-full w-full flex-col justify-evenly p-20'>
-        <h3 className='font-italic mb-3 text-3xl text-theme_primary-400'>💻 Projects and Technologies</h3>
+        <h3 className='font-italic mb-7 text-4xl text-theme_primary-400'>💻 Projects and Technologies</h3>
         <p className='text-md mb-10 text-justify text-theme_fg_accent'>
-          I thrive on the freedom to innovate and explore new technologies, frameworks and tools. Whether through side
-          projects or challenging professional experiences. This section showcases my personal projects, the key
-          technologies and tools I know as well as the significant work-related projects I undertook at different
-          companies. Each one of them has been a chance to delve deep, experiment and expand my technical skills.
+          I thrive on the freedom to innovate and explore new technologies, frameworks and tools, whether through side
+          projects or new challenging professional experiences. This section showcases some of my personal projects, the
+          technologies and tools I used as well as significant work-related projects I led or took part in during my
+          past work experiences. Each one of them pushed me to improve and has been a chance to delve deep, experiment
+          and expand my technical skills.
         </p>
 
         <Bento.Grid>
@@ -115,14 +116,15 @@ export default function Home() {
         </div>
 
         <div className='w-6/12 p-8 max-lg:h-auto max-lg:w-screen'>
-          <h3 className='font-italic mb-3 text-3xl text-theme_primary-400'>📱 Let's keep in touch!</h3>
+          <h3 className='font-italic mb-7 text-4xl text-theme_primary-400'>📱 Let's keep in touch!</h3>
           <p className='text-md mb-10 text-justify text-theme_fg_accent'>
-            I'm always open to new opportunities, collaborations and friendly conversations. Feel free to drop me a line
-            if you have a project in mind, want to discuss the latest tech trends or just want to connect. Your feedback
-            and ideas are always welcome! Looking forward to hearing from you soon!
+            I'm always open to new opportunities, collaborations or also just friendly conversations. Feel free to
+            contact me if you have a project in mind, want to discuss the latest tech trends or just want to connect.
+            Your feedback and ideas are always welcome! Looking forward to hearing from you soon!
           </p>
         </div>
       </section>
     </main>
   );
 }
+  

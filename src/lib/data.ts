@@ -9,7 +9,7 @@ export const Jobs: Job[] = [
     company: { name: 'BKN301', website: 'https://bkn301.com/' },
     skills: ['C#', '.NET Core', 'Playwright', 'Docker', 'Kubernetes'],
     description:
-      "Contributed to the design and development of '301core': BKN301's Core Banking systems and foundation of BKN301's flagship product: the Banking-as-a-Service suite. Managed priorities and business requirements for the whole development team, while enabling quick iteration on the product itself. Worked in tight loop with compliance, administrative and technical offices of multiple international banking institutions.",
+      "Contributed to the design and development of 301core: the company's Core Banking systems and foundational services of BKN301's flagship product: the Banking-as-a-Service (BaaS) suite. I managed priorities and business requirements for the entire development team, enabling quick iteration and scaling the product with the time. I worked in tight loop with compliance, administrative and other non-technical department of multiple international banking institutions.",
   },
 
   {
@@ -19,7 +19,7 @@ export const Jobs: Job[] = [
     company: { name: 'BKN301', website: 'https://bkn301.com/' },
     skills: ['Golang', 'Python', 'Terraform', 'Stellar', 'Docker'],
     description:
-      "Designed and implemented '301chain': a scalable and robust Closed Payment Circuit (CPC), based on the Stellar blockchain, capable of handling millions of dollars in daily transactions. Worked on R&D project '301stablecoin' aimed at releasing the first stablecoin based on a basket of multiple FIAT currencies as collateral to the token value.",
+      "Designed and implemented 301chain: a scalable and robust Closed Payment Circuit (CPC) based on the Stellar blockchain. Capable of handling millions of dollars in daily transactions, with fast settlements times and high availability in mind. I also worked on an R&D project named 301stablecoin: aiming at producing the first algorithmic stablecoin based on a basket diverse, regional FIAT currencies as collateral to the token value.",
   },
 
   {
@@ -29,7 +29,7 @@ export const Jobs: Job[] = [
     company: { name: 'Moonia', website: 'https://www.moonia.it/' },
     skills: ['Solidity', 'Typescript', 'Hardhat', 'Ethereum', 'Solana'],
     description:
-      "Developed, tested and released two NFT collections on Ethereum and Solana blockchains with special focus on maximizing cost efficiency. Designed and developed the MVP for 'Moonium': a SaaS product that aimed to simplify the management, discovery and interaction of Web3 communities (especially the ones spanning across multiple blockchains).",
+      "Developed, tested and released NFT collections on Ethereum and Solana with special focus on maximizing cost efficiency. I also designed and developed the MVP of Moonium, a SaaS product that aimed to simplify the management, discovery and interaction of Web3 communities with a multichain approach in mind.",
   },
 
   {
@@ -39,7 +39,7 @@ export const Jobs: Job[] = [
     company: { name: 'Botika', website: 'https://botika.ai/' },
     skills: ['Golang', 'Typescript', 'Next.js', 'Nest.js', 'Python'],
     description:
-      "Developed 'Meeters', a webapp for the organization, management and participation to virtual fairs and expositions during the Covid-19 pandemic. The platform has been utilized by both national and international fairs with up-to 10.000+ online simultaneous users. Developed custom products for international companies based on their requirements and with a special focus on speed, stability and cost-efficiency.",
+      "Developed Meeters, a platform for the organization and management of virtual fairs and expositions during the Covid-19 pandemic. The platform has been utilized by both national and international players with up-to 10.000+ online simultaneous users. I also developed custom products for international companies based on their business requirements and with a special focus on speed, stability and cost-efficiency.",
   },
 ];
 
