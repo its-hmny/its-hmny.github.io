@@ -1,4 +1,4 @@
-import { type Contact, type Job } from '@hmny.dev/lib/types';
+import { Skill, type Contact, type Job } from '@hmny.dev/lib/types';
 import { Bitcoin, Network, ServerCog, Store } from 'lucide-react';
 
 export const Jobs: Job[] = [
@@ -40,6 +40,129 @@ export const Jobs: Job[] = [
     skills: ['Golang', 'Typescript', 'Next.js', 'Nest.js', 'Python'],
     description:
       "Developed 'Meeters', a webapp for the organization, management and participation to virtual fairs and expositions during the Covid-19 pandemic. The platform has been utilized by both national and international fairs with up-to 10.000+ online simultaneous users. Developed custom products for international companies based on their requirements and with a special focus on speed, stability and cost-efficiency.",
+  },
+];
+
+export const Skills: Skill[] = [
+  {
+    type: 'tech',
+    name: 'C# and .NET',
+    logo: '/tech/csharp.svg',
+  },
+  {
+    type: 'tech',
+    name: 'Python',
+    logo: '/tech/python.svg',
+  },
+  {
+    type: 'tech',
+    name: 'Terraform & IaC',
+    logo: '/tech/terraform.svg',
+  },
+  {
+    type: 'project',
+    name: 'Choreia',
+    github: 'https://github.com/its-hmny/Choreia',
+    excerpt: 'A static analyzer to generate Choreography Automata from Go source',
+    logo: 'https://raw.githubusercontent.com/egonelbre/gophers/master/vector/science/scientist.svg',
+  },
+
+  {
+    type: 'project',
+    name: '3D Cellular Automata',
+    github: 'https://github.com/its-hmny/3D-Cellular-Automata',
+    excerpt: 'A Three.js webapp to simulate cellular automata in 3D',
+    logo: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/public/logo.png',
+  },
+  {
+    type: 'product',
+    name: '301core',
+    logo: '/tech/bank.svg',
+    excerpt: 'A suite of services designed to manage multiple financial core system through an abstracted and unified interface, enabling seamless integration across multiple service providers, facilitating flexibility and business continuity when migrating from one to the other for both my company and other financial institutions',
+  },
+
+  {
+    type: 'tech',
+    name: 'Golang',
+    logo: '/tech/golang.svg',
+  },
+  {
+    type: 'project',
+    name: 'ChimeraScript',
+    github: 'https://github.com/its-hmny/ChimeraScript',
+    excerpt: 'A suit of Python scripts for my everyday usage',
+    logo: 'https://raw.githubusercontent.com/its-hmny/ChimeraScript/main/assets/ChimeraScript.png',
+  },
+  {
+    type: 'tech',
+    name: 'GitHub Actions',
+    logo: '/tech/github-actions.svg',
+  },
+  {
+    type: 'tech',
+    name: 'Node.js',
+    logo: '/tech/node-js.svg',
+  },
+
+  {
+    type: 'product',
+    name: '301stablecoin',
+    logo: '/tech/libra.svg',
+    excerpt: 'A PoC for a multi-pegged algorithmic stablecoin where the value of the token is backed by a basket of regional FIAT currencies. The weight of each currency is determined by an algorithmically by leveraging real-time and historical data. Specifically designed and tested for emerging markets (MENA, LATAM, ASEAN)',
+  },
+  {
+    type: 'project',
+    name: 'its-hmny.github.io',
+    github: 'https://github.com/its-hmny/its-hmny.github.io',
+    excerpt: 'My personal website, hosted at https://its-hmny.github.io',
+    logo: 'https://raw.githubusercontent.com/its-hmny/its-hmny.github.io/main/public/PenroseTriangle.png',
+  },
+
+  {
+    type: 'tech',
+    name: 'React & Next.js',
+    logo: '/tech/react.svg',
+  },
+  {
+    type: 'tech',
+    name: 'Docker',
+    logo: '/tech/docker.svg',
+  },
+  {
+    type: 'product',
+    name: '301chain',
+    logo: '/tech/stellar.svg',
+    excerpt: 'A Closed Payment Circuit (CPC) based on the Stellar blockchain that allows users to manage multiple digital tokens and enabled fast settlement and exchange of value within the CPC. Designed to handle over $500 million in annual transaction volume, with ensure reliability and performance',
+  },
+
+  {
+    type: 'project',
+    name: 'MyPantryPal',
+    github: 'https://github.com/its-hmny/MyPantryPal',
+    excerpt: 'Mobile app to keep track of your grocery list via barcode',
+    logo: 'https://raw.githubusercontent.com/its-hmny/MyPantryPal/refs/heads/main/public/assets/icon/icon.png',
+  },
+  // {
+  //   type: 'project',
+  //   name: 'nand2tetris',
+  //   github: 'https://github.com/its-hmny/its-hmny.github.io',
+  //   excerpt: 'Collection of projects for the nand2tetris course',
+  //   logo: 'https://raw.githubusercontent.com/its-hmny/nand2tetris/refs/heads/main/assets/Tetris.png',
+  // },
+  {
+    type: 'tech',
+    name: 'Nest.js',
+    logo: '/tech/nest-js.svg',
+  },
+  {
+    type: 'tech',
+    name: 'PostgreSQL',
+    logo: '/tech/postgresql.svg',
+  },
+  {
+    type: 'tech',
+    name: 'Typescript',
+    logo: '/tech/typescript.svg',
   },
 ];
 

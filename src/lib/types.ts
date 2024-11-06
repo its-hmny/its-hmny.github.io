@@ -10,6 +10,29 @@ export type Job = {
   period: { start: string | Date; end: string | Date };
 };
 
+export type Tech = {
+  type: 'tech';
+  name: string;
+  logo: string;
+};
+
+export type Project = {
+  type: 'project';
+  name: string;
+  logo: string;
+  github: string;
+  excerpt: string;
+};
+
+export type Product = {
+  type: 'product';
+  name: string;
+  logo: string;
+  excerpt: string;
+};
+
+export type Skill = Tech | Product | Project;
+
 export type Contact = {
   name: string;
   icon: string;
