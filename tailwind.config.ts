@@ -19,6 +19,11 @@ const config: Config = {
         theme_fg_accent: colors.gray['500'],
       },
 
+      boxShadow: {
+        glowing_primary: `0px 0px 15px 5px ${colors.orange[500]}`,
+        glowing_secondary: `0px 0px 15px 5px ${colors.lime[500]}`,
+      },
+
       keyframes: { circle: { to: { 'offset-distance': '100%' } } },
       animation: {
         'spin-slow': 'circle 5s linear infinite',

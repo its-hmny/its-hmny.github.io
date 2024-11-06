@@ -1,18 +1,26 @@
 import Laptop from '@hmny.dev/3d/Laptop';
 import NonEuclideanCube from '@hmny.dev/3d/NonEuclideanCube';
 import Phone from '@hmny.dev/3d/Phone';
-import { Jobs } from '@hmny.dev/lib/data';
+import { Jobs, Skills } from '@hmny.dev/lib/data';
+import * as Bento from '@hmny.dev/ui/Bento';
 import * as Job from '@hmny.dev/ui/Job';
+import { Product, Project, Tech } from '@hmny.dev/ui/Skill';
 import Spinner from '@hmny.dev/ui/Spinner';
 import * as Timeline from '@hmny.dev/ui/Timeline';
 import { Github } from 'lucide-react';
 import Link from 'next/link';
-import { Suspense } from 'react';
+import { Suspense, useMemo } from 'react';
 
 // TODO(hmny): Should try View to manage everything through one canvas
 // ? Reference: https://github.com/pmndrs/drei?tab=readme-ov-file#view
 
 export default function Home() {
+  const items = useMemo(() => {
+    const SizeMap = { tech: 'small', project: 'medium', product: 'large' } as const;
+    const ComponentMap = { tech: Tech, project: Project, product: Product } as const;
+    return Skills.map(skill => ({ ...skill, size: SizeMap[skill.type], component: ComponentMap[skill.type] }));
+  }, []);
+
   return (
     <main>
       <section className='flex h-screen w-screen items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
@@ -85,6 +93,13 @@ export default function Home() {
           companies. Each one of them has been a chance to delve deep, experiment and expand my technical skills.
         </p>
 
+        <Bento.Grid>
+          {items.map(skill => (
+            <Bento.Item key={skill.name} size={skill.size}>
+              <skill.component skill={skill} />
+            </Bento.Item>
+          ))}
+        </Bento.Grid>
       </section>
 
       <section className='flex h-screen w-screen items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
