@@ -200,6 +200,6 @@ export const Contacts: Contact[] = [
   {
     name: 'Resume',
     icon: '/socials/files.png',
-    link: '/Resume.pdf',
+    link: '/Enea Guidi - Resume.pdf',
   },
 ];

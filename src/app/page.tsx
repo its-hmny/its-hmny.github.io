@@ -7,7 +7,7 @@ import * as Job from '@hmny.dev/ui/Job';
 import { Product, Project, Tech } from '@hmny.dev/ui/Experience';
 import Spinner from '@hmny.dev/ui/Spinner';
 import * as Timeline from '@hmny.dev/ui/Timeline';
-import { Github } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import { Suspense, useMemo } from 'react';
 
@@ -41,7 +41,7 @@ export default function Home() {
               👋 Hi there! I'm <span className='text-theme_secondary-400'>Enea</span>
             </h1>
             <h4 className='font-italic mb-3 text-2xl text-theme_primary-400'>
-              Fullstack Developer & Blockchain Specialist
+              Software Engineer - Fullstack Developer
             </h4>
             <p className='text-justify text-lg text-theme_fg_accent'>
               I architect and deliver unique digital experiences on the Frontend while implementing robust and
@@ -51,10 +51,14 @@ export default function Home() {
             </p>
           </div>
 
-          <div className='mb-4 mt-8 '>
-            <Link href='https://github.com/its-hmny' className='rounded-full bg-theme_primary-400 px-4 py-4 text-lg'>
+          <div className='mb-4 mt-8 w-full flex space-x-6'>
+            <Link href='https://github.com/its-hmny' target='_blank' className='rounded-full bg-theme_primary-400 px-5 py-3 text-lg'>
               <Github strokeWidth={2} className='mr-1 inline' />
-              <span>See some of my work</span>
+              <span>GitHub</span>
+            </Link>
+            <Link href='https://www.linkedin.com/in/enea-guidi' target='_blank' className='rounded-full bg-theme_primary-400 px-5 py-3 text-lg'>
+              <Linkedin strokeWidth={2} className='mr-1 inline mt-[-0.3em]' />
+              <span>LinkedIn</span>
             </Link>
           </div>
         </div>
@@ -63,7 +67,7 @@ export default function Home() {
       <section className='flex h-auto min-h-screen w-screen flex-row items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col-reverse'>
         {/* First half of the page */}
         <div className='h-full w-6/12 p-10 max-lg:h-auto max-lg:w-screen'>
-          <h3 className='font-italic mb-7 text-4xl text-theme_primary-400'>💼 My work experience</h3>
+          <h3 className='font-italic mb-7 text-4xl text-theme_primary-400'>💼 Work Experience</h3>
           <p className='text-md mb-10 text-justify text-theme_fg_accent'>
             Don't let my young age fool you! In my previous work experiences I was fortunate enough to explore and
             broaden my skillset: from delving into the intricacies of blockchains to exploring the creative realms of 3D
