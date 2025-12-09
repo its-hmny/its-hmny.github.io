@@ -1,4 +1,4 @@
-import { type Experience, type Contact, type Job } from '@hmny.dev/lib/types';
+import { type Technology, type Contact, type Job } from '@hmny.dev/lib/types';
 import { Bitcoin, Network, ServerCog, Store } from 'lucide-react';
 
 export const Jobs: Job[] = [
@@ -53,127 +53,41 @@ export const Jobs: Job[] = [
   },
 ];
 
-export const Experiences: Experience[] = [
-  {
-    type: 'tech',
-    name: 'C# and .NET',
-    logo: '/tech/csharp.svg',
-  },
-  {
-    type: 'tech',
-    name: 'Python',
-    logo: '/tech/python.svg',
-  },
-  {
-    type: 'tech',
-    name: 'Terraform & IaC',
-    logo: '/tech/terraform.svg',
-  },
-  {
-    type: 'project',
-    name: 'Choreia',
-    github: 'https://github.com/its-hmny/Choreia',
-    excerpt: 'A static analyzer to generate Choreography Automata from Go source',
-    logo: 'https://raw.githubusercontent.com/egonelbre/gophers/master/vector/science/scientist.svg',
-  },
+export const Languages: Technology[] = [
+  { name: 'Python', logo: 'https://cdn.simpleicons.org/python/3776AB' },
+  { name: 'Golang', logo: 'https://cdn.simpleicons.org/go/00ADD8' },
+  { name: 'Javascript', logo: 'https://cdn.simpleicons.org/javascript/F7DF1E' },
+  { name: 'Typescript', logo: 'https://cdn.simpleicons.org/typescript/3178C6' },
+  { name: 'Kotlin', logo: 'https://cdn.simpleicons.org/kotlin/7F52FF' },
+  { name: 'Zig', logo: 'https://cdn.simpleicons.org/zig/F7A41D' },
+];
 
-  {
-    type: 'project',
-    name: '3D Cellular Automata',
-    github: 'https://github.com/its-hmny/3D-Cellular-Automata',
-    excerpt: 'A Three.js webapp to simulate cellular automata in 3D',
-    logo: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/public/logo.png',
-  },
-  {
-    type: 'product',
-    name: '301core',
-    logo: '/tech/bank.svg',
-    excerpt: 'A suite of services designed to manage multiple financial core system through an abstracted and unified interface, enabling seamless integration across multiple service providers, facilitating flexibility and business continuity when migrating from one to the other for both my company and other financial institutions',
-  },
+export const Frameworks: Technology[] = [
+  { name: '.NET Core', logo: 'https://cdn.simpleicons.org/dotnet/512BD4' },
+  { name: 'React', logo: 'https://cdn.simpleicons.org/react/61DAFB' },
+  { name: 'Nest.js', logo: 'https://cdn.simpleicons.org/nestjs/E0234E' },
+  { name: 'Spring Boot', logo: 'https://cdn.simpleicons.org/springboot/6DB33F' },
+  { name: 'Next.js', logo: 'https://cdn.simpleicons.org/nextdotjs/FFFFFF' },
+  { name: 'Gin', logo: 'https://cdn.simpleicons.org/gin/008ECF' },
+  { name: 'Ktor', logo: 'https://cdn.simpleicons.org/ktor/087CFA' },
+];
 
-  {
-    type: 'tech',
-    name: 'Golang',
-    logo: '/tech/golang.svg',
-  },
-  {
-    type: 'project',
-    name: 'ChimeraScript',
-    github: 'https://github.com/its-hmny/ChimeraScript',
-    excerpt: 'A suit of Python scripts for my everyday usage',
-    logo: 'https://raw.githubusercontent.com/its-hmny/ChimeraScript/main/assets/ChimeraScript.png',
-  },
-  {
-    type: 'tech',
-    name: 'GitHub Actions',
-    logo: '/tech/github-actions.svg',
-  },
-  {
-    type: 'tech',
-    name: 'Node.js',
-    logo: '/tech/node-js.svg',
-  },
+export const Products: Technology[] = [
+  { name: 'GitHub Actions', logo: 'https://cdn.simpleicons.org/githubactions/2088FF' },
+  { name: 'GitHub', logo: 'https://cdn.simpleicons.org/github/FFFFFF' },
+  { name: 'Docker', logo: 'https://cdn.simpleicons.org/docker/2496ED' },
+  { name: 'Terraform', logo: 'https://cdn.simpleicons.org/terraform/844FBA' },
+  { name: 'PostgreSQL', logo: 'https://cdn.simpleicons.org/postgresql/4169E1' },
+  { name: 'v0', logo: 'https://cdn.simpleicons.org/v0/FFFFFF' },
+  { name: 'Supabase', logo: 'https://cdn.simpleicons.org/supabase/3FCF8E' },
+];
 
-  {
-    type: 'product',
-    name: '301stablecoin',
-    logo: '/tech/libra.svg',
-    excerpt: 'A PoC for a multi-pegged algorithmic stablecoin where the value of the token is backed by a basket of regional FIAT currencies. The weight of each currency is determined by an algorithmically by leveraging real-time and historical data. Specifically designed and tested for emerging markets (MENA, LATAM, ASEAN)',
-  },
-  {
-    type: 'project',
-    name: 'its-hmny.github.io',
-    github: 'https://github.com/its-hmny/its-hmny.github.io',
-    excerpt: 'My personal website, hosted at https://its-hmny.github.io',
-    logo: 'https://raw.githubusercontent.com/its-hmny/its-hmny.github.io/main/public/PenroseTriangle.png',
-  },
-
-  {
-    type: 'tech',
-    name: 'React & Next.js',
-    logo: '/tech/react.svg',
-  },
-  {
-    type: 'tech',
-    name: 'Docker',
-    logo: '/tech/docker.svg',
-  },
-  {
-    type: 'product',
-    name: '301chain',
-    logo: '/tech/stellar.svg',
-    excerpt: 'A Closed Payment Circuit (CPC) based on the Stellar blockchain that allows users to manage multiple digital tokens and enabled fast settlement and exchange of value within the CPC. Designed to handle over $500 million in annual transaction volume, with ensure reliability and performance',
-  },
-
-  {
-    type: 'project',
-    name: 'MyPantryPal',
-    github: 'https://github.com/its-hmny/MyPantryPal',
-    excerpt: 'Mobile app to keep track of your grocery list via barcode',
-    logo: 'https://raw.githubusercontent.com/its-hmny/MyPantryPal/refs/heads/main/public/assets/icon/icon.png',
-  },
-  // {
-  //   type: 'project',
-  //   name: 'nand2tetris',
-  //   github: 'https://github.com/its-hmny/its-hmny.github.io',
-  //   excerpt: 'Collection of projects for the nand2tetris course',
-  //   logo: 'https://raw.githubusercontent.com/its-hmny/nand2tetris/refs/heads/main/assets/Tetris.png',
-  // },
-  {
-    type: 'tech',
-    name: 'Nest.js',
-    logo: '/tech/nest-js.svg',
-  },
-  {
-    type: 'tech',
-    name: 'PostgreSQL',
-    logo: '/tech/postgresql.svg',
-  },
-  {
-    type: 'tech',
-    name: 'Typescript',
-    logo: '/tech/typescript.svg',
-  },
+export const Others: Technology[] = [
+  { name: 'Git', logo: 'https://cdn.simpleicons.org/git/F05032' },
+  { name: 'Ubuntu', logo: 'https://cdn.simpleicons.org/ubuntu/E95420' },
+  { name: 'Ghostty', logo: 'https://cdn.simpleicons.org/ghostty/3551F3' },
+  { name: 'Cursor', logo: 'https://cdn.simpleicons.org/cursor/FFFFFF' },
+  { name: 'Obsidian', logo: 'https://cdn.simpleicons.org/obsidian/7C3AED' },
 ];
 
 export const Contacts: Contact[] = [
