@@ -51,13 +51,21 @@ export default function Home() {
             </p>
           </div>
 
-          <div className='mb-4 mt-8 w-full flex space-x-6'>
-            <Link href='https://github.com/its-hmny' target='_blank' className='rounded-full bg-theme_primary-400 px-5 py-3 text-lg'>
+          <div className='mb-4 mt-8 flex w-full space-x-6'>
+            <Link
+              target='_blank'
+              href='https://github.com/its-hmny'
+              className='rounded-full bg-theme_primary-400 px-5 py-3 text-lg'
+            >
               <Github strokeWidth={2} className='mr-1 inline' />
               <span>GitHub</span>
             </Link>
-            <Link href='https://www.linkedin.com/in/enea-guidi' target='_blank' className='rounded-full bg-theme_primary-400 px-5 py-3 text-lg'>
-              <Linkedin strokeWidth={2} className='mr-1 inline mt-[-0.3em]' />
+            <Link
+              target='_blank'
+              href='https://www.linkedin.com/in/enea-guidi'
+              className='rounded-full bg-theme_primary-400 px-5 py-3 text-lg'
+            >
+              <Linkedin strokeWidth={2} className='mr-1 mt-[-0.3em] inline' />
               <span>LinkedIn</span>
             </Link>
           </div>
@@ -131,4 +139,3 @@ export default function Home() {
     </main>
   );
 }
-  
