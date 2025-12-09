@@ -1,7 +1,7 @@
 import Laptop from '@hmny.dev/3d/Laptop';
 import NonEuclideanCube from '@hmny.dev/3d/NonEuclideanCube';
 import Phone from '@hmny.dev/3d/Phone';
-import { Jobs, Others, Products, Languages, Frameworks } from '@hmny.dev/lib/data';
+import { Jobs, Others, Products, Languages, Frameworks, Projects } from '@hmny.dev/lib/data';
 import * as Job from '@hmny.dev/ui/Job';
 import Spinner from '@hmny.dev/ui/Spinner';
 import * as Timeline from '@hmny.dev/ui/Timeline';
@@ -9,6 +9,7 @@ import * as Orbit from '@hmny.dev/ui/Orbit';
 import { Github, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import { Suspense } from 'react';
+import { Marquee, ReviewCard } from '@hmny.dev/ui/Marquee';
 
 // TODO(hmny): Should try View to manage everything through one canvas
 // ? Reference: https://github.com/pmndrs/drei?tab=readme-ov-file#view
@@ -90,10 +91,21 @@ export default function Home() {
       </section>
 
       <section className='flex h-auto min-h-screen w-screen flex-row items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col-reverse'>
-        <div className='h-screen w-5/12 max-lg:h-[40vh] max-lg:w-screen'>
-          {/* <Suspense fallback={<Spinner />}>
-            <Laptop />
-          </Suspense> */}
+        <div className='h-3/6 w-5/12 max-lg:h-[40vh] max-lg:w-screen'>
+          <div className='relative flex w-full flex-col items-center justify-center overflow-hidden'>
+            <Marquee pauseOnHover className='[--duration:20s]'>
+              {Projects.map(project => (
+                <ReviewCard key={project.name} project={project} />
+              ))}
+            </Marquee>
+            <Marquee reverse pauseOnHover className='[--duration:20s]'>
+              {Projects.reverse().map(project => (
+                <ReviewCard key={project.name} project={project} />
+              ))}
+            </Marquee>
+            <div className='from-background pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r'></div>
+            <div className='from-background pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l'></div>
+          </div>
         </div>
 
         <div className='w-6/12 p-8 max-lg:h-auto max-lg:w-screen'>
