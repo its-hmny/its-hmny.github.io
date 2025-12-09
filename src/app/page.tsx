@@ -1,31 +1,19 @@
 import Laptop from '@hmny.dev/3d/Laptop';
 import NonEuclideanCube from '@hmny.dev/3d/NonEuclideanCube';
 import Phone from '@hmny.dev/3d/Phone';
-import { Experiences, Jobs } from '@hmny.dev/lib/data';
-import * as Bento from '@hmny.dev/ui/Bento';
+import { Jobs, Others, Products, Languages, Frameworks } from '@hmny.dev/lib/data';
 import * as Job from '@hmny.dev/ui/Job';
-import { Product, Project, Tech } from '@hmny.dev/ui/Experience';
 import Spinner from '@hmny.dev/ui/Spinner';
 import * as Timeline from '@hmny.dev/ui/Timeline';
+import * as Orbit from '@hmny.dev/ui/Orbit';
 import { Github, Linkedin } from 'lucide-react';
 import Link from 'next/link';
-import { Suspense, useMemo } from 'react';
+import { Suspense } from 'react';
 
 // TODO(hmny): Should try View to manage everything through one canvas
 // ? Reference: https://github.com/pmndrs/drei?tab=readme-ov-file#view
 
 export default function Home() {
-  const experiences = useMemo(() => {
-    const sizeMap = { tech: 'small', project: 'medium', product: 'large' } as const;
-    const componentMap = { tech: Tech, project: Project, product: Product } as const;
-
-    return Experiences.map(skill => ({
-      ...skill,
-      size: sizeMap[skill.type],
-      component: componentMap[skill.type],
-    }));
-  }, []);
-
   return (
     <main>
       <section className='flex h-screen w-screen items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
@@ -101,23 +89,48 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='align-evenly flex h-full w-full flex-col justify-evenly p-20'>
-        <h3 className='font-italic mb-7 text-4xl text-theme_primary-400'>💻 Projects and Technologies</h3>
-        <p className='text-md mb-10 text-justify text-theme_fg_accent'>
-          I thrive on the freedom to innovate and explore new technologies, frameworks and tools, whether through side
-          projects or new challenging professional experiences. This section showcases some of my personal projects, the
-          technologies and tools I used as well as significant work-related projects I led or took part in during my
-          past work experiences. Each one of them pushed me to improve and has been a chance to delve deep, experiment
-          and expand my technical skills.
-        </p>
+      <section className='flex h-auto min-h-screen w-screen flex-row items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col-reverse'>
+        <div className='h-screen w-5/12 max-lg:h-[40vh] max-lg:w-screen'>
+          {/* <Suspense fallback={<Spinner />}>
+            <Laptop />
+          </Suspense> */}
+        </div>
 
-        <Bento.Grid>
-          {experiences.map(exp => (
-            <Bento.Item key={exp.name} size={exp.size}>
-              <exp.component exp={exp} />
-            </Bento.Item>
-          ))}
-        </Bento.Grid>
+        <div className='w-6/12 p-8 max-lg:h-auto max-lg:w-screen'>
+          <h3 className='font-italic mb-7 text-4xl text-theme_primary-400'>💻 Projects and Technologies</h3>
+          <p className='text-md text-justify text-theme_fg_accent'>
+            I thrive on the freedom to innovate and explore new technologies, frameworks and tools, whether through side
+            projects or new challenging professional experiences. This section showcases some of my personal projects,
+            the technologies and tools I used as well as significant work-related projects I led or took part in during
+            my past work experiences. Each one of them pushed me to improve and has been a chance to delve deep,
+            experiment and expand my technical skills.
+          </p>
+
+          <div className='h-96 w-full'>
+            <Orbit.Main>
+              {Others.map((item, index) => (
+                <Orbit.Item path radius={45} duration={30} iconSize={30} startAngle={360/Others.length*index}>
+                  <img src={item.logo} alt={item.name} className="w-full h-full" />
+                </Orbit.Item>
+              ))}
+              {Languages.map((item, index) => (
+                <Orbit.Item path reverse radius={90} duration={30} iconSize={30} startAngle={360/Languages.length*index}>
+                  <img src={item.logo} alt={item.name} className="w-full h-full" />
+                </Orbit.Item>
+              ))}
+              {Frameworks.map((item, index) => (
+                <Orbit.Item path radius={135} duration={30} iconSize={30} startAngle={360/Frameworks.length*index}>
+                  <img src={item.logo} alt={item.name} className="w-full h-full" />
+                </Orbit.Item>
+              ))}
+              {Products.map((item, index) => (
+                <Orbit.Item path reverse radius={180} duration={30} iconSize={30} startAngle={360/Products.length*index}>
+                  <img src={item.logo} alt={item.name} className="w-full h-full" />
+                </Orbit.Item>
+              ))}
+            </Orbit.Main>
+        </div>
+        </div>
       </section>
 
       <section className='flex h-screen w-screen items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
