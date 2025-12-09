@@ -15,6 +15,23 @@ export type Technology = {
   logo: string;
 };
 
+export type PersonalProject = {
+  name: string;
+  logo: string;
+  github: string;
+  excerpt: string;
+  type: 'personal_project';
+};
+
+export type EnterpriseProduct = {
+  name: string;
+  logo: string;
+  excerpt: string;
+  type: 'enterprise_product';
+};
+
+export type Project = PersonalProject | EnterpriseProduct;
+
 export type Contact = {
   name: string;
   icon: string;

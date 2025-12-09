@@ -1,4 +1,4 @@
-import { type Technology, type Contact, type Job } from '@hmny.dev/lib/types';
+import { type Contact, type Job, type Project, type Technology } from '@hmny.dev/lib/types';
 import { Bitcoin, Network, ServerCog, Store } from 'lucide-react';
 
 export const Jobs: Job[] = [
@@ -89,6 +89,71 @@ export const Others: Technology[] = [
   { name: 'Cursor', logo: 'https://cdn.simpleicons.org/cursor/FFFFFF' },
   { name: 'Obsidian', logo: 'https://cdn.simpleicons.org/obsidian/7C3AED' },
 ];
+
+
+export const Projects: Project[] = [
+  {
+    name: 'Choreia',
+    type: 'personal_project',
+    github: 'https://github.com/its-hmny/Choreia',
+    excerpt: 'A static analyzer to generate Choreography Automata from Go source',
+    logo: 'https://raw.githubusercontent.com/egonelbre/gophers/master/vector/science/scientist.svg',
+  },
+  {
+    name: '3D Cellular Automata',
+    type: 'personal_project',
+    github: 'https://github.com/its-hmny/3D-Cellular-Automata',
+    excerpt: 'A Three.js webapp to simulate cellular automata in 3D',
+    logo: 'https://raw.githubusercontent.com/its-hmny/3D-Cellular-Automata/main/public/logo.png',
+  },
+  {
+    name: '301core',
+    type: 'enterprise_product',
+    logo: '/tech/bank.svg',
+    excerpt: 'A suite of services designed to manage multiple financial core system through an abstracted and unified interface, enabling seamless integration across multiple service providers, facilitating flexibility and business continuity when migrating from one to the other for both my company and other financial institutions',
+  },
+  {
+    name: 'ChimeraScript',
+    type: 'personal_project',
+    github: 'https://github.com/its-hmny/ChimeraScript',
+    excerpt: 'A suit of Python scripts for my everyday usage',
+    logo: 'https://raw.githubusercontent.com/its-hmny/ChimeraScript/main/assets/ChimeraScript.png',
+  },
+  {
+    name: '301stablecoin',
+    type: 'enterprise_product',
+    logo: '/tech/libra.svg',
+    excerpt: 'A PoC for a multi-pegged algorithmic stablecoin where the value of the token is backed by a basket of regional FIAT currencies. The weight of each currency is determined by an algorithmically by leveraging real-time and historical data. Specifically designed and tested for emerging markets (MENA, LATAM, ASEAN)',
+  },
+  {
+    name: 'its-hmny.github.io',
+    type: 'personal_project',
+    github: 'https://github.com/its-hmny/its-hmny.github.io',
+    excerpt: 'My personal website, hosted at https://its-hmny.github.io',
+    logo: 'https://raw.githubusercontent.com/its-hmny/its-hmny.github.io/main/public/PenroseTriangle.png',
+  },
+  {
+    name: '301chain',
+    type: 'enterprise_product',
+    logo: '/tech/stellar.svg',
+    excerpt: 'A Closed Payment Circuit (CPC) based on the Stellar blockchain that allows users to manage multiple digital tokens and enabled fast settlement and exchange of value within the CPC. Designed to handle over $500 million in annual transaction volume, with ensure reliability and performance',
+  },
+  {
+    name: 'MyPantryPal',
+    type: 'personal_project',
+    github: 'https://github.com/its-hmny/MyPantryPal',
+    excerpt: 'Mobile app to keep track of your grocery list via barcode',
+    logo: 'https://raw.githubusercontent.com/its-hmny/MyPantryPal/refs/heads/main/public/assets/icon/icon.png',
+  },
+  {
+    name: 'nand2tetris',
+    type: 'personal_project',
+    github: 'https://github.com/its-hmny/its-hmny.github.io',
+    excerpt: 'Collection of projects for the nand2tetris course',
+    logo: 'https://raw.githubusercontent.com/its-hmny/nand2tetris/refs/heads/main/assets/Tetris.png',
+  },
+];
+
 
 export const Contacts: Contact[] = [
   {
