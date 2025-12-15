@@ -4,8 +4,18 @@ import { Bitcoin, Network, ServerCog, Store } from 'lucide-react';
 export const Jobs: Job[] = [
   {
     icon: Network,
+    role: 'Fullstack Engineer - Regulatory Technology',
+    period: { start: 'August 2025', end: 'Present' },
+    company: { name: 'N26', website: 'https://n26.com/' },
+    skills: ['Kotlin', 'Typescript', 'Spring Boot', 'React', 'Nest.js'],
+    description:
+      "Maintained internal tools that abstracted and enforced regulatory requirements while limiting impact on business operations. Most of the work focused on Identity and Access Management (IAM): defining roles and permissions, automating Joiner–Mover–Leaver flows and building checks for Least-Privilege Access and Segregation of Duties. Contributed to integrations and automation to manage access across internal and external systems, reduce manual bookkeeping while maintaining full traceability for compliance audits.",
+  },
+  
+  {
+    icon: Network,
     role: 'Team Leader - Core System Team',
-    period: { start: 'December 2023', end: 'Present' },
+    period: { start: 'December 2023', end: 'August 2025' },
     company: { name: 'BKN301', website: 'https://bkn301.com/' },
     skills: ['C#', '.NET Core', 'Playwright', 'Docker', 'Kubernetes'],
     description:
