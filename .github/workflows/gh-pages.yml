@@ -1,4 +1,4 @@
-# Sample workflow for building and deploying a Vite React app to GitHub Pages
+# Sample workflow for building and deploying a Next.js app to GitHub Pages
 
 name: Deploy to GitHub Pages
 
@@ -17,8 +17,13 @@ concurrency: # Allow one concurrent deployment
   cancel-in-progress: true
 
 jobs: 
-  build: # The full build process step-by-step
+  deploy:
     runs-on: ubuntu-latest
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -43,15 +48,6 @@ jobs:
         with:
           path: ./out
 
-  deploy: # Deployment of the artifact to GitHUb Pages
-    needs: build
-    runs-on: ubuntu-latest
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
