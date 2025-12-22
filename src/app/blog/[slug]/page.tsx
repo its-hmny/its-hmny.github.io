@@ -26,10 +26,13 @@ export default async function Post({ params }: StaticProps) {
   const dateFmtOpt = { year: 'numeric', month: 'long', day: 'numeric' } as const;
 
   return (
-    <article className='mb-32'>
-      <h1 className='mx-auto mb-12 text-center text-3xl font-bold leading-tight tracking-tighter md:text-left md:text-5xl md:leading-none lg:text-6xl'>
+    <article className='mb-32 max-w-7xl mx-auto'>
+      <h1 className='mx-auto mb-1 text-center text-3xl font-bold leading-tight tracking-tighter md:text-left md:text-5xl md:leading-none lg:text-6xl'>
         {post.title}
       </h1>
+      <h3 className='mx-auto mb-12 text-theme_fg_accent text-center text-lg font-bold leading-tight tracking-tighter md:text-left md:text-2xl md:leading-none lg:text-3xl'>
+        {post.subtitle}
+      </h3>
 
       <div className='w-full flex flex-cols justify-between items-center md:mb-6'>
         <div className='max-w-2/4 flex items-center'>
@@ -42,14 +45,14 @@ export default async function Post({ params }: StaticProps) {
           />
           <div className='text-xl font-bold'>{post.author.name}</div>
         </div>
-        <div className='text-lg '>
+        <div className='text-lg'>
           <time className='text-theme_secondary-500' dateTime={post.date.toISOString()}>
             {new Intl.DateTimeFormat(undefined, dateFmtOpt).format(post.date)}
           </time>
         </div>
       </div>
 
-      <div id='markdown' className='mx-auto max-w-7xl text-justify'>
+      <div id='markdown' className='text-justify'>
         <MDXRemote source={post.content} />
       </div>
     </article>
