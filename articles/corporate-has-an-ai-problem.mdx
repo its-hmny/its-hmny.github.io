@@ -1,0 +1,76 @@
+---
+title: "Corporate has an AI problem"
+date: "2025-12-22"
+
+excerpt: "How AI is enabling broken corporate habits instead of fixing them, by making it easy to comply with pointless bureaucracy, erasing the natural friction between layers, and quietly setting companies up for their own demise"
+
+author:
+  name: Enea Guidi
+  picture: "/blog/hmny.jpeg"
+
+images:
+  og: "/blog/corporate-has-an-ai-problem/cover_small.png"
+  cover_large: "/blog/corporate-has-an-ai-problem/cover_large.png "
+  cover_small: "/blog/corporate-has-an-ai-problem/cover_small.png"
+---
+
+## This is not what you're thinking
+
+Contrary to what one may think I don't intend on shitting the corporate world, everyone has experienced first-hand on known someone that told them about the usual bullshit shenanigans like: 20+ meetings a week, endless layers of review and approval and thousands of (manly pointless) policies and so on... I also don't plan on speaking about how, in the last few years, executive at all levels are trying to push AI adoption everywhere to 'automate' and 'improve efficiency' while they themselves foster an environment where the employee productivity, agency and imagination is destroyed and submerged under endless layers of hierarchy and procedures.
+
+What I would like to talk about instead is how the (stereo)typical corporate environment is mixing with an overusage of AI automation in an explosive cocktail that hides inefficiencies rather than bringing them forwards so that, at some point, they can be addressed and fixed. This alone would not be a problem but in my opinion the AI tooling stops the employee from pushing back to the manager and removes the feedback loop effect from the corporate hierarchy. I think we can all agree that a situation like this might become dangerouse if not potentially fatal for the company itself.
+
+In this article I'll share some things I've experienced in the last months and how I have **not** solved them with the help of AI.
+None of the issues here at hand are out of the ordinary or major by any standards but *this is precisely my point*: since they are not major (**and AI can help you deal with it easily**) they get hidden and compound with each other over years until the whole thing explodes. As a matter of fact, given the growth in capability and quality of AI-related tooling, the more these nuances are left unchecked and growing the more they will get hidden under the rug and left unhandled until they grow Too Big To Ignore.
+
+AI, as for any other tool, is not good nor bad but depends on the use we make of it. It just seems, at least in the corporate world, is now mainly used to manage nuances and undesirable bureaucracy, letting both grow unchecked without the proper counter-balance force.
+
+## The Underdevelopment of Useful Documentation
+
+Let's paint the first scenario here. I just joined a new team and, as part of my onboarding, tried to do the same usual things every newjoiner does: read some documentation, try run locally the code and gather an understanding of the overall system I'm working with.
+
+The documentation (of course) is mostly useless and outdated, it's at the same time full of useless details but at the same time lacking of any real insights. This is almost always the case when documentation is written because **we need to** rather than because **it's useful to**, this usually happens because your manager or his manager requested documentation for any new feature while never actually bother to read one sentence from it.
+
+Now, before the age of AI my way of approaching the problem would be to investigate on the code or ask my colleagues about any doubts I may have. Then I would go on and either amend the previous documentation or create new one. The idea here is that something is unclear to me it will probably be unclear also to the next person joining after me.
+
+Can you guess what I did instead this time? I just put all the repositories and every other piece of documentation the same folder, gave an LLM access to it and prompted it all my doubts. On one hand, I have solved all my problem (even faster than my previous approach) but I did it only for this one time and only for my immediate need. I didn't get any insight in how the team was thinking, what were any non-written constraints or why did they chose one option rather than the other one. I've have no historical context, I lack the kind of nuances that only the people they were there can tell you about but at the same time are almost never included in writing.
+
+Furthermore, this time, I've contributed and addressed nothing. The next new joiner will have the same problem as me, find probably the same solution and leave the same problem unsolved for the one after him. When new documentation will be produced it will still be done in the incorrect way (because no feedback was given this time) and it will be probably be done through an LLM by giving as reference the previous documents. Now, multiply this behavior for thousands of hires across hundreds of team, compound it with the intrinsic non-determinism of an LLM (for example my answer can be from 'slightly different' or 'significantly different' from the one another guy may receive) and you will note that there is an undergoing **Loss of Context pandemic** here. 
+
+## The Overdevelopment of Useless Documentation
+
+You may have experienced firsthand your manager, an external consultant or client ask you to document, with great length of details, every piece of your system. I'll make a practical example from my experience: one time a corporate client asked us to document every interaction with any external service of our major project while still undergoing daily changes and modifications. This was, as you can imagine, on top of an already pointless and (frankly) out of touch with reality requests on their side. Again, this is the kind of thing these entity and their collaborator (mainly consultants in my experience) tend to do to compensate for their lack of any technical skills.
+
+Now, the me from the past would've taken the time to actually sit down with these people and try to reason with them. At worst, I would've tried to reach a compromise (usually by threatening to miss a deadline). The sheer tediousness of the task would make the task (even economically speaking) impractical and forced me to push against it.
+
+Do you think this is what I did this time? Of course not. I just tasked an LLM to generate a 'comprehensive report' based on the codebase itself. I'm pretty sure the content of this documentation was never checked by anyone in the team. I know for a fact that the people that requested it in the first place lacked the technical skills to understand any of it so they probably never opened it as well.
+
+This example can be generalized to every other piece of documentation that is enforced in the same way: through hierarchy rather than need. If you have corporate experience you know that this will probably apply to around 75% percent of the entire company knowledge base.
+
+Once more, we didn't actually solve anything. No one pushed back against it so next time they will ask for the same pointless thing and get the same pointless result. What I also experienced firsthand is that, while AI lowers the cost of documentation, it doesn't improve quality and instead enables an entire managerial class of 'procedures fetishist' looking for the next hit of their documentation crack. As with any other junkie they will get used to it and require an even bigger dose next time. 
+
+But for the others everything is fine, they just piled more dust under the rug and lived to survive another day... While this example is specific about documentation the problem is far more extended: any piece of bureaucracy that can get automated with AI gets automated, no one pushes against it anymore because it's easier to not care about it. While before there was a reaching point were people indirectly or not started to push back now there's nothing so it grows unchecked and becomes worse.
+
+## Tech Debt will only grow
+
+One last case study for today. I guess any developer has fought against technical debt in his career. Tech Debt is a natural part of software development lifecycle and, as everything, is not inherently good or bad. The bad thing that is usually associated with Tech Debt is that it never gets **extinguished**. In most cases it only gets **refinanced** and de-prioritized from the backlog for the sake of **delivering features** or **increasing revenues**. I guess every engineer has a story about being asked to do something super quick with the promise to `address it later` and then being forced by the same people to work on the same shitty codebase for months delivering even more hacked features rather than restructure the foundations and start anew.
+
+The problem is that, until some years ago, this debt would have at some point growed out of control and start *spilling* out of the developers hands. The problem caused by it would be reflected in **Time To Market**, slower iteration times, increasing number of bugs and dissatisfaction from the end user. Coincidentally, all the metrics that upper management understands or, rather, is forced to reckon with. The *spillover effect* would have forced them to reckon with the engineers' necessities and to reach a common ground between the economical side and the technical one.
+
+What happens now? Every disillusioned developer just uses AI to **work around the problem**. It is doesn't have to stick his head out with his manager and he doesn't have to work around the clock to fix the real issue of the problem. The same goes for any other kind of technical concern: they will be raised maybe once, probably will go unheard because `we have other priorities` and then the whole issue will be forgotten. This of course doesn't mean it has disappeared, it stays there and grows bigger with every new feature and every new shortcut taken.
+
+Once again, the feedback loop has been interrupted, and the problems that would've been highlighted through this loop are simply ignored by all parties involved until they can't be ignored anymore. Then all hell break loose...
+
+## But why this is a corporate only problem?
+
+It is a corporate only problem because corporate is the kind of environment where agency is actually discouraged. Employees are selectively breed to be 'Yes Man' rather than thinking people. Directives are propagated throughout the chain without anyone raising any kind of concerns or double checking what is being asked for the lower level. People that would like to make changes are first blocked by the sheer amount of bureaucracy and coordination required to do anything, then they are ostracized by colleagues and other team more aligned with the 'Party Line' and then forced out either via firing of resignation. Only the tamed survives and enforce their derangement onto the next generation of employees.
+
+The incentives are wicked: I saw people which objective at the end of the day was not to prove they did something, rather to prove they did nothing for someone else fault. This behavior can be observed in the ping-pong of mail between six people where everyone adds one more person to the thread in the hope this one might be able to respond a basic question. It can be observed in the **passive** agressive exchange with tha classic 'corporate jargon' that every actual worker hates.
+
+On the other hand I also worked at startups, there the environment is different. They're actively looking for someone independent and more entrepreneurial than the average employee. On one hand you feel empowered to try something new and help the actual growth of your company. Even when there are tech problems you can work on them with, at least, cooperation if not support from other teams and the scope of the product is usually more reduced and lean than more established players. 
+
+## How far can we go?
+
+As you can see all the problem listed here smaller and coming from a diverse range of situations, the problem is that these issues are not properly addressed but only circumvented. So they grow and compound on one another, a lot of small local bubbles of inefficiency grow to form a giant, global one. The only way the machine keeps working without losing its power is by offloading even more tasks to the AI. The problem with this is that it can only work until the AI is capable of bailing us out.
+
+ I feel like I'm living in the tech version of 'The Big Short', seeing people going blindly on a one-way only street asleep in the confort of their own life without any actual responsability. What will happen when this giant bubble of inefficiency will burst? I guess only time will tell...
