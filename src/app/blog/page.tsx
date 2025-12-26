@@ -11,7 +11,7 @@ export default async function Blog() {
       </section>
 
       <section>
-        <h2 className='mb-8 text-5xl font-bold leading-tight tracking-tighter'>More Stories</h2>
+        <h2 className='mb-8 text-4xl font-bold leading-tight tracking-tighter'>More Stories</h2>
         <div className='mb-32 grid grid-cols-1 gap-x-16 gap-y-20 md:grid-cols-2'>
           {others.map(p => (
             <Article.Preview key={p.slug} post={p} />
