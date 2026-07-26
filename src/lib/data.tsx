@@ -1,3 +1,4 @@
+import { Excalidraw } from '@hmny.dev/ui/Excalidraw';
 import { type Experience, type Contact, type Job } from '@hmny.dev/lib/types';
 import { Bitcoin, Network, ServerCog, Store } from 'lucide-react';
 
@@ -29,7 +30,15 @@ export const Jobs: Job[] = [
     company: { name: 'BKN301', website: 'https://bkn301.com/' },
     skills: ['Golang', 'Python', 'Terraform', 'Stellar', 'Docker'],
     description:
-      "Designed and implemented 301chain: a scalable and robust Closed Payment Circuit (CPC) based on the Stellar blockchain. Capable of handling millions of dollars in daily transactions, with fast settlements times and high availability in mind. I also worked on an R&D project named 301stablecoin: aiming at producing the first algorithmic stablecoin based on a basket diverse, regional FIAT currencies as collateral to the token value.",
+      <>
+        Designed and implemented <Excalidraw name='301chain' path='/diagrams/301chain.excalidraw' />: a scalable and robust Closed Payment
+        Circuit (CPC) based on the Stellar blockchain. Capable of handling millions of dollars in daily transactions,
+        with fast settlements times and high availability in mind. I also worked on{' '}
+        <Excalidraw name='301xb' path='/diagrams/301xb.excalidraw' />: a cross-border payment product leveraging USDC on the Stellar
+        network for fast, low-cost settlement across high-risk corridors. And on an R&D project named 301stablecoin:
+        aiming at producing the first algorithmic stablecoin based on a basket of diverse, regional FIAT currencies as
+        collateral to the token value.
+      </>,
   },
 
   {
