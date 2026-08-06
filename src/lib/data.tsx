@@ -35,9 +35,9 @@ export const Jobs: Job[] = [
         Circuit (CPC) based on the Stellar blockchain. Capable of handling millions of dollars in daily transactions,
         with fast settlements times and high availability in mind. I also worked on{' '}
         <Excalidraw name='301xb' path='/diagrams/301xb.excalidraw' />: a cross-border payment product leveraging USDC on the Stellar
-        network for fast, low-cost settlement across high-risk corridors. And on an R&D project named 301stablecoin:
-        aiming at producing the first algorithmic stablecoin based on a basket of diverse, regional FIAT currencies as
-        collateral to the token value.
+        network for fast, low-cost settlement across high-risk corridors. And on an R&D project named{' '}
+        <Excalidraw name='301stablecoin' path='/diagrams/301stablecoin.excalidraw' />: aiming at producing the first
+        algorithmic stablecoin based on a basket of diverse, regional FIAT currencies as collateral to the token value.
       </>,
   },
 
