@@ -1,10 +1,11 @@
-import Laptop from '@hmny.dev/3d/Laptop';
-import NonEuclideanCube from '@hmny.dev/3d/NonEuclideanCube';
-import Phone from '@hmny.dev/3d/Phone';
+'use client';
+
 import { Experiences, Jobs } from '@hmny.dev/lib/data';
+import { useIsDesktop } from '@hmny.dev/lib/useMediaQuery';
 import * as Bento from '@hmny.dev/ui/Bento';
-import * as Job from '@hmny.dev/ui/Job';
 import { Product, Project, Tech } from '@hmny.dev/ui/Experience';
+import * as Job from '@hmny.dev/ui/Job';
+import Lazy from '@hmny.dev/ui/Lazy';
 import Spinner from '@hmny.dev/ui/Spinner';
 import * as Timeline from '@hmny.dev/ui/Timeline';
 import { Github, Linkedin } from 'lucide-react';
@@ -14,7 +15,15 @@ import { Suspense, useMemo } from 'react';
 // TODO(hmny): Should try View to manage everything through one canvas
 // ? Reference: https://github.com/pmndrs/drei?tab=readme-ov-file#view
 
+// The heavy 3D models are mounted through <Lazy> only on desktop-sized viewports, so on
+// mobile there is no WebGL context, no GPU memory and no .glb download — just the text.
+// (Next still preloads the three.js JS chunk itself on this route; see the note in
+// Lazy.tsx and the follow-up options in TODO.md.)
+
 export default function Home() {
+  // Only mount the 3D models on desktop-sized viewports; on mobile we keep just the text.
+  const isDesktop = useIsDesktop();
+
   const experiences = useMemo(() => {
     const sizeMap = { tech: 'small', project: 'medium', product: 'large' } as const;
     const componentMap = { tech: Tech, project: Project, product: Product } as const;
@@ -29,11 +38,14 @@ export default function Home() {
   return (
     <main>
       <section className='flex h-screen w-screen items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
-        <div className='h-screen w-5/12 max-lg:h-[40vh] max-lg:w-screen'>
-          <Suspense fallback={<Spinner />}>
-            <Laptop />
-          </Suspense>
-        </div>
+        {/* 3D column: desktop-only. On mobile it would just show a spinner forever, so skip it. */}
+        {isDesktop && (
+          <div className='h-screen w-5/12 max-lg:h-[40vh] max-lg:w-screen'>
+            <Suspense fallback={<Spinner />}>
+              <Lazy enabled={isDesktop} name='Laptop' fallback={<Spinner />} />
+            </Suspense>
+          </div>
+        )}
 
         <div className='w-6/12 p-8 max-lg:h-auto max-lg:w-screen'>
           <div className='mb-3'>
@@ -93,12 +105,14 @@ export default function Home() {
           </Timeline.Vertical>
         </div>
 
-        {/* Second half of the page with the 3D model */}
-        <div className='h-screen w-5/12 max-lg:h-[30vh] max-lg:w-screen'>
-          <Suspense fallback={<Spinner />}>
-            <NonEuclideanCube />
-          </Suspense>
-        </div>
+        {/* Second half of the page with the 3D model (desktop-only, hidden on mobile) */}
+        {isDesktop && (
+          <div className='h-screen w-5/12 max-lg:h-[30vh] max-lg:w-screen'>
+            <Suspense fallback={<Spinner />}>
+              <Lazy enabled={isDesktop} name='NonEuclideanCube' fallback={<Spinner />} />
+            </Suspense>
+          </div>
+        )}
       </section>
 
       <section className='align-evenly flex h-full w-full flex-col justify-evenly p-20'>
@@ -121,11 +135,14 @@ export default function Home() {
       </section>
 
       <section className='flex h-screen w-screen items-center justify-evenly align-middle max-lg:h-auto max-lg:min-h-screen max-lg:flex-col'>
-        <div className='h-screen w-5/12 max-lg:h-[40vh] max-lg:w-screen'>
-          <Suspense fallback={<Spinner />}>
-            <Phone />
-          </Suspense>
-        </div>
+        {/* 3D column: desktop-only. On mobile it would just show a spinner forever, so skip it. */}
+        {isDesktop && (
+          <div className='h-screen w-5/12 max-lg:h-[40vh] max-lg:w-screen'>
+            <Suspense fallback={<Spinner />}>
+              <Lazy enabled={isDesktop} name='Phone' fallback={<Spinner />} />
+            </Suspense>
+          </div>
+        )}
 
         <div className='w-6/12 p-8 max-lg:h-auto max-lg:w-screen'>
           <h3 className='font-italic mb-7 text-4xl text-theme_primary-400'>📱 Let's keep in touch!</h3>
