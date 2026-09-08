@@ -1,12 +1,12 @@
 import { ReactNode } from 'react';
 
 type TimelineItemProps = Readonly<{
-  children: [ReactNode, ReactNode];
+  children: ReactNode;
   period: [string | Date, string | Date];
 }>;
 
 export function Item({ children, period }: TimelineItemProps) {
-  const [title, description] = children;
+  // const [title, description] = children;
 
   return (
     <li className='mb-10 ms-4'>
@@ -14,8 +14,7 @@ export function Item({ children, period }: TimelineItemProps) {
       <time className='mb-1 text-sm font-normal leading-none text-theme_fg_accent'>
         {period[0].toLocaleString()} - {period[1].toLocaleString()}
       </time>
-      <>{title}</>
-      <>{description}</>
+      <>{children}</>
     </li>
   );
 }

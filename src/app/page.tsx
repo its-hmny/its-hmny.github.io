@@ -7,7 +7,7 @@ import * as Job from '@hmny.dev/ui/Job';
 import { Product, Project, Tech } from '@hmny.dev/ui/Experience';
 import Spinner from '@hmny.dev/ui/Spinner';
 import * as Timeline from '@hmny.dev/ui/Timeline';
-import { Github, Linkedin } from 'lucide-react';
+import { ChevronDown, Github, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import { Suspense, useMemo } from 'react';
 
@@ -82,12 +82,22 @@ export default function Home() {
             development, I bring a diverse range of expertise to the table.
           </p>
           <Timeline.Vertical>
-            {Jobs.map(j => (
+            {Jobs.map((j, i) => (
               <Timeline.Item key={j.role} period={[j.period.start, j.period.end]}>
                 {/* Title section w/ role and company */}
-                <Job.Title job={j} />
-                {/* Brief description about the job and the activities completed */}
-                <Job.Description job={j} />
+                <details className='group' open={i < 2}>
+                  <summary className='group/head flex cursor-pointer list-none items-center justify-between gap-3 rounded-lg py-1 pr-1 outline-none transition-colors marker:content-none'>
+                    <Job.Title job={j} />
+                    <ChevronDown
+                      strokeWidth={2.5}
+                      className='h-5 w-5 shrink-0 text-theme_fg_accent transition-all duration-300 ease-out group-open:rotate-180 group-open:text-theme_primary-400 group-hover/head:text-theme_primary-400'
+                    />
+                  </summary>
+                  {/* Brief description about the job and the activities completed */}
+                  <div className='group-open:animate-reveal'>
+                    <Job.Description job={j} />
+                  </div>
+                </details>
               </Timeline.Item>
             ))}
           </Timeline.Vertical>

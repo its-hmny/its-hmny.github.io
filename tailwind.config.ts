@@ -24,10 +24,17 @@ const config: Config = {
         glowing_secondary: `0px 0px 15px 5px ${colors.lime[500]}`,
       },
 
-      keyframes: { circle: { to: { 'offset-distance': '100%' } } },
+      keyframes: {
+        circle: { to: { 'offset-distance': '100%' } },
+        reveal: {
+          from: { opacity: '0', transform: 'translateY(-0.35rem)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
       animation: {
         'spin-slow': 'circle 5s linear infinite',
         'spin-fast': 'circle 3s linear infinite',
+        reveal: 'reveal 0.28s ease-out',
       },
     },
   },
