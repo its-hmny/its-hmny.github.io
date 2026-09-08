@@ -1,11 +1,11 @@
 <p align="center">
-    <img alt="Logo" width="400" src="./public/PenroseTriangle.png">
+    <img alt="Logo" width="200" src="./public/PenroseTriangle.png">
 </p>
 
 <p align="center">
     <img alt="GPLv3 License" src="https://img.shields.io/badge/License-GPL%20v3-yellow.svg">
     <img alt="Code Size" src="https://img.shields.io/github/languages/code-size/its-hmny/its-hmny.github.io?color=green&label=Code%20Size">
-    <img alt="Deploy" src="https://github.com/its-hmny/its-hmny.github.io/actions/workflows/gh-pages.yml/badge.svg">
+    <img alt="Deploy" src="https://github.com/its-hmny/its-hmny.github.io/actions/workflows/cd.workflow.yml/badge.svg">
     <img alt="Release" src="https://img.shields.io/github/v/release/its-hmny/its-hmny.github.io?label=Version">
 </p>
 
